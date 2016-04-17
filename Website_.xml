@@ -1,0 +1,4285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<texts>
+	<PrivacyPolicy>
+		<en>Privacy Policy</en>
+		<de>Datenschutzbestimmungen</de>
+		<pt>Privacy Policy</pt>
+		<it>Politica sulla Privacy</it>
+		<ms>Privacy Policy</ms>
+		<nl>Privacybeleid</nl>
+		<es>Privacy Policy</es>
+		<fr>Privacy Policy</fr>
+		<th>นโยบายความเป็นส่วนตัว</th>
+		<tr>Gizlilik Politikası</tr>
+		<in>Kebijakan Privasi</in>
+		<vi>Chính sách Riêng tư</vi>
+</PrivacyPolicy>
+	<Tip_Default_Title>
+		<en>Tip</en>
+		<de>Tipp</de>
+		<pt>Dica</pt>
+		<it>Suggerimento</it>
+		<ms>Tip</ms>
+		<nl>Tip</nl>
+		<es>consejo</es>
+		<fr>Astuce</fr>
+		<ar>معلومة</ar>
+		<az>Məsləhət</az>
+		<bn>পরামর্শ</bn>
+		<hi>सुझाव</hi>
+		<ru>Подсказка</ru>
+		<si>apadesa</si>
+		<ur>مشورہ</ur>
+		<fa>نکته</fa>
+		<th>เคล็ดลับ</th>
+		<tr>İpucu</tr>
+		<in>Kiat</in>
+		<vi>Lời khuyên</vi>
+</Tip_Default_Title>
+	<DidYouKnow_Default_Title>
+		<en>Did you know?</en>
+		<de>Wussten Sie schon?</de>
+		<pt>Você sabia?</pt>
+		<it>Lo sapevi?</it>
+		<ms>Adakah anda tahu?</ms>
+		<nl>Wist je dat?</nl>
+		<es>¿Lo sabías?</es>
+		<fr>Saviez-vous que?</fr>
+		<ar>هل تعلم؟</ar>
+		<az>Bilirsinizmi?</az>
+		<bn>তুমি কি জানো?</bn>
+		<hi>क्या आप जानते थे?</hi>
+		<ru>Знаете ли вы?</ru>
+		<si>oba dannawaada?</si>
+		<ur>کیا آپ جانتے ہیں؟</ur>
+		<fa>آیا میدانستید؟</fa>
+		<th>คุณรู้หรือไม่?</th>
+		<tr>Biliyor muydunuz?</tr>
+		<in>Tahukah Anda?</in>
+		<vi>Bạn có biết?</vi>
+</DidYouKnow_Default_Title>
+	<Tool_Default_Title/>
+	<QuestionInText_Default_Title>
+		<en>Question</en>
+		<de>Frage</de>
+		<pt>Pergunta</pt>
+		<it>Domanda</it>
+		<ms>soalan</ms>
+		<nl>Vraag</nl>
+		<es>pregunta</es>
+		<fr>Question</fr>
+		<ar>سؤال</ar>
+		<az>Sual</az>
+		<bn>প্রশ্ন</bn>
+		<hi>प्रश्न</hi>
+		<ru>Вопрос</ru>
+		<si>prashnaya</si>
+		<ur>سوال</ur>
+		<fa>سوأل</fa>
+		<th>คำถาม</th>
+		<tr>Soru</tr>
+		<in>Pertanyaan</in>
+		<vi>Câu hỏi</vi>
+</QuestionInText_Default_Title>
+	<Info_Default_Title/>
+	<Caution_Default_Title>
+		<en>Caution!</en>
+		<de>Achtung!</de>
+		<pt>Cuidado!</pt>
+		<it>Attenzione!</it>
+		<ms>Berhati-hati!</ms>
+		<nl>Let op!</nl>
+		<es>¡Atención!</es>
+		<fr>Attention!</fr>
+		<ar>تحذير</ar>
+		<az>Diqqət!</az>
+		<bn>সাবধানতা!</bn>
+		<hi>सावधानी!</hi>
+		<ru>Внимание!</ru>
+		<si>awawaadaya!</si>
+		<ur>احتیاط!</ur>
+		<fa>دقت کنید!</fa>
+		<th>ระวัง!</th>
+		<tr>Dikkat!</tr>
+		<in>Perhatian!</in>
+		<vi>Chú ý!</vi>
+</Caution_Default_Title>
+	<ToDo_Default_Title>
+		<en>Do</en>
+		<de>Machen</de>
+		<pt>Fazer</pt>
+		<it>Fare</it>
+		<ms>Lakukan</ms>
+		<nl>Doen</nl>
+		<es>Hacer</es>
+		<fr>Allez</fr>
+		<ar>افعل</ar>
+		<az>Et</az>
+		<bn>করো</bn>
+		<hi>करें</hi>
+		<ru>Сделайте</ru>
+		<si>karanna</si>
+		<ur>کریں</ur>
+		<fa>انجام دهید</fa>
+		<th>ทำได้</th>
+		<tr>Yapın</tr>
+		<in>Kerjakan</in>
+		<vi>Làm</vi>
+</ToDo_Default_Title>
+	<NotToDo_Default_Title>
+		<en>Don't!</en>
+		<de>Nicht machen!</de>
+		<pt>Não fazer</pt>
+		<it>Non fare!</it>
+		<ms>Jangan lakukan !</ms>
+		<nl>Niet doen!</nl>
+		<es>¡No hacer!</es>
+		<fr>Ne pas Aller!</fr>
+		<ar>لا تفعل</ar>
+		<az>Etmə!</az>
+		<bn>করোনা!</bn>
+		<hi>नहीं करें!</hi>
+		<ru>Не делайте!</ru>
+		<si>epa!</si>
+		<ur>نہ کریں</ur>
+		<fa>انجام ندهید</fa>
+		<th>ห้ามทำ!</th>
+		<tr>Yapmayın!</tr>
+		<in>Jangan!</in>
+		<vi>Đừng làm!</vi>
+</NotToDo_Default_Title>
+	<Quote_Default_Title/>
+	<Example_Default_Title>
+		<en>Example</en>
+		<de>Beispiel</de>
+		<pt>Exemplo</pt>
+		<it>Esempio</it>
+		<ms>contoh</ms>
+		<nl>Voorbeeld</nl>
+		<es>ejemplo</es>
+		<fr>Exemple</fr>
+		<ar>مثال</ar>
+		<az>Nümunə</az>
+		<bn>উদাহরন</bn>
+		<hi>उदाहरण</hi>
+		<ru>Пример</ru>
+		<si>udaaharanaya</si>
+		<ur>مثال</ur>
+		<fa>مثال</fa>
+		<th>ตัวอย่าง</th>
+		<tr>Örnek</tr>
+		<in>Contoh</in>
+		<vi>Ví dụ</vi>
+</Example_Default_Title>
+	<Summary_Default_Title>
+		<en>Summary</en>
+		<de>Zusammenfassung</de>
+		<pt>Resumo</pt>
+		<it>Sommario</it>
+		<ms>Ringkasan</ms>
+		<nl>Samenvatting</nl>
+		<es>resumen</es>
+		<fr>Résumé</fr>
+		<ar>ملخّص</ar>
+		<az>Yekun</az>
+		<bn>সারাংশ</bn>
+		<hi>सारांश</hi>
+		<ru>Вывод</ru>
+		<si>saaraanshaya</si>
+		<ur>خلاصہ</ur>
+		<fa>خلاصه</fa>
+		<th>สรุป</th>
+		<tr>Özet</tr>
+		<in>Ringkasan</in>
+		<vi>Tóm tắt</vi>
+</Summary_Default_Title>
+	<Sumup_Default_Title/>
+	<SelectCourse>
+		<en>Select a Course</en>
+		<de>Wählen Sie einen Kurs</de>
+		<pt>Selecionar um Curso</pt>
+		<it>Seleziona un Corso</it>
+		<ms>Pilih Kursus</ms>
+		<nl>Kies een cursus</nl>
+		<es>Selecciona un Curso</es>
+		<fr>Sélectionnez un cours</fr>
+		<ar>اختر مادة</ar>
+		<az>Kursu seçin</az>
+		<bn>একটা কোর্স বাছাই করো</bn>
+		<hi>कोर्स का चयन करें</hi>
+		<ru>Выберите курс</ru>
+		<si>paatamaalaawak thoaranna</si>
+		<ur>کورس کا انتخاب کریں</ur>
+		<fa>انتخاب یک درس</fa>
+		<th>เลือกหลักสูตร</th>
+		<tr>Kurs seçin</tr>
+		<in>Pilih Kursus</in>
+		<vi>Chọn một Khóa học</vi>
+</SelectCourse>
+	<Course_Intro_Title>
+		<en>Introduction</en>
+		<de>Einführung</de>
+		<pt>Introdução</pt>
+		<it>Introduzione</it>
+		<ms>Pengenalan</ms>
+		<nl>Introductie</nl>
+		<es>introducción</es>
+		<fr>Présentation</fr>
+		<ar>مقدّمة</ar>
+		<az>Giriş</az>
+		<bn>সূচনা</bn>
+		<hi>परिचय</hi>
+		<ru>Введение</ru>
+		<si>hadinweema</si>
+		<ur>تعارف</ur>
+		<fa>معرفی</fa>
+		<th>คำนำ</th>
+		<tr>Tanıtım</tr>
+		<in>Introduksi</in>
+		<vi>Giới thiệu</vi>
+</Course_Intro_Title>
+	<Course_Intro_Start>
+		<en>Start Course</en>
+		<de>Kurs beginnen</de>
+		<pt>Iniciar o Curso</pt>
+		<it>Inizio Corso</it>
+		<ms>Mulakan Kursus</ms>
+		<nl>Beginnen met de cursus</nl>
+		<es>Inicio del curso</es>
+		<fr>Commencez le cours</fr>
+		<ar>ابدأ المادة</ar>
+		<az>Kursa başla</az>
+		<bn>কোর্স শুরু করো</bn>
+		<hi>कोर्स शुरू करें</hi>
+		<ru>Начать курс</ru>
+		<si>paatamaalaawa arabanna</si>
+		<ur>کورس کو شروع کریں</ur>
+		<fa>شروع یک درس</fa>
+		<th>เริ่มหลักสูตร</th>
+		<tr>Kursa Başla</tr>
+		<in>Mulai Kursus</in>
+		<vi>Bắt đầu Khóa học</vi>
+</Course_Intro_Start>
+	<Course_Next_Chapter>
+		<en>Next Chapter</en>
+		<de>Nächstes Kapitel</de>
+		<pt>Próximo Capítulo</pt>
+		<it>Capitolo Successivo</it>
+		<ms>Bab seterusnya</ms>
+		<nl>Volgende hoofdstuk</nl>
+		<es>Siguiente capítulo</es>
+		<fr>Chapitre suivant</fr>
+		<ar>الفصل التالي</ar>
+		<az>Növbəti fəsil</az>
+		<bn>পরবর্তী অধ্যায়</bn>
+		<hi>अगला चैप्टर</hi>
+		<ru>Следующая глава</ru>
+		<si>meelaga parichcheedaya</si>
+		<ur>اگلا باب</ur>
+		<fa>بخش بعدی</fa>
+		<th>บทต่อไป</th>
+		<tr>Sonraki Bölüm</tr>
+		<in>Bab Berikutnya</in>
+		<vi>Chương sau</vi>
+</Course_Next_Chapter>
+	<Course_Take_The_Test_Again>
+		<en><![CDATA[ Take the test <br /> Again ]]></en>
+		<de><![CDATA[ Machen Sie den Test <br/> Nochmal ]]></de>
+		<pt><![CDATA[ Faça o teste <br/> de novo ]]></pt>
+		<it><![CDATA[ Fai il test <br/> di nuovo ]]></it>
+		<ms><![CDATA[ Ambil ujian <br/> Sekali lagi ]]></ms>
+		<nl><![CDATA[ Doe de test <br/> nog een keer ]]></nl>
+		<es><![CDATA[ Hacer el test <br/> Una vez más ]]></es>
+		<fr><![CDATA[ Faites le test <br/> Encore une fois ]]></fr>
+		<ar><![CDATA[ خذ الإختبار <br/> مرّة أخرى ]]></ar>
+		<az><![CDATA[ Testdən keç <br/> Yenidən ]]></az>
+		<bn><![CDATA[ পরীক্ষাটি নাও <br/> আবার ]]></bn>
+		<hi><![CDATA[ टेस्ट <br/> पुनः लें ]]></hi>
+		<ru><![CDATA[ Выберите тест <br/> Еще раз ]]></ru>
+		<si><![CDATA[ pareekshanaya ganeema <br/> nawatha ]]></si>
+		<ur><![CDATA[ ٹیسٹ لیں <br/> دوبارہ ]]></ur>
+		<fa><![CDATA[ بهترین را دوباره <br/> مشاهده کنید ]]></fa>
+		<th><![CDATA[ ทำแบบทดสอบ <br /> อีกครั้ง ]]></th>
+		<tr><![CDATA[ Testi al <br /> Again ]]></tr>
+		<in><![CDATA[ Ikuti Tes <br /> Lagi ]]></in>
+		<vi><![CDATA[ Làm bài kiểm tra <br /> Một lần nữa ]]></vi>
+</Course_Take_The_Test_Again>
+	<Course_Review_This_Chapter>
+		<en><![CDATA[ Review this <br /> Chapter ]]></en>
+		<de><![CDATA[ Bewerten Sie dieses <br/> Kapitel ]]></de>
+		<pt><![CDATA[ Rever este <br/> Capítulo ]]></pt>
+		<it><![CDATA[ Commenta questo <br/> Capitolo ]]></it>
+		<ms><![CDATA[ Kaji ini <br/> bab ]]></ms>
+		<nl><![CDATA[ Lees dit hoofdstuk <br/> nog een keer ]]></nl>
+		<es><![CDATA[ Revisa este <br/> Capítulo ]]></es>
+		<fr><![CDATA[ Examiner ce <br/> chapitre ]]></fr>
+		<ar><![CDATA[ راجع هذا <br /> الفصل ]]></ar>
+		<az><![CDATA[[ Bu fəsilə <br/> Bax ]]></az>
+		<bn><![CDATA[ এটি পর্যালোচনা করো <br/> অধ্যায় ]]></bn>
+		<hi><![CDATA[ इस चैप्टर की <br/> समीक्षा करें ]]></hi>
+		<ru><![CDATA[ Просмотреть эту <br/> Главу ]]]></ru>
+		<si><![CDATA[ meya wimarshanaya karanna <br/> parichcheedaya ]]></si>
+		<ur>ا<![CDATA[ س کا جائزہ لیں <br/> باب ]]></ur>
+		<fa><![CDATA[ ین بخش را <br/> بازخوانی کنید ]]></fa>
+		<th><![CDATA[ ทบทวน <br /> บทนี้ ]]></th>
+		<tr><![CDATA[ Bunu gözden geçir <br /> Chapter ]]></tr>
+		<in><![CDATA[ Periksa Bab <br /> ini ]]></in>
+		<vi><![CDATA[ Xem lại <br /> Chương này ]]></vi>
+</Course_Review_This_Chapter>
+	<Course_All_Chapters>
+		<en>All Chapters</en>
+		<de>Alle Kapitel</de>
+		<pt>Todos os Capítulos</pt>
+		<it>Tutti i Capitoli</it>
+		<ms>Semua bab</ms>
+		<nl>Alle hoofdstukken</nl>
+		<es>Todos los capítulos</es>
+		<fr>Tous les chapitres</fr>
+		<ar>جميع الفصول</ar>
+		<az>Bütün fəsillər</az>
+		<bn>সব অধ্যায়</bn>
+		<hi>सभी चैप्टर</hi>
+		<ru>Все главы</ru>
+		<si>siyalu parichcheedayan</si>
+		<ur>تمام باب</ur>
+		<fa>تمام بخش‌ها</fa>
+		<th>บทเรียนทั้งหมด</th>
+		<tr>Tüm Bölümler</tr>
+		<in>Semua Bab</in>
+		<vi>Tất cả các Chương</vi>
+</Course_All_Chapters>
+	<Test_Correct_Answer>
+		<en>You are awesome!</en>
+		<de>Sie sind genial!</de>
+		<pt>Você é incrível!</pt>
+		<it>Fantastico!</it>
+		<ms>Anda Hebat!</ms>
+		<nl>Je bent een kanjer!</nl>
+		<es>¡Eres increíble!</es>
+		<fr>Vous êtes génial!</fr>
+		<ar>أنت رائع!</ar>
+		<az>Siz möhtəşəmsiniz!</az>
+		<bn>তুমি অসাধারণ!</bn>
+		<hi>आप कमाल कर रहे हैं!</hi>
+		<ru>Вы потрясающие!</ru>
+		<si>oba wishishtayi!</si>
+		<ur>آپ بہت اچھے ہیں!</ur>
+		<fa>کارتان فوق است</fa>
+		<th>คุณเก่งมาก!</th>
+		<tr>Harikasınız!</tr>
+		<in>Anda luar biasa!</in>
+		<vi>Bạn thật tuyệt vời!</vi>
+</Test_Correct_Answer>
+	<Test_Incorrect_Answer>
+		<en>Ooops! That is not correct.</en>
+		<de>Ooops! Das ist nicht korrekt.</de>
+		<pt>Oops! Esta resposta é incorreta.</pt>
+		<it>Ops! Questo non è corretto.</it>
+		<ms>Ooops! Itu tidak betul.</ms>
+		<nl>Oeps! Dat is niet juist.</nl>
+		<es>¡Ups! Eso no es correcto.</es>
+		<fr>Oups! Ce n'est pas correct.</fr>
+		<ar>اووه! هذا ليس صحيح.</ar>
+		<az>Bu səhvdir!</az>
+		<bn>ওহ্! এটা সঠিক নয়।</bn>
+		<hi>ओह! यह सही नहीं है।</hi>
+		<ru>Ой! Это не правильно.</ru>
+		<si>apoyi! meya niwaradi nowe.</si>
+		<ur>افوہ! یہ درست نہیں ہے.</ur>
+		<fa>وای! صحیح نیست.</fa>
+		<th>แย่แล้ว! มันไม่ถูก</th>
+		<tr>Hop! Doğru değil.</tr>
+		<in>Ups! Itu salah.</in>
+		<vi>Oái! Không đúng rồi.</vi>
+</Test_Incorrect_Answer>
+	<Test_Correct_Ansswer_Was>
+		<en>THE CORRECT ANSWER:</en>
+		<de>DIE RICHTIGE ANTWORT:</de>
+		<pt>A RESPOSTA CORRETA:</pt>
+		<it>LA RISPOSTA CORRETTA È:</it>
+		<ms>JAWAPAN YANG BETUL:</ms>
+		<nl>HET JUISTE ANTWOORD:</nl>
+		<es>LA RESPUESTA CORRECTA:</es>
+		<fr>LA BONNE RÉPONSE:</fr>
+		<ar>الجواب الصحيح</ar>
+		<az>DOĞRU CAVAB:</az>
+		<bn>এটা সঠিক উত্তরঃ</bn>
+		<hi>सही उत्तर:</hi>
+		<ru>ПРАВИЛЬНЫЙ ОТВЕТ:</ru>
+		<si>niwaradi pilithura:</si>
+		<ur>صحیح جواب ہے:</ur>
+		<fa>پاسخ صحیح این است:</fa>
+		<th>คำตอบที่ถูกต้อง:</th>
+		<tr>DOĞRU CEVAP:</tr>
+		<in>JAWABAN YANG BENAR:</in>
+		<vi>CÂU TRẢ LỜI ĐÚNG:</vi>
+</Test_Correct_Ansswer_Was>
+	<Test_Last_Best_Score>
+		<en>LAST BEST SCORE:</en>
+		<de>LETZTES BESTES ERGEBNIS:</de>
+		<pt>ÚLTIMA MELHOR NOTA :</pt>
+		<it>ULTIMO MIGLIOR PUNTEGGIO:</it>
+		<ms>MARKAH TERTINGGI YANG TERDAHULU:</ms>
+		<nl>LAATSTE BESTE SCORE:</nl>
+		<es>ÚLTIMA MEJOR PUNTUACIÓN:</es>
+		<fr>DERNIER MEILLEUR SCORE:</fr>
+		<ar>اخر أفضل نتيجة</ar>
+		<az>SONUNCU ƏN YÜKSƏK NƏTİCƏ:</az>
+		<bn>শেষ শ্রেষ্ঠ স্কোরঃ</bn>
+		<hi>पिछला सर्वश्रेष्ठ स्कोर:</hi>
+		<ru>ПОСЛЕДНИЙ ЛУЧШИЙ РЕЗУЛЬТАТ:</ru>
+		<si>pasugiya hodama lakunu:</si>
+		<ur>آخری بہترین سکور:</ur>
+		<fa>بهترین امتیاز قبلی</fa>
+		<th>คะแนนที่ดีที่สุดครั้งล่าสุด:</th>
+		<tr>EN SON ALINAN EN İYİ PUAN</tr>
+		<in>SKOR TERBAIK TERAKHIR:</in>
+		<vi>ĐIỂM CAO GẦN ĐÂY NHẤT:</vi>
+</Test_Last_Best_Score>
+	<Test_Next_Question>
+		<en>Next Question</en>
+		<de>Nächste Frage</de>
+		<pt>Próxima Pergunta</pt>
+		<it>Domanda Successiva</it>
+		<ms>Soalan Seterusnya</ms>
+		<nl>Volgende vraag</nl>
+		<es>Siguiente pregunta</es>
+		<fr>Question suivante</fr>
+		<ar>السؤال التالي</ar>
+		<az>Növbəti sual</az>
+		<bn>পরের প্রশ্ন</bn>
+		<hi>अगला सवाल</hi>
+		<ru>Следующий вопрос</ru>
+		<si>meelaga prashnaya</si>
+		<ur>اگلا سوال</ur>
+		<fa>سوأل بعدی</fa>
+		<th>คำถามต่อไป</th>
+		<tr>Sonraki Soru</tr>
+		<in>Pertanyaan Berikutnya</in>
+		<vi>Câu hỏi tiếp theo</vi>
+</Test_Next_Question>
+	<Test_Summary>
+		<en>TEST SUMMARY</en>
+		<de>TEST ZUSAMMENFASSUNG</de>
+		<pt>RESUMO DA PROVA</pt>
+		<it>INIZIO DEL TEST</it>
+		<ms>UJIAN RINGKASAN</ms>
+		<nl>TEST-OVERZICHT</nl>
+		<es>RESUMEN DEL TEST</es>
+		<fr>SOMMAIRE DE L'ESSAI</fr>
+		<ar>ملخّص الإختبار</ar>
+		<az>TESTİN NƏTİCƏSİ</az>
+		<bn>পরীক্ষার সারসংক্ষেপ</bn>
+		<hi>टेस्ट सारांश</hi>
+		<ru>РЕЗУЛЬТАТЫ ТЕСТА</ru>
+		<si>pareekshana saaraanshaya</si>
+		<ur>ٹیسٹ کا خلاصہ</ur>
+		<fa>خلاصه آزمون</fa>
+		<th>สรุปการทดสอบ</th>
+		<tr>TEST ÖZETİ</tr>
+		<in>RINGKASAN TES</in>
+		<vi>TÓM TẮT KIỂM TRA</vi>
+</Test_Summary>
+	<Test_Total>
+		<en>TOTAL</en>
+		<de>TOTAL</de>
+		<pt>TOTAL</pt>
+		<it>TOTALE</it>
+		<ms>JUMLAH</ms>
+		<nl>TOTAAL</nl>
+		<es>Total</es>
+		<fr>TOTAL</fr>
+		<ar>المجموع</ar>
+		<az>CƏMİ</az>
+		<bn>মোট</bn>
+		<hi>कुल</hi>
+		<ru>ИТОГО</ru>
+		<si>ekathuwa</si>
+		<ur>کل</ur>
+		<fa>مجموع</fa>
+		<th>ผลโดยรวม</th>
+		<tr>TOPLAM</tr>
+		<in>TOTAL</in>
+		<vi>TỔNG</vi>
+</Test_Total>
+	<UnSubMessage>
+		<en>Click on Yes to unsubscribe.</en>
+		<de>Klicken Sie auf Ja, um sich abzumelden.</de>
+		<pt>Clique no Sim para cancelar a sua inscrição.</pt>
+		<it>Fare clic su Sì per cancellare l'iscrizione.</it>
+		<ms>Klik pada Ya untuk menghentikan langganan. Anda tidak boleh mengakses perkhidmatan ini selepas itu.</ms>
+		<nl>Klik op Ja om je af te melden.</nl>
+		<es>Haz clic en Sí para cancelar la suscripción.</es>
+		<fr>Cliquez sur Oui pour vous désinscrire.</fr>
+		<ar>الضغط على نعم سيلغي اشتراك المستخدم غير المشتركين لا يستطيعون استخدام الموقع.</ar>
+		<az>Abunəliyi ləğv etmək üçün Bəli düyməsini klikləyin. Bundan sonra siz xidmətdən istifadə edə bilməyəcəksiniz.</az>
+		<bn>নিবন্ধন বাতিল করতে হ্যাঁ ক্লিক করো। তুমি পরে সেবাটি ব্যবহার করতে পারবে না।</bn>
+		<hi>सदस्यता समाप्त करने के लिए हाँ पर क्लिक करें। इसके बाद आप सेवा का उपयोग नहीं कर सकते।</hi>
+		<ru>Нажмите Да, чтобы отказаться от подписки. Вы не сможете получить доступ к службе позже.</ru>
+		<si>sammaadan noweemata ow matha obanna. obata pasugiya kaalayehi seewaawanta prawesha wiya nohaka.</si>
+		<ur>ہاں پر کلک کر کے رُکنیت ختم کریں۔ اس کے بعد آپ یہ سہولت حاصل نہیں کر سکیں گے</ur>
+		<fa>برای ثبت نام بر روی بله کلیک کنید پس از آن نمی‌توانید به سرویس دسترسی پیدا کنید.</fa>
+		<th>คลิก ใช่ เพื่อยกเลิกการเป็นสมาชิก หลังจากนั้นคุณจะไม่สามารถเข้าใช้บริการได้</th>
+		<tr>Abonelikten çıkmak için Evet'e tıklayın. Daha sonrasında hizmete ulaşamazsınız.</tr>
+		<in>Klik Ya untuk membatalkan langganan. Anda tidak dapat mengakses layanan ini sesudahnya.</in>
+		<vi>Nhấn Có để hủy đăng ký. Sau đó bạn không thể truy cập dịch vụ.</vi>
+</UnSubMessage>
+	<Settings>
+		<en>Settings</en>
+		<de>Einstellungen</de>
+		<pt>Definições</pt>
+		<it>Impostazioni</it>
+		<ms>Tetapan</ms>
+		<nl>Instellingen</nl>
+		<es>Configuración</es>
+		<fr>Réglages</fr>
+		<ar>إعدادات</ar>
+		<az>tənzimləmələr</az>
+		<bn>সেটিংস</bn>
+		<hi>सेटिंग्स</hi>
+		<ru>Настройки</ru>
+		<si>sakasum</si>
+		<ur>ترتیبات</ur>
+		<fa>تنظیمات</fa>
+		<th>การตั้งค่า</th>
+		<tr>Ayarlar</tr>
+		<in>Pengaturan</in>
+		<vi>Thiết lập</vi>
+</Settings>
+	<Home>
+		<en>Home</en>
+		<de>Homepage</de>
+		<pt>Página Inicial</pt>
+		<it>Pagina iniziale</it>
+		<ms>Laman Utama</ms>
+		<nl>Startpagina</nl>
+		<es>Inicio</es>
+		<fr>Accueil</fr>
+		<ar>الصفحة الرئيسية</ar>
+		<az>Ana səhifə</az>
+		<bn>হোম পেজে</bn>
+		<hi>होम</hi>
+		<ru>Домашняя страница</ru>
+		<si>Niwahana</si>
+		<ur>ghar</ur>
+		<fa>خانه</fa>
+		<sw>nyumbani</sw>
+		<th>หน้าหลัก</th>
+		<tr>Ana sayfa</tr>
+		<in>Beranda</in>
+		<vi>Trang chủ</vi>
+</Home>
+	<Courses>
+		<en>Courses</en>
+		<de>Kurse</de>
+		<pt>Cursos</pt>
+		<it>Corsi</it>
+		<ms>kursus</ms>
+		<nl>Cursussen</nl>
+		<es>Cursos</es>
+		<fr>Courses</fr>
+		<ar>المواد</ar>
+		<az>Kurslar</az>
+		<bn>কোর্সসমূহ</bn>
+		<hi>पाठ्यक्रम</hi>
+		<ru>Курсы</ru>
+		<si>paatamaalaawan</si>
+		<ur>کورسز</ur>
+		<fa>درسها</fa>
+		<th>หลักสูตร</th>
+		<tr>Kurslar</tr>
+		<in>Kursus</in>
+		<vi>Khóa học</vi>
+</Courses>
+	<SelectTheMeaning>
+		<en>Select the meaning of-</en>
+		<de>Wählen Sie die Bedeutung von-</de>
+		<pt>Escolha o significado de-</pt>
+		<it>Selezionare il significato di-</it>
+		<ms>Pilih makna -</ms>
+		<nl>Kies de betekenis van-</nl>
+		<es>Seleccionar el significado de-</es>
+		<fr>Sélectionnez le sens de-</fr>
+		<ar>اختر معنى</ar>
+		<az>Mənasını seçin -</az>
+		<bn>এর অর্থ নির্বাচন করো</bn>
+		<hi>- का अर्थ चुनें</hi>
+		<ru>Выберите значение-</ru>
+		<si>adahasa thoaranna -</si>
+		<ur>مطلب کا انتخاب کریں ۔</ur>
+		<fa>انتخاب کنید معنی --- را</fa>
+		<th>เลือกความหมายของ-</th>
+		<tr>Şunun anlamını seçin</tr>
+		<in>Pilih arti dari-</in>
+		<vi>Chọn ý nghĩa của-</vi>
+</SelectTheMeaning>
+	<QuestionHolder>
+		<en>Which of these options indicate-</en>
+		<de>Welche dieser Optionen geben-</de>
+		<pt>Qual destas opções indica-</pt>
+		<it>Quale di queste opzioni indica-</it>
+		<ms>Manakah antara pilihan ini menunjukkan -</ms>
+		<nl>Welk van de opties toont-</nl>
+		<es>Cuál de estas opciones indica-</es>
+		<fr>Laquelle de ces options indiquent-</fr>
+		<ar>اي من هذه الخيارات يرشد الى</ar>
+		<az>Bu variantlardan hansı göstərir -</az>
+		<bn>এই বিকল্পগুলির কোনটি নির্দেশ করে-</bn>
+		<hi>इनमें से कौन से विकल्प प्रदर्शित करते हैं-</hi>
+		<ru>Какой из этих вариантов указывает-</ru>
+		<si>min kumana wikalpa dakwenneeda -</si>
+		<ur>یہ آپشنز کس کی طرف اشارہ کرتے ہیں۔</ur>
+		<fa>کدام یک از انتخاب های زیر نشان دهنده ---</fa>
+		<th>ตัวเลือกใดต่อไปนี้ที่ระบุ-</th>
+		<tr>Seçeneklerden hangisi bunu ifade eder-</tr>
+		<in>Mana dari opsi-opsi ini yang menunjukkan-</in>
+		<vi>Phương án nào sau đây thể hiện-</vi>
+</QuestionHolder>
+	<NeedtoReceive>
+		<en>You need to receive</en>
+		<de>Sie müssen .... erhalten</de>
+		<pt>Você precisa receber</pt>
+		<it>Devi ricevere</it>
+		<ms>Anda perlu menerima</ms>
+		<nl>Je moet minstens deze score behalen:</nl>
+		<es>Necesitas recibir</es>
+		<fr>Vous avez besoin de recevoir</fr>
+		<ar>عليك استلام</ar>
+		<az>Siz qəbul etməlisiniz</az>
+		<bn>তোমাকে গ্রহন করতে হবে</bn>
+		<hi>आपको प्राप्त करने की आवश्यकता है</hi>
+		<ru>Вам нужно получить</ru>
+		<si>oba labeemata awash‍ya</si>
+		<ur>آپ کو حاصل کرنے کی ضرورت ہے</ur>
+		<fa>باید کسب کنید</fa>
+		<th>คุณจะต้องได้รับ</th>
+		<tr>Almanız gereken</tr>
+		<in>Anda perlu menerima</in>
+		<vi>Bạn cần nhận</vi>
+</NeedtoReceive>
+	<OTHERCOURSES>
+		<en>OTHER COURSES</en>
+		<de>WEITERE KURSE</de>
+		<pt>OUTROS CURSOS</pt>
+		<it>ALTRI CORSI</it>
+		<ms>KURSUS LAIN</ms>
+		<nl>ANDERE CURSUSSEN</nl>
+		<es>OTROS CURSOS</es>
+		<fr>AUTRES COURSES</fr>
+		<ar>مواد أخرى</ar>
+		<az>DİGƏR KURSLAR</az>
+		<bn>অন্যান্য কোর্সসমূহ</bn>
+		<hi>अन्य पाठ्यक्रम</hi>
+		<ru>ДРУГИЕ КУРСЫ</ru>
+		<si>anek paatamaalaawan</si>
+		<ur>دوسرے کورسز</ur>
+		<fa>درسهای دیگر</fa>
+		<th>หลักสูตรอื่น ๆ</th>
+		<tr>DİĞER KURSLAR</tr>
+		<in>KURSUS LAINNYA</in>
+		<vi>KHÓA HỌC KHÁC</vi>
+</OTHERCOURSES>
+	<No>
+		<en>No</en>
+		<de>Nein</de>
+		<pt>Não</pt>
+		<it>No</it>
+		<ms>tidak</ms>
+		<nl>Nee</nl>
+		<es>no</es>
+		<fr>Non</fr>
+		<ar>لا</ar>
+		<az>Xeyr</az>
+		<bn>না</bn>
+		<hi>नहीं</hi>
+		<ru>Нет</ru>
+		<si>natha</si>
+		<ur>نہیں</ur>
+		<fa>نه</fa>
+		<th>ไม่</th>
+		<tr>Hayır</tr>
+		<in>Tidak</in>
+		<vi>Không</vi>
+</No>
+	<Yes>
+		<en>Yes</en>
+		<de>Ja</de>
+		<pt>Sim</pt>
+		<it>Sì</it>
+		<ms>Ya</ms>
+		<nl>Ja</nl>
+		<es>sí</es>
+		<fr>Oui</fr>
+		<ar>نعم</ar>
+		<az>Bəli</az>
+		<bn>হ্যাঁ</bn>
+		<hi>हां</hi>
+		<ru>Да</ru>
+		<si>ow</si>
+		<ur>ہاں</ur>
+		<fa>بله</fa>
+		<th>ใช่</th>
+		<tr>Evet</tr>
+		<in>Ya</in>
+		<vi>Có</vi>
+</Yes>
+	<Submit>
+		<en>Submit</en>
+		<de>Absenden</de>
+		<pt>Submeter</pt>
+		<it>Invio</it>
+		<ms>Hantar</ms>
+		<nl>Verzenden</nl>
+		<es>enviar</es>
+		<fr>Soumettez</fr>
+		<ar>أدخل</ar>
+		<az>Göndər</az>
+		<bn>জমা দাও</bn>
+		<hi>सबमिट करें</hi>
+		<ru>Подтвердить</ru>
+		<si>idiripath karanna</si>
+		<ur>بھیجیں</ur>
+		<fa>ارسال</fa>
+		<th>ส่ง</th>
+		<tr>Gönder</tr>
+		<in>Serahkan</in>
+		<vi>Gửi đi</vi>
+</Submit>
+	<StarRewarded>
+		<en>STAR PLAYER REWARD</en>
+		<de>STAR SPIELER BELOHNUNG</de>
+		<pt>PRÉMIO DO JOGADOR ESTRELA</pt>
+		<it>PREMIO QUALE GIOCATORE DI PRIMA GRANDEZZA (STAR PLAYER)</it>
+		<ms>GANJARAN PEMAIN HEBAT</ms>
+		<nl>STERSPELER-AWARD</nl>
+		<es>ESTRELLA RECOMPENSA DEL JUGADOR</es>
+		<fr>RÉCOMPENSE D'UN JOUEUR ÉTOILE</fr>
+		<ar>جائزة اللاعب صاحب النجمة</ar>
+		<az>ULDUZ OYUNÇU MÜKAFATI</az>
+		<bn>তারকা খেলোয়াড়ের পুরস্কার</bn>
+		<hi>स्टार प्लेयर रिवॉर्ड</hi>
+		<ru>НАГРАДА ЛУЧШЕМУ ИГРОКУ</ru>
+		<si>tharu kreedaka thyaagaya</si>
+		<ur>مشہور کھلاڑی کا انعام</ur>
+		<fa>جایزه بازیکن را آغاز کنید</fa>
+		<th>รางวัลผู้เล่นดาวเด่น</th>
+		<tr>YILDIZ OYUNCU ÖDÜLÜ</tr>
+		<in>HADIAH PEMAIN BINTANG</in>
+		<vi>PHẦN THƯỞNG CHO NGƯỜI CHƠI XUẤT SẮC</vi>
+</StarRewarded>
+	<Message>
+		<en>Message</en>
+		<de>Nachricht</de>
+		<pt>Mensagem</pt>
+		<it>Messaggio</it>
+		<ms>mesej</ms>
+		<nl>Bericht</nl>
+		<es>mensaje</es>
+		<fr>Message</fr>
+		<ar>رسالة</ar>
+		<az>Mesaj</az>
+		<bn>বার্তা</bn>
+		<hi>मैसेज</hi>
+		<ru>Сообщение</ru>
+		<si>paniwudaya</si>
+		<ur>پیغام</ur>
+		<fa>پیغام</fa>
+		<th>ข้อความ</th>
+		<tr>Mesaj</tr>
+		<in>Pesan</in>
+		<vi>Thông điệp</vi>
+</Message>
+	<MobilePhone>
+		<en>Mobile Number</en>
+		<de>Handynummer</de>
+		<pt>Numero de Telemóvel</pt>
+		<it>Numero di cellulare</it>
+		<ms>Nombor Telefon</ms>
+		<nl>Mobiel nummer</nl>
+		<es>Número de móvil</es>
+		<fr>Numéro de Téléphone Mobile</fr>
+		<ar>رقم الجوّال</ar>
+		<az>Mobil nömrə</az>
+		<bn>মোবাইল নম্বর</bn>
+		<hi>मोबाइल नंबर</hi>
+		<ru>Номер телефона</ru>
+		<si>jangama durakathana ankaya</si>
+		<ur>موبائل نمبر</ur>
+		<fa>شماره موبایل</fa>
+		<th>เบอร์มือถือ</th>
+		<tr>Cep Telefonu Numarası</tr>
+		<in>Nomor Ponsel</in>
+		<vi>Số Điện thoại Di động</vi>
+</MobilePhone>
+	<LName>
+		<en>Last Name</en>
+		<de>Nachname</de>
+		<pt>Sobrenome</pt>
+		<it>Cognome</it>
+		<ms>Nama Akhir</ms>
+		<nl>Achternaam</nl>
+		<es>apellido</es>
+		<fr>Nom de famille</fr>
+		<ar>اسم العائلة</ar>
+		<az>Soyad</az>
+		<bn>শেষ নাম</bn>
+		<hi>अंतिम नाम</hi>
+		<ru>Фамилия</ru>
+		<si>awasaana nama</si>
+		<ur>آخری نام</ur>
+		<fa>نام خانوادگی</fa>
+		<th>นามสกุล</th>
+		<tr>Soy isim</tr>
+		<in>Nama Belakang</in>
+		<vi>Họ</vi>
+</LName>
+	<FName>
+		<en>First Name</en>
+		<de>Vorname</de>
+		<pt>Primeiro Nome</pt>
+		<it>Nome</it>
+		<ms>Nama Pertama</ms>
+		<nl>Voornaam</nl>
+		<es>Nombre</es>
+		<fr>Prénom</fr>
+		<ar>الإسم الأول</ar>
+		<az>Ad</az>
+		<bn>নামের প্রথমাংশ</bn>
+		<hi>प्रथम नाम</hi>
+		<ru>Имя</ru>
+		<si>mul nama</si>
+		<ur>پہلا نام</ur>
+		<fa>نام</fa>
+		<th>ชื่อ</th>
+		<tr>İsim</tr>
+		<in>Nama Depan</in>
+		<vi>Tên</vi>
+</FName>
+	<Email>
+		<en>Email</en>
+		<de>E-Mail</de>
+		<pt>Email</pt>
+		<it>E-mail</it>
+		<ms>E-mel</ms>
+		<nl>E-mail</nl>
+		<es>Email</es>
+		<fr>Email</fr>
+		<ar>البريد الإلكتروني</ar>
+		<az>Email</az>
+		<bn>ইমেইল</bn>
+		<hi>ईमेल</hi>
+		<ru>электронная почта</ru>
+		<si>widyuth lipinaya</si>
+		<ur>ای۔میل</ur>
+		<fa>ایمیل</fa>
+		<th>อีเมล</th>
+		<tr>E-posta</tr>
+		<in>Surel</in>
+		<vi>Email</vi>
+</Email>
+	<BodyLanguageCourse>
+		<en>Body Language Course</en>
+		<de>Kurs über Körpersprache</de>
+		<pt>Curso de Linguagem Corporal</pt>
+		<it>Corso sul linguaggio del corpo</it>
+		<ms>Kursus Bahasa Tubuh</ms>
+		<nl>Lichaamstaal-cursus</nl>
+		<es>Curso de lenguaje corporal</es>
+		<fr>Cours de langage du corps</fr>
+		<ar>مادة لغة الجسد</ar>
+		<az>Bədən dili kursu</az>
+		<bn>শারীরিক ভাষা কোর্স</bn>
+		<hi>बॉडी लैंग्वेज कोर्स</hi>
+		<ru>Курс Языка Тела</ru>
+		<si>aangika baashaa paatamaalaawa</si>
+		<ur>جسمانی زبان کا کورس</ur>
+		<fa>درس زبان بدنی</fa>
+		<th>หลักสูตรภาษากาย</th>
+		<tr>Beden Dili Kursu</tr>
+		<in>Kursus Bahasa Tubuh</in>
+		<vi>Khóa học Ngôn ngữ Cơ thể</vi>
+</BodyLanguageCourse>
+	<TermsandConditions>
+		<en>Terms and Conditions</en>
+		<de>AGB</de>
+		<pt>Termos e Condições</pt>
+		<it>Termini e Condizioni</it>
+		<ms>Terma dan Syarat</ms>
+		<nl>Gebruiksvoorwaarden</nl>
+		<es>Términos y Condiciones</es>
+		<fr>Termes et Conditions</fr>
+		<ar>شروط وقوانين</ar>
+		<az>Şərtlər və Qaydalar</az>
+		<bn>শর্তাবলী</bn>
+		<hi>नियम और शर्तें</hi>
+		<ru>Условия</ru>
+		<si>niyamayan haa kondeesi</si>
+		<ur>شرائط و ضوابط</ur>
+		<fa>شرایط و ضوابط</fa>
+		<th>ข้อตกลงและเงื่อนไข</th>
+		<tr>Şartlar ve Koşullar</tr>
+		<in>Syarat dan Ketentuan</in>
+		<vi>Điều khoản và Điều kiện</vi>
+</TermsandConditions>
+	<Step>
+		<en>Step</en>
+		<de>Schritt</de>
+		<pt>Passo</pt>
+		<it>Passo</it>
+		<ms>Langkah</ms>
+		<nl>Stap</nl>
+		<es>paso</es>
+		<fr>Étape</fr>
+		<ar>خطوة</ar>
+		<az>Addım</az>
+		<bn>ধাপ</bn>
+		<hi>चरण</hi>
+		<ru>Шаг</ru>
+		<si>piyawara</si>
+		<ur>قدم</ur>
+		<fa>قدم</fa>
+		<th>ขั้นตอน</th>
+		<tr>Adım</tr>
+		<in>Langkah</in>
+		<vi>Bước</vi>
+</Step>
+	<AddFlashCard>
+		<en>Add some Flash Cards to your library first!</en>
+		<de>Fügen Sie zuerst einige Flash-Karten zu Ihrer Sammlung hinzu!</de>
+		<pt>Primeiro adicione alguns Cartões Flash à sua biblioteca !</pt>
+		<it>Installa prima Flash Cards alla tua libreria!</it>
+		<ms>Tambah beberapa Kad Flash untuk perpustakaan anda terlebih dahulu!</ms>
+		<nl>Voeg eerst een aantal Flash Cards toe aan je bibliotheek!</nl>
+		<es>¡Agrega algunas tarjetas a la biblioteca primero!</es>
+		<fr>Ajoutez quelques cartes flash à votre bibliothèque abord!</fr>
+		<ar>اضف بعض بطاقات الفلاش الى مكتبتك اولا!</ar>
+		<az>Ilk olaraq kitabxanaya biraz Flaş Kartlar əlavə edin!</az>
+		<bn>প্রথমে তোমার লাইব্রেরিতে কিছু ফ্ল্যাশ কার্ড যোগ করো!</bn>
+		<hi>पहले कुछ फ़्लैश कार्ड अपनी लाइब्रेरी में जोड़ें!</hi>
+		<ru>Для начала добавьте Флеш -карту в вашу библиотеку!</ru>
+		<si>prathamayen yam flaesh kaad pathak obagee gonuwata ek karanna!</si>
+		<ur>اپنی لائبریری میں پہلے چند فلیش کارڈ جمع کریں!</ur>
+		<fa>ابتدا چند فلش کارت به کتابخانه خود اضافه کنید</fa>
+		<th>เพิ่มบัตรคำบางส่วนลงในคลังข้อมูลของคุณก่อน!</th>
+		<tr>Kütüphanenize ilk olarak Hafıza Kartları ekleyin!</tr>
+		<in>Tambahkan dulu beberapa Flash Card ke perpustakaan Anda!</in>
+		<vi>Bổ sung thêm một số Thẻ Flash vào thư viện của bạn đã!</vi>
+</AddFlashCard>
+	<TestyourSelf>
+		<en>Test Yourself</en>
+		<de>Testen Sie sich</de>
+		<pt>Teste a si mesmo</pt>
+		<it>Mettiti alla prova</it>
+		<ms>Menguji Diri Anda</ms>
+		<nl>Test jezelf</nl>
+		<es>Prueba tú mismo</es>
+		<fr>Testez-vous</fr>
+		<ar>اختبر نفسك</ar>
+		<az>Özünüzü yoxlayın</az>
+		<bn>নিজেকে পরীক্ষা করো</bn>
+		<hi>अपने आप को परखें</hi>
+		<ru>Проверьте себя</ru>
+		<si>obama wibaagaya karanna</si>
+		<ur>خُود کو آزمائیں</ur>
+		<fa>خودتان را تست کنید</fa>
+		<th>ทดสอบตัวคุณเอง</th>
+		<tr>Kendinizi Test edin</tr>
+		<in>Uji Diri Anda</in>
+		<vi>Kiểm tra Trình độ Bản thân</vi>
+</TestyourSelf>
+	<EmptyLibrary>
+		<en>Library is Empty.</en>
+		<de>Sammlung ist leer.</de>
+		<pt>A Biblioteca está Vazia.</pt>
+		<it>La libreria è vuota.</it>
+		<ms>Perpustakaan adalah kosong.</ms>
+		<nl>Bibliotheek is leeg.</nl>
+		<es>La biblioteca está vacía.</es>
+		<fr>Bibliothèque est vide.</fr>
+		<ar>المكتبة فارغة</ar>
+		<az>Kitabxana boşdur</az>
+		<bn>লাইব্রেরী খালি</bn>
+		<hi>लाइब्रेरी खाली है।</hi>
+		<ru>Библиотека пуста</ru>
+		<si>gonuwa hisya.</si>
+		<ur>لائبریری خالی ہے</ur>
+		<fa>کتابخانه خالی است</fa>
+		<th>คลังข้อมูลว่างเปล่า</th>
+		<tr>Kütüphane Boş</tr>
+		<in>Perpustakaan Kosong.</in>
+		<vi>Thư viện đang Trống.</vi>
+</EmptyLibrary>
+	<Youneedtoget>
+		<en>You need to get</en>
+		<de>Sie müssen ...... bekommen</de>
+		<pt>Você precisa de ter</pt>
+		<it>Devi avere</it>
+		<ms>Anda perlu mendapatkan</ms>
+		<nl>Je moet minstens deze score behalen:</nl>
+		<es>Tienes que conseguir</es>
+		<fr>Vous devez obtenir</fr>
+		<ar>عليك الحصول على</ar>
+		<az>Siz yığmalısınız:</az>
+		<bn>তোমাকে পেতে হবে</bn>
+		<hi>आपको प्राप्त करने की आवश्यकता है</hi>
+		<ru>Вам надо</ru>
+		<si>oba ganeemata awash‍ya</si>
+		<ur>آپ کو چاہیے</ur>
+		<fa>شما باید بگیرید</fa>
+		<th>คุณจะต้องได้</th>
+		<tr>Şunu almalısınız</tr>
+		<in>Anda perlu mendapatkan</in>
+		<vi>Bạn cần có</vi>
+</Youneedtoget>
+	<YouEarnedThe>
+		<en>You earned the</en>
+		<de>Sie haben ..... verdient.</de>
+		<pt>Você ganhou o(a)</pt>
+		<it>Hai guadagnato il</it>
+		<ms>Anda telah memperolehi</ms>
+		<nl>Dit heb je verdiend:</nl>
+		<es>Ganaste el</es>
+		<fr>Vous avez gagné le</fr>
+		<ar>لقد حصلت على</ar>
+		<az>Siz qazandınız:</az>
+		<bn>তুমি অর্জন করেছো</bn>
+		<hi>आपने प्राप्त किए</hi>
+		<ru>Вы получили</ru>
+		<si>oba upayaa gaththee</si>
+		<ur>آپ نے حاصل کیا ہے</ur>
+		<fa>شما به دست آورده‌اید</fa>
+		<th>คุณได้รับ</th>
+		<tr>Bu bölümü geçmek için gereken</tr>
+		<in>Anda telah memperoleh</in>
+		<vi>Bạn đã nhận</vi>
+</YouEarnedThe>
+	<ScoreToPass>
+		<en>score to pass this chapter.</en>
+		<de>Punktzahl für dieses Kapitel</de>
+		<pt>nota para passar este capítulo.</pt>
+		<it>spunta per passare questo capitolo.</it>
+		<ms>markah untuk lulus bab ini.</ms>
+		<nl>score om te slagen voor dit hoofdstuk.</nl>
+		<es>puntuación para aprobar este capítulo.</es>
+		<fr>gagnez pour réussir ce chapitre.</fr>
+		<ar>نتيجة لتخطي هذا الدرس</ar>
+		<az>bu bölümü keçmək üçün xal.</az>
+		<bn>এই অধ্যায়ে পাস করার স্কোর।</bn>
+		<hi>इस चैप्टर को पास करने के लिए स्कोर।</hi>
+		<ru>очков чтобы пройти эту главу.</ru>
+		<si>mema parichcheedaya samath weemata lakunu ganna.</si>
+		<ur>اس باب کو پاس کرنے کے لئے سکور کریں</ur>
+		<fa>امتیاز برای</fa>
+		<th>คะแนนเพื่อผ่านบทเรียนนี้</th>
+		<tr>puanı aldınız.</tr>
+		<in>skor agar lulus bab ini.</in>
+		<vi>điểm để vượt qua chương này.</vi>
+</ScoreToPass>
+	<StartChapterAgain>
+		<en>Start the Chapter Again</en>
+		<de>Starten Sie das Kapitel erneut</de>
+		<pt>Iniciar o Capítulo de novo</pt>
+		<it>Avvia il nuovo capitolo</it>
+		<ms>Mulakan bab ini sekali lagi</ms>
+		<nl>Opnieuw beginnen met het hoofdstuk</nl>
+		<es>Inicia el capítulo de nuevo</es>
+		<fr>Commencez le chapitre de nouveau</fr>
+		<ar>ابدأ الفصل مرّة أخرى</ar>
+		<az>Fəsilə yenidən başla</az>
+		<bn>অধ্যায় আবার নতুন করে শুরু করো</bn>
+		<hi>चैप्टर फिर से शुरू करें</hi>
+		<ru>Начтите Главу Снова</ru>
+		<si>parichcheedaya nawatha arabanna</si>
+		<ur>باب کو دوبارہ شروع کریں</ur>
+		<fa>این بخش را دوباره شروع کنید</fa>
+		<th>เริ่มบทเรียนอีกครั้ง</th>
+		<tr>Bölümü Tekrar Başlat</tr>
+		<in>Mulai Bab Ini Kembali</in>
+		<vi>Bắt đầu Chương này một lần nữa</vi>
+</StartChapterAgain>
+	<Oops>
+		<en>Oops!</en>
+		<de>Oops!</de>
+		<pt>Oops!</pt>
+		<it>Oops!</it>
+		<ms>Oops !</ms>
+		<nl>Oeps!</nl>
+		<es>¡Ups!</es>
+		<fr>Oops!</fr>
+		<ar>اووه!</ar>
+		<az>Xəta!</az>
+		<bn>ইশ্</bn>
+		<hi>उफ़!</hi>
+		<ru>Ой!</ru>
+		<si>apoyi!</si>
+		<ur>افوہ!</ur>
+		<fa>وای!</fa>
+		<th>แย่แล้ว!</th>
+		<tr>Hop!</tr>
+		<in>Ups!</in>
+		<vi>Oái!</vi>
+</Oops>
+	<YourBestScore>
+		<en>Your Best Score:</en>
+		<de>Ihre bestes Ergebnis:</de>
+		<pt>Sua Melhor Nota:</pt>
+		<it>Il tuo miglior punteggio:</it>
+		<ms>Skor Terbaik Anda:</ms>
+		<nl>Je beste score:</nl>
+		<es>Tu Mejor puntuación:</es>
+		<fr>Votre meilleur score:</fr>
+		<ar>أفضل نتيجة لك:</ar>
+		<az>Ən yaxşı nəticəniz:</az>
+		<bn>তোমার সেরা স্কোরঃ</bn>
+		<hi>आपका सर्वश्रेष्ठ स्कोर:</hi>
+		<ru>Ваш Лучший Результат:</ru>
+		<si>obagee hodama lakunu:</si>
+		<ur>آپکا بہترین سکور:</ur>
+		<fa>بهترین امتیاز شما:</fa>
+		<th>คะแนนที่ดีที่สุดของคุณ:</th>
+		<tr>En İyi Puanınız:</tr>
+		<in>Skor Terbaik Anda:</in>
+		<vi>Điểm cao nhất của Bạn:</vi>
+</YourBestScore>
+	<YourScore>
+		<en>Your Score:</en>
+		<de>Ihr Ergebnis:</de>
+		<pt>Sua Nota:</pt>
+		<it>Il tuo punteggio:</it>
+		<ms>Skor Anda :</ms>
+		<nl>Je score:</nl>
+		<es>Tu puntuación:</es>
+		<fr>Votre score:</fr>
+		<ar>نتيجتك:</ar>
+		<az>Sizin nəticə:</az>
+		<bn>তোমার স্কোরঃ</bn>
+		<hi>आपका स्कोर:</hi>
+		<ru>Ваш Результат:</ru>
+		<si>obagee lakunu:</si>
+		<ur>آپکا سکور:</ur>
+		<fa>امتیاز شما:</fa>
+		<th>คะแนนของคุณ:</th>
+		<tr>Puanınız:</tr>
+		<in>Skor Anda:</in>
+		<vi>Điểm của Bạn:</vi>
+</YourScore>
+	<BeBetter>
+		<en>You could do better</en>
+		<de>Sie könnten besser sein</de>
+		<pt>Você pode fazer melhor</pt>
+		<it>Potevi fare di meglio</it>
+		<ms>Anda boleh melakukan dengan lebih baik</ms>
+		<nl>Dat had beter gekund</nl>
+		<es>Se podría hacer mejor</es>
+		<fr>Vous pourriez faire mieux</fr>
+		<ar>يمكنك القيام بما هو أفضل</ar>
+		<az>Siz daha yaxşısını edə bilərdiniz</az>
+		<bn>তুমি আরো ভালো করতে পারবে</bn>
+		<hi>आप बेहतर कर सकते</hi>
+		<ru>Вы можете лучше</ru>
+		<si>obata wadaath hodin kireemata puluwan wiya</si>
+		<ur>آپ اچھا کر سکتے تھے</ur>
+		<fa>از این بهتر هم میتوانید</fa>
+		<th>คุณน่าจะทำได้ดีกว่านี้</th>
+		<tr>Daha iyisini yapabilirdiniz</tr>
+		<in>Anda dapat lebih baik</in>
+		<vi>Bạn có thể làm tốt hơn</vi>
+</BeBetter>
+	<PassedTheTest>
+		<en>You passed this test successfully!</en>
+		<de>Sie haben diesen Test erfolgreich bestanden!</de>
+		<pt>Você passou esta prova com sucesso!</pt>
+		<it>Hai superato questo test con successo!</it>
+		<ms>Anda telah lulus ujian ini dengan jayanya !</ms>
+		<nl>Je bent geslaagd voor deze test!</nl>
+		<es>Has pasado la prueba con éxito!</es>
+		<fr>Vous avez passé ce test avec succès!</fr>
+		<ar>لقد أكملت هذا الإختبار بنجاح</ar>
+		<az>Siz testi uğurla keçdiniz!</az>
+		<bn>তুমি সফলতার সাথে পরীক্ষাটি পাশ করেছো!</bn>
+		<hi>आपने सफलतापूर्वक यह टेस्ट पास कर लिया!</hi>
+		<ru>Вы успешно прошли этот тест!</ru>
+		<si>oba mema pareekshanaya saarthaka lesin samathwiya!</si>
+		<ur>آپ نے کامیابی سے اس ٹیسٹ کو پاس کر لیا ہے!</ur>
+		<fa>این آزمون را با موفقیت گذراندید</fa>
+		<th>คุณผ่านการทดสอบนี้เรียบร้อยแล้ว!</th>
+		<tr>Bu testi başarıyla geçtiniz!</tr>
+		<in>Anda berhasil lulus tes ini!</in>
+		<vi>Bạn đã xuất sắc vượt qua bài kiểm tra này!</vi>
+</PassedTheTest>
+	<Congratulations>
+		<en>Congratulations !</en>
+		<de>Herzlichen Glückwunsch!</de>
+		<pt>Parabéns!</pt>
+		<it>Congratulazioni!</it>
+		<ms>Tahniah !</ms>
+		<nl>Gefeliciteerd!</nl>
+		<es>¡Enhorabuena!</es>
+		<fr>Félicitations!</fr>
+		<ar>مبروك!</ar>
+		<az>Təbriklər!</az>
+		<bn>অভিনন্দন!</bn>
+		<hi>बधाई हो!</hi>
+		<ru>Поздравляем!</ru>
+		<si>suba pathum !</si>
+		<ur>مباری ہو!</ur>
+		<fa>تبریک!</fa>
+		<th>ขอแสดงความยินดีด้วย!</th>
+		<tr>Tebrikler!</tr>
+		<in>Selamat!</in>
+		<vi>Xin chúc mừng!</vi>
+</Congratulations>
+	<Close>
+		<en>Close</en>
+		<de>Schließen</de>
+		<pt>Fechar</pt>
+		<it>Chiudi</it>
+		<ms>Tutup</ms>
+		<nl>Sluiten</nl>
+		<es>cerrar</es>
+		<fr>Proche</fr>
+		<ar>إغلاق</ar>
+		<az>Bağla</az>
+		<bn>বন্ধ করো</bn>
+		<hi>बंद करें</hi>
+		<ru>Закрыть</ru>
+		<si>wasanna</si>
+		<ur>بندکریں</ur>
+		<fa>بستن</fa>
+		<th>ปิด</th>
+		<tr>Kapat</tr>
+		<in>Tutup</in>
+		<vi>Đóng</vi>
+</Close>
+	<Save>
+		<en>Save</en>
+		<de>Speichern</de>
+		<pt>Salvar</pt>
+		<it>Salva</it>
+		<ms>Simpan</ms>
+		<nl>Opslaan</nl>
+		<es>guardar</es>
+		<fr>Sauvegarder</fr>
+		<ar>حفظ</ar>
+		<az>Yadda saxla</az>
+		<bn>সংরক্ষণ</bn>
+		<hi>सेव करें</hi>
+		<ru>Сохранить</ru>
+		<si>aarakshaa karanna</si>
+		<ur>محفوظ کریں</ur>
+		<fa>ذخیره</fa>
+		<th>บันทึก</th>
+		<tr>Kaydet</tr>
+		<in>Simpan</in>
+		<vi>Lưu lại</vi>
+</Save>
+	<ContactUs>
+		<en>Contact Us</en>
+		<de>Kontaktieren Sie uns</de>
+		<pt>Contacte-nos</pt>
+		<it>Contattaci</it>
+		<ms>Hubungi Kami</ms>
+		<nl>Neem contact met ons op</nl>
+		<es>contáctanos</es>
+		<fr>Contactez-nous</fr>
+		<ar>اتصل بنا</ar>
+		<az>Bizimlə əlaqə</az>
+		<bn>আমাদের সাথে যোগাযোগ করো</bn>
+		<hi>हमसे संपर्क करें</hi>
+		<ru>Связаться с нами</ru>
+		<si>apawa hamuwanna</si>
+		<ur>ہم سے رابطہ کریں</ur>
+		<fa>تماس با ما</fa>
+		<th>ติดต่อเรา</th>
+		<tr>Bize Ulaşın</tr>
+		<in>Hubungi Kami</in>
+		<vi>Liên hệ với Chúng tôi</vi>
+</ContactUs>
+	<FAQ>
+		<en>FAQ</en>
+		<de>Häufige Fragen</de>
+		<pt>Perguntas Frequentes</pt>
+		<it>Domande frequenti (FAQ)</it>
+		<ms>Soalan Lazim</ms>
+		<nl>Veelgestelde vragen</nl>
+		<es>Preguntas más frecuentes</es>
+		<fr>FAQ</fr>
+		<ar>أسئلة و أجوبة</ar>
+		<az>FAQ</az>
+		<bn>প্রায়শই জিজ্ঞাসিত প্রশ্ন-উত্তর</bn>
+		<hi>अक्सर पूछे जाने वाले प्रश्न</hi>
+		<ru>Часто задаваемые вопросы</ru>
+		<si>FAQ</si>
+		<ur>عمومی سوالات</ur>
+		<fa>سوألات متداول</fa>
+		<th>คำถามที่ถามบ่อย</th>
+		<tr>SSS</tr>
+		<in>FAQ</in>
+		<vi>FAQ</vi>
+</FAQ>
+	<LanguageSettings>
+		<en>Language Settings</en>
+		<de>Spracheinstellungen</de>
+		<pt>Opções de Língua</pt>
+		<it>Impostazione della lingua</it>
+		<ms>Tetapan Bahasa</ms>
+		<nl>Taalinstellingen</nl>
+		<es>Configuración de idioma</es>
+		<fr>Paramètres du langue</fr>
+		<ar>إعدادات اللغة</ar>
+		<az>Dil tənzimləmələri</az>
+		<bn>ভাষা সেটিংস</bn>
+		<hi>भाषा सेटिंग्स</hi>
+		<ru>Настройки Языка</ru>
+		<si>baashaa sakasum</si>
+		<ur>زبان کی سیٹنگ</ur>
+		<fa>تنظیمات زبان</fa>
+		<th>การตั้งค่าภาษา</th>
+		<tr>Dil Ayarları</tr>
+		<in>Pengaturan Bahasa</in>
+		<vi>Thiết lập Ngôn ngữ</vi>
+</LanguageSettings>
+	<Start>
+		<en>Start</en>
+		<de>Starten</de>
+		<pt>Iniciar</pt>
+		<it>Inizio</it>
+		<ms>Mula</ms>
+		<nl>Start</nl>
+		<es>iniciar</es>
+		<fr>Démarrez</fr>
+		<ar>إبدأ</ar>
+		<az>Başla</az>
+		<bn>শুরু করো</bn>
+		<hi>प्रारंभ</hi>
+		<ru>Старт</ru>
+		<si>arabanna</si>
+		<ur>شروع</ur>
+		<fa>شروع</fa>
+		<th>เริ่ม</th>
+		<tr>Başla</tr>
+		<in>Mulai</in>
+		<vi>Bắt đầu</vi>
+</Start>
+	<MobileAcademy>
+		<en>Mobile Academy</en>
+		<de>Mobile Academy</de>
+		<pt>Mobile Academy</pt>
+		<it>Mobile Academy</it>
+		<ms>Mobile Academy</ms>
+		<es>Mobile Academy</es>
+		<fr>Mobile Academy</fr>
+		<az>Mobile Academy</az>
+		<bn>Mobile Academy</bn>
+		<hi>Mobile Academy</hi>
+		<ru>Mobile Academy</ru>
+		<ur>Mobile Academy</ur>
+		<fa>Mobile Academy</fa>
+		<th>Mobile Academy</th>
+		<tr>Öğrenme Kulübü</tr>
+		<in>Mobile Academy</in>
+		<vi>Học viện Di động</vi>
+</MobileAcademy>
+	<Signin_Facebook_Button_Caption>
+		<en>Sign in with Facebook</en>
+		<de>Anmeldung mit Facebook</de>
+		<pt>Entrar com o Facebook</pt>
+		<it>Collegati a Facebook</it>
+		<ms>Daftar masuk dengan Facebook</ms>
+		<nl>Log in met Facebook</nl>
+		<es>Conectate con Facebook</es>
+		<fr>Connectez-vous avec Facebook</fr>
+		<ar>التسجيل في فيس بوك</ar>
+		<az>Facebook vasitəsilə daxil ol</az>
+		<bn>ফেসবুকের সাথে যুক্ত হোন</bn>
+		<hi>फेसबुक से साइन इन करें</hi>
+		<ru>Войти в Facebook</ru>
+		<si>Facebook samagin athulu wanna</si>
+		<ur>فیس بک کی مدد سے داخل ہوں</ur>
+		<fa>ورود با فیسبوک</fa>
+		<th>เข้าระบบด้วย Facebook</th>
+		<tr>Facebook ile giriş yapın</tr>
+		<in>Sign in dengan Facebook</in>
+		<vi>Đăng nhập với Facebook</vi>
+</Signin_Facebook_Button_Caption>
+	<Waiting>
+		<en>Waiting</en>
+		<de>Warten</de>
+		<pt>Esperando</pt>
+		<it>Attendere</it>
+		<ms>Menunggu</ms>
+		<nl>Even geduld</nl>
+		<es>espera</es>
+		<fr>Attente</fr>
+		<ar>انتظار</ar>
+		<az>Gözlə</az>
+		<bn>অপেক্ষারত</bn>
+		<hi>प्रतीक्षा</hi>
+		<ru>Ожидание</ru>
+		<si>radee sitimin</si>
+		<ur>انتظار کریں</ur>
+		<fa>صبر کنید</fa>
+		<th>กำลังรอ</th>
+		<tr>Bekliyor</tr>
+		<in>Menunggu</in>
+		<vi>Đang chờ</vi>
+</Waiting>
+	<Back_Button_Caption>
+		<en>Back</en>
+		<de>Zurück</de>
+		<pt>Voltar</pt>
+		<it>Indietro</it>
+		<ms>Kembali</ms>
+		<nl>Terug</nl>
+		<es>atrás</es>
+		<fr>Retour</fr>
+		<ar>عودة</ar>
+		<az>Geriyə</az>
+		<bn>পিছনে</bn>
+		<hi>वापस</hi>
+		<ru>Назад</ru>
+		<si>pasu pasa</si>
+		<ur>پیچھے جائیں</ur>
+		<fa>بازگشت</fa>
+		<th>กลับ</th>
+		<tr>Geri Dön</tr>
+		<in>Kembali</in>
+		<vi>Quay lại</vi>
+</Back_Button_Caption>
+	<MyProfile_Title>
+		<en>Profile Settings</en>
+		<de>Profil-Einstellungen</de>
+		<pt>Opções de Perfil</pt>
+		<it>Impostazione del profilo</it>
+		<ms>profil Tetapan</ms>
+		<nl>Profielinstellingen</nl>
+		<es>Configuración del perfil</es>
+		<fr>Paramètres du profil</fr>
+		<ar>إعدادات الملف الشخصي</ar>
+		<az>Profil tənzimləmələri</az>
+		<bn>প্রোফাইল সেটিংস</bn>
+		<hi>प्रोफ़ाइल सेटिंग्स</hi>
+		<ru>Настройки Профиля</ru>
+		<si>profayil sakasum</si>
+		<ur>پروفائل سیٹنگ</ur>
+		<fa>تنظیمات پروفایل</fa>
+		<th>การตั้งค่าโปรไฟล์</th>
+		<tr>Profil Ayarları</tr>
+		<in>Pengaturan Profil</in>
+		<vi>Thiết lập Hồ sơ</vi>
+</MyProfile_Title>
+	<MyProfile_Create_Your_Nickname>
+		<en>Create your Nickname</en>
+		<de>Erstellen Sie Ihren Nickname</de>
+		<pt>Criar o seu Apelido</pt>
+		<it>Crea il tuo Nickname</it>
+		<ms>Mereka Nama Samaran anda</ms>
+		<nl>Geef jezelf een bijnaam</nl>
+		<es>Crea tu apodo</es>
+		<fr>Créez votre Pseudonyme</fr>
+		<ar>إنشاء اسم مستعار</ar>
+		<az>İstifadəçi adı yarat</az>
+		<bn>তোমার ডাকনাম তৈরি করো</bn>
+		<hi>अपना उपनाम बनाएँ</hi>
+		<ru>Создать имя пользователя</ru>
+		<si>obagee anuwartha nama nirmaanaya karanna</si>
+		<ur>اپنی عُرفیت بنائیں</ur>
+		<fa>نام مستعار خود را ایجاد کنید</fa>
+		<th>สร้างชื่อเล่นของคุณ</th>
+		<tr>Takma İsminizi Oluşturun</tr>
+		<in>Buat Nama Panggilan Anda</in>
+		<vi>Tạo Biệt danh của Bạn</vi>
+</MyProfile_Create_Your_Nickname>
+	<MyProfile_Change_Your_Nickname>
+		<en>Change your Nickname</en>
+		<de>Ändern Sie Ihre Nickname</de>
+		<pt>Alterar o seu Apelido</pt>
+		<it>Cambia il tuo Nickname</it>
+		<ms>Tukar nama panggilan anda</ms>
+		<nl>Verander je bijnaam</nl>
+		<es>Cambia tu apodo</es>
+		<fr>Changer votre Pseudonyme</fr>
+		<ar>تغيير الاسم المستعار</ar>
+		<az>İstifadəçi adını dəyiş</az>
+		<bn>তোমার ডাকনাম পরিবর্তন করো</bn>
+		<hi>अपना उपनाम बदलें</hi>
+		<ru>Поменять имя пользователя</ru>
+		<si>obagee anuwartha nama wenas karanna</si>
+		<ur>اپنی عُرفیت تبدیل کریں</ur>
+		<fa>نام مستعار خود را تغییر دهید</fa>
+		<th>เปลี่ยนชื่อเล่นของคุณ</th>
+		<tr>Takma İsminizi Değiştirin</tr>
+		<in>Ubah Nama Panggilan Anda</in>
+		<vi>Đổi Biệt danh của Bạn</vi>
+</MyProfile_Change_Your_Nickname>
+	<MyProfile_Save_Nickname_Button_Caption>
+		<en>OK</en>
+		<de>OK</de>
+		<pt>OK</pt>
+		<it>OK</it>
+		<ms>OK</ms>
+		<nl>Oké</nl>
+		<es>OK</es>
+		<fr>OK</fr>
+		<ar>موافق</ar>
+		<az>OK</az>
+		<bn>ঠিক আছে</bn>
+		<hi>ओके</hi>
+		<ru>ОК</ru>
+		<si>niwaradiyi</si>
+		<ur>ٹھیک ہے</ur>
+		<fa>ثبت</fa>
+		<th>ตกลง</th>
+		<tr>TAMAM</tr>
+		<in>OK</in>
+		<vi>OK</vi>
+</MyProfile_Save_Nickname_Button_Caption>
+	<Challenge_New_ChooseACategory>
+		<en>Select a Category</en>
+		<de>Wählen Sie eine Kategorie</de>
+		<pt>Selecionar uma Categoria</pt>
+		<it>Scegli una categoria</it>
+		<ms>Pilih Kategori</ms>
+		<nl>Kies een categorie</nl>
+		<es>Selecciona una categoría</es>
+		<fr>Choisissez une catégorie</fr>
+		<ar>اختيار الفئة</ar>
+		<az>Kateqoriya yarat</az>
+		<bn>একটি বিভাগ নির্বচন করো</bn>
+		<hi>एक श्रेणी चुनें</hi>
+		<ru>Выбрать Категорию</ru>
+		<si>prabeedaya thoaranna</si>
+		<ur>قسم منتخب کریں</ur>
+		<fa>یک دسته را انتخاب کنید</fa>
+		<th>เลือกหมวดหมู่</th>
+		<tr>Bir Kategori Seçin</tr>
+		<in>Pilih Kategori</in>
+		<vi>Chọn một Hạng mục</vi>
+</Challenge_New_ChooseACategory>
+	<Homepage_Nickname_Caption>
+		<en>Create your Nickname</en>
+		<de>Erstellen Sie Ihren Nickname</de>
+		<pt>Criar o seu Apelido</pt>
+		<it>Crea il tuo Nickname</it>
+		<ms>Mereka Nama Samaran anda</ms>
+		<nl>Geef jezelf een bijnaam</nl>
+		<es>Crea tu apodo</es>
+		<fr>Créez votre Pseudo</fr>
+		<ar>إنشاء اسم مستعار</ar>
+		<az>İstifadəçi adı yarat</az>
+		<bn>তোমার ডাকনাম তৈরি করো</bn>
+		<hi>अपना उपनाम बनाएँ</hi>
+		<ru>Создать имя пользователя</ru>
+		<si>obagee anuwartha nama nirmaanaya karanna</si>
+		<ur>اپنی عُرفیت بنائیں</ur>
+		<fa>نام مستعار خود را ایجاد کنید</fa>
+		<th>สร้างชื่อเล่นของคุณ</th>
+		<tr>Takma İsminizi Oluşturun</tr>
+		<in>Buat Nama Panggilan Anda</in>
+		<vi>Tạo Biệt danh của Bạn</vi>
+</Homepage_Nickname_Caption>
+	<Support_You_Are_Unsubscribed>
+		<en>You have successfully Unsubscribed from this service.</en>
+		<de>Sie haben sich erfolgreich von diesem Service abgemeldet.</de>
+		<pt>Você conseguiu cancelar a sua inscrição com este serviço</pt>
+		<it>Ti sei cancellato con successo da questo servizio.</it>
+		<ms>Anda telah berjaya menghentikan langganan perkhidmatan ini.</ms>
+		<nl>Je bent nu afgemeld van deze service.</nl>
+		<es>Has cancelado tu suscripción con éxito de este servicio.</es>
+		<fr>Votre desabonnement est effectué avec succes.</fr>
+		<ar>لقد ألغيت الاشتراك بنجاح من هذه الخدمة.</ar>
+		<az>Xidmətə abunəlik ləğv edildi.</az>
+		<bn>তুমি সফলভাবে নিবন্ধন বাতিল করেছ</bn>
+		<hi>आपने सफलतापूर्वक इस सेवा से सदस्यता रद्द की है।</hi>
+		<ru>Вы успешно отписались от данного сервиса.</ru>
+		<si>oba mema seewaawen sammaadam weemen saarthakawa iwathwuni.</si>
+		<ur>اس سروس سے آپ کامیابی سے خارج ہو گئے ہیں</ur>
+		<fa>با موفقیت از این سرویس لغو اشتراک کردید</fa>
+		<th>คุณได้ยกเลิกการเป็นสมาชิกจากบริการนี้เรียบร้อยแล้ว</th>
+		<tr>Bu hizmetin Aboneliğinden başarıyla Ayrıldınız.</tr>
+		<in>Anda telah berhasil Membatalkan Langganan dari layanan ini.</in>
+		<vi>Bạn đã Hủy đăng ký dịch vụ này.</vi>
+</Support_You_Are_Unsubscribed>
+	<About>
+		<en>About</en>
+		<de>Über</de>
+		<pt>Sobre</pt>
+		<it>Circa</it>
+		<ms>Mengenai</ms>
+		<nl>Over ons</nl>
+		<es>acerca de</es>
+		<fr>Sur</fr>
+		<ar>عن الخدمة</ar>
+		<az>Haqqında</az>
+		<bn>সম্পর্কে</bn>
+		<hi>के बारे में</hi>
+		<ru>О нас</ru>
+		<si>pilibada</si>
+		<ur>کے متعلق</ur>
+		<fa>درباره</fa>
+		<th>เกี่ยวกับ</th>
+		<tr>Hakkında</tr>
+		<in>Tentang</in>
+		<vi>Giới thiệu</vi>
+</About>
+	<Contact_Us>
+		<en>Contact Us</en>
+		<de>Kontaktieren Sie uns</de>
+		<pt>Contate-nos</pt>
+		<it>Contattaci</it>
+		<ms>Hubungi Kami</ms>
+		<nl>Neem contact met ons op</nl>
+		<es>contáctanos</es>
+		<fr>Contactez-nous</fr>
+		<ar>اتصل بنا</ar>
+		<az>Bizimlə əlaqə</az>
+		<bn>আমাদের সাথে যোগাযোগ করো</bn>
+		<hi>हमसे संपर्क करें</hi>
+		<ru>Связаться с нами</ru>
+		<si>apawa hamuwanna</si>
+		<ur>ہم سے رابطہ کریں</ur>
+		<fa>تماس با ما</fa>
+		<th>ติดต่อเรา</th>
+		<tr>Bize Ulaşın</tr>
+		<in>Hubungi Kami</in>
+		<vi>Liên hệ với Chúng tôi</vi>
+</Contact_Us>
+	<Terms_And_Conditions>
+		<en>Terms &amp; Conditions</en>
+		<de>AGB</de>
+		<pt>Termos e Condições</pt>
+		<it>Termini e Condizioni</it>
+		<ms>Terma &amp; Syarat</ms>
+		<nl>Algemene voorwaarden</nl>
+		<es>Términos y condiciones</es>
+		<fr>Termes &amp; Conditions</fr>
+		<ar>الشروط والأحكام</ar>
+		<az>Şərtlər və Qaydalar</az>
+		<bn>শর্তাবলী</bn>
+		<hi>नियम और शर्तें</hi>
+		<ru>Условия</ru>
+		<si>niyamayan haa kondeesi</si>
+		<ur>شرائط و ضوابط</ur>
+		<fa>شرایط و ضوابط</fa>
+		<th>ข้อตกลง &amp; เงื่อนไข</th>
+		<tr>Şartlar &amp; Koşullar</tr>
+		<in>Syarat &amp; Ketentuan</in>
+		<vi>Điều khoản &amp; Điều kiện</vi>
+</Terms_And_Conditions>
+	<Course_Take_The_Test>
+		<en>Take the test</en>
+		<de>Machen Sie den Test</de>
+		<pt>Fazer a prova</pt>
+		<it>Fai il test</it>
+		<ms>Ambil ujian</ms>
+		<nl>Doe de test</nl>
+		<es>Haz la prueba</es>
+		<fr>Faites le test</fr>
+		<ar>خذ الإختبار</ar>
+		<az>Testdən keç</az>
+		<bn>পরীক্ষাটি নাও</bn>
+		<hi>टेस्ट लें</hi>
+		<ru>Пройти тест</ru>
+		<si>pareekshanaya ganeema</si>
+		<ur>ٹیسٹ لیں</ur>
+		<fa>تست بدهید</fa>
+		<th>ทำแบบทดสอบ</th>
+		<tr>Testi al</tr>
+		<in>Ikuti tes</in>
+		<vi>Làm bài kiểm tra</vi>
+</Course_Take_The_Test>
+	<Featured_Courses>
+		<en>Featured</en>
+		<de>Featured</de>
+		<pt>Destacado</pt>
+		<it>In primo piano</it>
+		<ms>Pilihan</ms>
+		<nl>Onze aanraders</nl>
+		<es>Destacado</es>
+		<fr>Sélectionnée</fr>
+		<ar>المميز</ar>
+		<az>Seçilmişlər</az>
+		<bn>বৈশিষ্ট্যযুক্ত</bn>
+		<hi>विशिष्ट</hi>
+		<ru>Рекомендуемые</ru>
+		<si>widahaa dakwoo</si>
+		<ur>خصوصیات</ur>
+		<fa>ویژه</fa>
+		<th>คุณสมบัติเด่น</th>
+		<tr>Ayrıcalıklı</tr>
+		<in>Sorotan</in>
+		<vi>Nổi bật</vi>
+</Featured_Courses>
+	<All_Courses>
+		<en>All Courses</en>
+		<de>Alle Kurse</de>
+		<pt>Todos os Cursos</pt>
+		<it>Tutti i corsi</it>
+		<ms>Semua Kursus</ms>
+		<nl>Alle cursussen</nl>
+		<es>Todos los cursos</es>
+		<fr>Toutes les Cours</fr>
+		<ar>جميع المواد</ar>
+		<az>Bütün kurslar</az>
+		<bn>সব কোর্স</bn>
+		<hi>सभी पाठ्यक्रम</hi>
+		<ru>Все Курсы</ru>
+		<si>siyalu paatamaalaawan</si>
+		<ur>تمام کورسز</ur>
+		<fa>تمام درسها</fa>
+		<th>หลักสูตรทั้งหมด</th>
+		<tr>Tüm Kurslar</tr>
+		<in>Semua Kursus</in>
+		<vi>Tất cả các Khóa học</vi>
+</All_Courses>
+	<Course_Previous_Chapter>
+		<en>Previous Chapter</en>
+		<de>Vorheriges Kapitel</de>
+		<pt>Capítulo Anterior</pt>
+		<it>Capitolo precedente</it>
+		<ms>Bab sebelumnya</ms>
+		<nl>Vorige hoofdstuk</nl>
+		<es>Capítulo anterior</es>
+		<fr>Chapitre précédent</fr>
+		<ar>الفصل السابق</ar>
+		<az>Əvvəlki fəsil</az>
+		<bn>আগের অধ্যায়</bn>
+		<hi>पिछला चैप्टर</hi>
+		<ru>Предыдущая Глава</ru>
+		<si>kalin thiboo parichcheedaya</si>
+		<ur>پچھلا باب</ur>
+		<fa>بخش قبلی</fa>
+		<th>บทเรียนก่อนหน้านี้</th>
+		<tr>Önceki Bölüm</tr>
+		<in>Bab Sebelumnya</in>
+		<vi>Chương trước</vi>
+</Course_Previous_Chapter>
+	<Chapters>
+		<en>Chapters</en>
+		<de>Kapitel</de>
+		<pt>Capítulos</pt>
+		<it>Capitoli</it>
+		<ms>bab</ms>
+		<nl>Hoofdstukken</nl>
+		<es>capítulos</es>
+		<fr>Chapitres</fr>
+		<ar>الأقسام</ar>
+		<az>Fəsillər</az>
+		<bn>অধ্যায়</bn>
+		<hi>चैप्टर्स</hi>
+		<ru>Главы</ru>
+		<si>parichcheda</si>
+		<ur>اسباق</ur>
+		<fa>بخش‌ها</fa>
+		<th>บทเรียน</th>
+		<tr>Bölümler</tr>
+		<in>Bab</in>
+		<vi>Chương</vi>
+</Chapters>
+	<Course_Info>
+		<en>Course Info</en>
+		<de>Kursinformationen</de>
+		<pt>Informação do Curso</pt>
+		<it>Informazioni sul corso</it>
+		<ms>Maklumat kursus</ms>
+		<nl>Cursusinformatie</nl>
+		<es>Información del Curso</es>
+		<fr>Information sur le cours</fr>
+		<ar>معلومات المادة</ar>
+		<az>Kurs haqqında</az>
+		<bn>কোর্সের তথ্য</bn>
+		<hi>कोर्स की जानकारी</hi>
+		<ru>Информация о курсе</ru>
+		<si>paatamaalaa thorathuru</si>
+		<ur>کورس کے متعلق معلومات</ur>
+		<fa>اطلاعات درس</fa>
+		<th>ข้อมูลหลักสูตร</th>
+		<tr>Kurs Bilgisi</tr>
+		<in>Info Kursus</in>
+		<vi>Thông tin Khóa học</vi>
+</Course_Info>
+	<Language>
+		<en>Language</en>
+		<de>Sprache</de>
+		<pt>Língua</pt>
+		<it>Lingua</it>
+		<ms>bahasa</ms>
+		<nl>Taal</nl>
+		<es>idioma</es>
+		<fr>langue</fr>
+		<ar>اللغة</ar>
+		<az>Dil tənzimləmələri</az>
+		<bn>ভাষা</bn>
+		<hi>भाषा</hi>
+		<ru>Язык</ru>
+		<si>baashaawa</si>
+		<ur>زبان</ur>
+		<fa>زبان</fa>
+		<th>ภาษา</th>
+		<tr>Dil </tr>
+		<in>Bahasa</in>
+		<vi>Ngôn ngữ</vi>
+</Language>
+	<Next_Flashcard>
+		<en>Next</en>
+		<de>Weiter</de>
+		<pt>Próximo</pt>
+		<it>Avanti</it>
+		<ms>Seterusnya</ms>
+		<nl>Volgende</nl>
+		<es>próximo</es>
+		<fr>Suivant</fr>
+		<ar>التالي</ar>
+		<az>Növbəti</az>
+		<bn>পরবর্তী</bn>
+		<hi>अगला</hi>
+		<ru>Следующий</ru>
+		<si>meelaga</si>
+		<ur>آگے</ur>
+		<fa>بعدی</fa>
+		<th>ถัดไป</th>
+		<tr>Sonraki</tr>
+		<in>Berikutnya</in>
+		<vi>Tiếp theo</vi>
+</Next_Flashcard>
+	<Prev_Flashcard>
+		<en>Prev</en>
+		<de>Zurück</de>
+		<pt>Anterior</pt>
+		<it>Precedente</it>
+		<ms>Sebelum</ms>
+		<nl>Vorige</nl>
+		<es>Anterior</es>
+		<fr>Précédent</fr>
+		<ar>السابق</ar>
+		<az>Əvvəlki</az>
+		<bn>পূর্ববর্তী</bn>
+		<hi>पिछला</hi>
+		<ru>Предыдущий</ru>
+		<si>pera</si>
+		<ur>پیچھے</ur>
+		<fa>قبلی</fa>
+		<th>ก่อนหน้า</th>
+		<tr>Önceki</tr>
+		<in>Sebelumnya</in>
+		<vi>Trước</vi>
+</Prev_Flashcard>
+	<BackToTop>
+		<en>Back to Top</en>
+		<de>Zurück zum Anfang</de>
+		<pt>Voltar ao Início</pt>
+		<it>Torna all'inizio</it>
+		<ms>Kembali ke Atas</ms>
+		<nl>Terug naar boven</nl>
+		<es>Volver al inicio</es>
+		<fr>Retour au début</fr>
+		<ar>العودة للأعلى</ar>
+		<az>Yuxarıya</az>
+		<bn>উপরে ফিরে যাও</bn>
+		<hi>शीर्ष पर वापस जाएँ</hi>
+		<ru>Вернуть назад</ru>
+		<si>nawatha ihalata</si>
+		<ur>واپس اُوپر جائیں</ur>
+		<fa>بازگشت به ابتدا</fa>
+		<th>กลับไปข้างบน</th>
+		<tr>Başa Dön</tr>
+		<in>Kembali ke Atas</in>
+		<vi>Quay lại đầu trang</vi>
+</BackToTop>
+	<This_Course_Is_Locked>
+		<en>This course is locked!</en>
+		<de>Dieser Kurs ist gesperrt!</de>
+		<pt>Este curso está bloqueado!</pt>
+		<it>Questo corso è chiuso!</it>
+		<ms>Kursus ini dikunci !</ms>
+		<nl>Deze cursus is vergrendeld!</nl>
+		<es>Este curso está cerrado!</es>
+		<fr>Cette course est verrouillé!</fr>
+		<ar>هذه المادة مغلقة!</ar>
+		<az>Bu kurs bağlıdır!</az>
+		<bn>এই কোর্সটি তালাবদ্ধ!</bn>
+		<hi>यह कोर्स लॉक है!</hi>
+		<ru>Этот курс заблокирован!</ru>
+		<si>mema paatamaalaawa agulu laa atha.</si>
+		<ur>یہ کورس بند کریا ہے!</ur>
+		<fa>این درس قفل است!</fa>
+		<th>หลักสูตรนี้ถูกล็อกไว้!</th>
+		<tr>Bu kurs kilitli!</tr>
+		<in>Kursus ini dikunci!</in>
+		<vi>Khóa học này đã bị khóa!</vi>
+</This_Course_Is_Locked>
+	<Course_Coming_Soon>
+		<en>This course is coming soon.</en>
+		<de>Dieser Kurs wird bald kommen.</de>
+		<pt>Este curso estará disponível em breve.</pt>
+		<it>Questo corso sarà presto disponibile.</it>
+		<ms>Kursus ini akan datang tidak lama lagi.</ms>
+		<nl>Deze cursus is binnenkort beschikbaar.</nl>
+		<es>Este curso estará disponible en breve.</es>
+		<fr>Cette course est pour bientôt.</fr>
+		<ar>هذه المادة ستجهز قريبا</ar>
+		<az>Bu kurs tezliklə açıq olacaq.</az>
+		<bn>এই কোর্স শীঘ্রই আসছে.</bn>
+		<hi>यह कोर्स जल्द ही आ रहा है।</hi>
+		<ru>Этот курс ожидается!</ru>
+		<si>mema paatamaalaawa ikmanin paminee.</si>
+		<ur>یہ کورس جلد آرہا ہے۔</ur>
+		<fa>این درس به زودی ارائه خواهد شد</fa>
+		<th>หลักสูตรนี้จะมีให้เร็ว ๆ นี้</th>
+		<tr>Bu kurs çok yakında.</tr>
+		<in>Kursus ini akan segera hadir.</in>
+		<vi>Khóa học này sắp được phát hành.</vi>
+</Course_Coming_Soon>
+	<Checkout_Other_Courses>
+		<en>You can checkout our other available courses for the meantime.</en>
+		<de>Sie können sich in der Zwischenzeit unsere anderen Kurse ansehen.</de>
+		<pt>Enquanto isso, você pode ver os outros cursos já disponíveis.</pt>
+		<it>Nel frattempo puoi vedere gli altri nostri corsi disponibili.</it>
+		<ms>Anda boleh menyemak kursus-kursus kami yang lain yang boleh diperolehi buat sementara waktu.</ms>
+		<nl>In de tussentijd kun je onze andere cursussen proberen.</nl>
+		<es>Puedes mirar otros cursos disponibles mientras tanto.</es>
+		<fr>Vous pouvez vérifier nos autres cours disponibles pour le temps.</fr>
+		<ar>يمكنك ايضا مشاهدة موادنا المتاحة في الوقت الحالي</ar>
+		<az>Digər kursları da nəzərdən keçirə bilərsiniz.</az>
+		<bn>এই সময়ে তুমি আমাদের অন্যান্য কোর্স চেক করে দেখতে পারো।</bn>
+		<hi>इस दौरान आप हमारे अन्य उपलब्ध पाठ्यक्रमों की जांच कर सकते हैं।</hi>
+		<ru>Посмотрите наши другие доступные курсы.</ru>
+		<si>kaalaya atharathuradee obata labaagatha haki apagee anek paatamaalaa parikshaa kala hakiya.</si>
+		<ur>آپ اس دوران ہمارے دیگر موجودہ کورسز کے بارے میں جان سکتے ہیں</ur>
+		<fa>میتوانید در این زمان دیگر درسها موجود را بررسی کنید</fa>
+		<th>ในระหว่างนี้คุณสามารถตรวจดูหลักสูตรอื่น ๆ ของเราที่มีให้บริการ</th>
+		<tr>Bu süre içerisinde mevcut diğer kurslarımıza göz atabilirsiniz.</tr>
+		<in>Sementara itu Anda dapat memeriksa kursus lain yang tersedia.</in>
+		<vi>Bạn có thể xem các khóa học khác của chúng tôi trong thời điểm hiện tại.</vi>
+</Checkout_Other_Courses>
+	<Select_Your_Language>
+		<en>Select your language</en>
+		<de>Wählen Sie Ihre Sprache</de>
+		<pt>Selecionar a sua língua</pt>
+		<it>Seleziona la tua lingua</it>
+		<ms>Pilih bahasa anda</ms>
+		<nl>Kies je taal</nl>
+		<es>Selecciona el lenguaje</es>
+		<fr>Sélectionnez votre langue</fr>
+		<ar>اختر لغتك</ar>
+		<az>Dilinizi seçin</az>
+		<bn>তোমার ভাষা নির্বাচন করো</bn>
+		<hi>अपनी भाषा का चयन करें</hi>
+		<ru>Выбрать ваш язык</ru>
+		<si>obagee baashaawa thoaranna</si>
+		<ur>اپنی زُبان کا انتخاب کریں</ur>
+		<fa>زبان خود را انتخاب کنید</fa>
+		<th>เลือกภาษาของคุณ</th>
+		<tr>Dil seçin</tr>
+		<in>Pilih bahasa Anda</in>
+		<vi>Chọn ngôn ngữ của bạn</vi>
+</Select_Your_Language>
+	<Your_Name>
+		<en>Your Name</en>
+		<de>Ihr Name</de>
+		<pt>Seu Nome</pt>
+		<it>Il tuo nome</it>
+		<ms>Nama Anda</ms>
+		<nl>Je naam</nl>
+		<es>Tu nombre</es>
+		<fr>Votre Nom</fr>
+		<ar>اسمك</ar>
+		<az>Adınız</az>
+		<bn>তোমার নাম</bn>
+		<hi>आपका नाम</hi>
+		<ru>Ваше Имя</ru>
+		<si>obagee nama</si>
+		<ur>آپ کا نام</ur>
+		<fa>نام شما</fa>
+		<th>ชื่อของคุณ</th>
+		<tr>İsminiz</tr>
+		<in>Nama Anda</in>
+		<vi>Tên của Bạn</vi>
+</Your_Name>
+	<Your_Email>
+		<en>Your email</en>
+		<de>Ihre E-Mail</de>
+		<pt>Seu email</pt>
+		<it>La tua e-mail</it>
+		<ms>e-mel anda</ms>
+		<nl>Je e-mail</nl>
+		<es>Tu correo electrónico</es>
+		<fr>Votre e-mail</fr>
+		<ar>بريدك الإلكتروني</ar>
+		<az>Email ünvanınız</az>
+		<bn>তোমার ইমেইল</bn>
+		<hi>आपका ईमेल</hi>
+		<ru>Ваша эл. почта</ru>
+		<si>obagee widyuth lipinaya</si>
+		<ur>آپ کا ای۔میل</ur>
+		<fa>ایمیل شما</fa>
+		<th>อีเมลของคุณ</th>
+		<tr>E-postanız</tr>
+		<in>Surel Anda</in>
+		<vi>Email của Bạn</vi>
+</Your_Email>
+	<Your_Mobile_Number>
+		<en>Your Mobile Number</en>
+		<de>Ihre Handynummer</de>
+		<pt>O numero do seu telemóvel</pt>
+		<it>Il tuo numero di cellulare</it>
+		<ms>Nombor Telefon anda</ms>
+		<nl>Je mobiele nummer</nl>
+		<es>Tu número de teléfono móvil</es>
+		<fr>Votre Numéro de Mobile</fr>
+		<ar>رقم جوّالك</ar>
+		<az>Mobil nömrəniz</az>
+		<bn>তোমার মোবাইল নম্বর</bn>
+		<hi>आपका मोबाइल नंबर</hi>
+		<ru>Ваш номер телефона</ru>
+		<si>obagee jangama durakathana ankaya</si>
+		<ur>آپ کا موبائل نمبر</ur>
+		<fa>شماره موبایل شما</fa>
+		<th>เบอร์มือถือของคุณ</th>
+		<tr>Cep Telefonu Numaranız</tr>
+		<in>Nomor Ponsel Anda</in>
+		<vi>Số Điện thoại Di động của Bạn</vi>
+</Your_Mobile_Number>
+	<Your_Message_Here>
+		<en>Type Your Message here</en>
+		<de>Geben Sie Ihre Nachricht hier ein</de>
+		<pt>Digite a sua Mensagem aqui</pt>
+		<it>Digita qui il tuo messaggio</it>
+		<ms>Type Mesej Anda di sini</ms>
+		<nl>Typ hier je bericht</nl>
+		<es>Escribe aquí tu mensaje</es>
+		<fr>Tapez votre message ici</fr>
+		<ar>أدخل رسالتك هنا</ar>
+		<az>Məktubun mətnini buraya yazın</az>
+		<bn>এখানে তোমার মেসেজ লেখো</bn>
+		<hi>यहाँ अपना संदेश टाइप करें</hi>
+		<ru>Введите ваше сообщение</ru>
+		<si>obagee paniwudaya mehi sadahan karanna</si>
+		<ur>اپنا پیغام یہاں درج کریں</ur>
+		<fa>پیغام خود را در اینجا تایپ کنید</fa>
+		<th>พิมพ์ข้อความของคุณที่นี่</th>
+		<tr>Mesajınızı buraya yazın</tr>
+		<in>Ketik Pesan Anda di sini</in>
+		<vi>Nhập nội dung tin nhắn của bạn</vi>
+</Your_Message_Here>
+	<Send>
+		<en>Send</en>
+		<de>Senden</de>
+		<pt>Enviar</pt>
+		<it>Invia</it>
+		<ms>Hantar</ms>
+		<nl>Versturen</nl>
+		<es>enviar</es>
+		<fr>Envoyez</fr>
+		<ar>أرسل</ar>
+		<az>Göndər</az>
+		<bn>পাঠাও</bn>
+		<hi>भेजें</hi>
+		<ru>Отправить</ru>
+		<si>yawanna</si>
+		<ur>بھیجیں</ur>
+		<fa>ارسال</fa>
+		<th>ส่ง</th>
+		<tr>Gönder</tr>
+		<in>Kirim</in>
+		<vi>Gửi đi</vi>
+</Send>
+	<ContactUs_Your_Message_Sent>
+		<en>Your message has been sent. Thank you!</en>
+		<de>Ihre Nachricht wurde gesendet. Danke!</de>
+		<pt>A sua mensagem foi enviada. Obrigado!</pt>
+		<it>Il tuo messaggio è stato inviato. Grazie!</it>
+		<ms>Mesej anda telah dihantar. Terima kasih !</ms>
+		<nl>Je bericht is verstuurd. Bedankt!</nl>
+		<es>Tu mensaje ha sido enviado. ¡Gracias!</es>
+		<fr>Votre message a été envoyé. Je vous remercie!</fr>
+		<ar>لقد تم ارسال رسالتك. شكرا!</ar>
+		<az>Təşəkkürlər! Sizin məktubunuz göndərildi.</az>
+		<bn>তোমার মেসেজ পাঠানো হয়ে গেছে। ধন্যবাদ!</bn>
+		<hi>आपका संदेश भेज दिया गया है। धन्यवाद!</hi>
+		<ru>Сообщение отправлено. Спасибо!</ru>
+		<si>obagee paniwudaya yawana ladi. obata sthoothiyi!</si>
+		<ur>آپ کا پیغام بھیج دیا گیا ہے۔ شکریہ!</ur>
+		<fa>پیغام شما ارسال شد. متشکریم!</fa>
+		<th>ส่งข้อความของคุณแล้ว ขอบคุณ!</th>
+		<tr>Mesajınız gönderildi. Teşekkür ederiz!</tr>
+		<in>Pesan Anda telah terkirim. Terima kasih!</in>
+		<vi>Tin nhắn của bạn đã được gửi đi. Cảm ơn bạn!</vi>
+</ContactUs_Your_Message_Sent>
+	<ContactUs_Message_Failed>
+		<en>Please try again.</en>
+		<de>Bitte versuchen Sie es erneut.</de>
+		<pt>Favor tente de novo.</pt>
+		<it>Riprova per favore.</it>
+		<ms>Sila cuba sekali lagi.</ms>
+		<nl>Probeer het nog een keer.</nl>
+		<es>Por favor, inténtalo de nuevo.</es>
+		<fr>S'il vous plaît, essayez de nouveau.</fr>
+		<ar>الرجاء المحاولة مرة أخرى</ar>
+		<az>Xahiş olunur, yenidən cəhd edin</az>
+		<bn>আবার চেষ্টা করো।</bn>
+		<hi>पुन: प्रयास करें।</hi>
+		<ru>Попробуйте снова</ru>
+		<si>karunaakara nawatha uthsaha karanna</si>
+		<ur>برائے مہربانی دوبارہ کوشش کریں۔</ur>
+		<fa>لطفاً دوباره سعی کنید</fa>
+		<th>โปรดลองอีกครั้ง</th>
+		<tr>Lütfen tekrar deneyin.</tr>
+		<in>Harap coba lagi.</in>
+		<vi>Bạn vui lòng thử lại.</vi>
+</ContactUs_Message_Failed>
+	<Access_Denied>
+		<en>Access Denied</en>
+		<de>Zugriff verweigert</de>
+		<pt>Acesso Negado</pt>
+		<it>Accesso negato</it>
+		<ms>Akses Dinafikan</ms>
+		<nl>Toegang geweigerd</nl>
+		<es>Acceso en proceso</es>
+		<fr>Accès Refusé</fr>
+		<ar>لا يمكنك الدخول</ar>
+		<az>Giriş qadağandır.</az>
+		<bn>প্রবেশাধিকার নেই</bn>
+		<hi>उपयोग निषेध है</hi>
+		<ru>Доступ запрещен</ru>
+		<si>praweeshaweeya nohaka</si>
+		<ur>رسائی مسترد ہوگئی</ur>
+		<fa>دسترسی ممکن نیست</fa>
+		<th>ปฏิเสธการเข้าถึง</th>
+		<tr>Erişim Engellendi</tr>
+		<in>Akses Ditolak</in>
+		<vi>Truy cập bị Từ chối</vi>
+</Access_Denied>
+	<Access_Deneied_Guide>
+		<en>Please click on the link that you got by SMS to access Mobile Academy.</en>
+		<de>Bitte klicken Sie auf den Link, den Sie per SMS erhalten haben, um auf die Mobile Academy zuzugreifen.</de>
+		<pt>Favor clicar no link que você recebeu por SMS para aceder à Academia Móvel.</pt>
+		<it>Per accedere alla Mobile Academy, si prega di cliccare sul link che hai ricevuto tramite SMS</it>
+		<ms>Sila klik pada pautan yang ada dapat melalui SMS untuk mengakses Akademi Telefon Bimbit.</ms>
+		<nl>Om toegang te krijgen tot Mobile Academy moet je op de link klikken die je per sms ontvangen hebt.</nl>
+		<es>Por favor, haz clic en el enlace que tienes por SMS para acceder a Mobile Academy</es>
+		<fr>S'il vous plaît, cliquez sur le lien que vous avez obtenu par SMS pour accéder l'Mobile Academy.</fr>
+		<ar>الرجاء الضغط على الرابط الذي استلمته بواسطة رسالة نصية للدخول الى Mobile Academy .</ar>
+		<az>Mobil Akademiyaya giriş əldə etmək üçün sizə SMS vasitəsilə göndərilmiş linki tıklayın.</az>
+		<bn>মুঠোফোনের বিদ্যালয়ে প্রবেশের জন্য তুমি বার্তার মাধ্যমে যে লিংক পেয়েছ তাতে ক্লিক করো।</bn>
+		<hi>मोबाइल अकादमी का उपयोग करने के लिए आप एसएमएस द्वारा प्राप्त लिंक पर क्लिक करें।</hi>
+		<ru>Используйте ссылку полученную в СМС для доступа к Мобильной Академии.</ru>
+		<si>karunaakara obata SMS magin labunu link eka ebeemen jangama akadamiyata piwisenna.</si>
+		<ur>برائے مہربانی مابائل اکیڈمی تک رسائی کے لئے اُس لنک پر کلک کریں جو آپ کو بطور موبائل فون پر بذریعہ ایس۔ایم۔ایس حاصل ہوا ہے</ur>
+		<fa>لطفاً بر روی لینکی که از طریق SMS دریافت کردید کلیک کنید تا به آکادمی موبایل دسترسی پیدا کنید.</fa>
+		<th>โปรดคลิกที่ลิงก์ที่คุณได้รับทาง SMS เพื่อเข้าถึง Mobile Academy</th>
+		<tr>Öğrenme Kulübü'e erişmek için lütfen SMS ile aldığınız bağlantıya tıklayın.</tr>
+		<in>Silakan mengeklik tautan yang Anda peroleh melalui SMS untuk mengakses Mobile Academy.</in>
+		<vi>Vui lòng nhấn vào liên kết mà bạn nhận qua SMS để truy cập Học viện Di động.</vi>
+</Access_Deneied_Guide>
+	<Babelbay_ChooseYourSpeakingLang>
+		<en>Choose your speaking language</en>
+		<de>Wählen Sie Ihre Sprache</de>
+		<pt>Escolha a sua língua falada</pt>
+		<it>Scegli la tua lingua</it>
+		<ms>Pilih bahasa ibunda anda</ms>
+		<nl>Kies je spreektaal</nl>
+		<es>Elige el idioma hablado</es>
+		<fr>Choisissez votre langue francophone</fr>
+		<ar>اختر لغتك الأصلية التي تتحدثها</ar>
+		<az>Danışdığınız dili seçin</az>
+		<bn>তোমার কথা বলার ভাষা নির্বাচন করো</bn>
+		<hi>अपनी बोलने की भाषा चुनें</hi>
+		<ru>Выберите ваш язык</ru>
+		<si>oba kathaa karanaa baashaawa thoaranna</si>
+		<ur>اپنی بولنے والی زبان کا انتخاب کریں</ur>
+		<fa>زبان خود را انتخاب کنید</fa>
+		<sw>Chagua lugha unayozungumza</sw>
+		<th>เลือกภาษาพูดของคุณ</th>
+		<pl>Wybierz swój język mówiony</pl>
+		<tr>Lütfen konuştuğunuz dili seçin</tr>
+		<no>Begynn å snakk i ditt språk</no>
+		<in>Pilih bahasa percakapan Anda</in>
+		<vi>Chọn ngôn ngữ nói của bạn</vi>
+</Babelbay_ChooseYourSpeakingLang>
+	<Babelbay_ChangeYourSpeakingLang>
+		<en>Change Language</en>
+		<de>Sprache ändern</de>
+		<pt>Alterar a Língua</pt>
+		<it>Cambia Lingua</it>
+		<ms>Tukar Bahasa</ms>
+		<nl>Taal wijzigen</nl>
+		<es>Cambiar el idioma</es>
+		<fr>Modifiez la langue</fr>
+		<ar>قم بتغيير اللغة</ar>
+		<az>Dili dəyiş</az>
+		<bn>ভাষা পরিবর্তন করো</bn>
+		<hi>भाषा बदलें</hi>
+		<ru>Поменять язык</ru>
+		<si>baashaawa wenas karanna</si>
+		<ur>زبان کو تبدیل کریں</ur>
+		<fa>تغییر زبان</fa>
+		<th>เปลี่ยนภาษา</th>
+		<tr>Dil değiştir</tr>
+		<in>Ubah Bahasa</in>
+		<vi>Thay đổi Ngôn ngữ</vi>
+</Babelbay_ChangeYourSpeakingLang>
+	<Hello>
+		<en>Hello</en>
+		<de>Hallo</de>
+		<pt>Ola</pt>
+		<it>Ciao</it>
+		<ms>Hello</ms>
+		<nl>Hallo</nl>
+		<es>Hola</es>
+		<fr>Bonjour</fr>
+		<ar>مرحبا</ar>
+		<az>Salam</az>
+		<bn>হ্যালো!</bn>
+		<hi>नमस्ते</hi>
+		<ru>Привет</ru>
+		<si>Hayi</si>
+		<ur>خوش آمدید</ur>
+		<fa>سلام</fa>
+		<sw>jambo</sw>
+		<th>สวัสดี</th>
+		<pl>Cześć!</pl>
+		<tr>Merhaba</tr>
+		<in>Halo</in>
+		<vi>Xin chào</vi>
+</Hello>
+	<ChooseLanguage>
+		<en>Choose your language</en>
+		<de>Wählen Sie Ihre Sprache</de>
+		<pt>Selecionar a sua língua</pt>
+		<it>Seleziona la tua lingua</it>
+		<ms>Pilih bahasa anda</ms>
+		<nl>Kies je taal</nl>
+		<es>Seleccione el idioma</es>
+		<fr>Choisir votre langue</fr>
+		<ar>اختر لغتك</ar>
+		<az>Dilinizi seçin</az>
+		<bn>তোমার ভাষা নির্বাচন করো</bn>
+		<hi>अपनी भाषा का चयन करें</hi>
+		<ru>Выбрать ваш язык</ru>
+		<si>obagee baashaawa thoaranna</si>
+		<ur>اپنی زُبان کا انتخاب کریں</ur>
+		<fa>زبان خود را انتخاب کنید</fa>
+		<th>เลือกภาษาของคุณ</th>
+		<tr>Dil seçin</tr>
+		<in>Pilih bahasa Anda</in>
+		<vi>Chọn ngôn ngữ của bạn</vi>
+</ChooseLanguage>
+	<Join_Us_Today>
+		<en>JOIN US TODAY</en>
+		<de>MELDEN SIE SICH HEUTE AN</de>
+		<pt>JUNTE-SE A NÓS HOJE</pt>
+		<it>UNISCITI A NOI OGGI</it>
+		<ms>SERTAI HARI INI</ms>
+		<nl>WORD VANDAAG LID</nl>
+		<es>ÚNETE A NOSOTROS HOY</es>
+		<fr>REJOIGNEZ-NOUS AUJOURD'HUI</fr>
+		<ar>انضم لنا اليوم</ar>
+		<az>Elə indi qoşulun bizə</az>
+		<bn>আজই আমাদের সাথে যোগ দিন</bn>
+		<hi>हमें आज ही जॉइन करें</hi>
+		<ru>ЗАРЕГИСТРИРУЙТЕСЬ СЕГОДНЯ</ru>
+		<si>ada ekwanna</si>
+		<ur>آج ہی ہمارا حصّہ بنئے</ur>
+		<fa>امروز به ما محلق شوید</fa>
+		<th>เข้าร่วมกับเราวันนี้</th>
+		<tr>BİZE BUGÜN KATILIN</tr>
+		<in>BERGABUNG DENGAN KAMI HARI INI</in>
+		<vi>HÃY THAM GIA CÙNG CHÚNG TÔI NGAY HÔM NAY</vi>
+</Join_Us_Today>
+	<Connect_With_Facebook>
+		<en>Connect With Facebook</en>
+		<de>Mit Facebook anmelden</de>
+		<pt>Entrar com o Facebook</pt>
+		<it>Iscriviti su Facebook</it>
+		<ms>Berhubungan Dengan Facebook</ms>
+		<nl>Meld je aan met Facebook</nl>
+		<es>Regístrate con Facebook</es>
+		<fr>Inscrivez-vous avec Facebook</fr>
+		<ar>سجل عن طريق فيسبوك</ar>
+		<az>Facebook vasitəsilə qeydiyyatdan keç</az>
+		<bn>ফেসবুক সঙ্গে সংযুক্ত হোন</bn>
+		<hi>फेसबुक के साथ साइन अप करें</hi>
+		<ru>Зайти через Facebook</ru>
+		<si>facebook samaga sign up wanna</si>
+		<ur>اپنے فیس بک اکاؤنٹ سے سائن اپ کریں</ur>
+		<fa>به فیسبوک متصل شوید</fa>
+		<th>เชื่อมต่อกับ Facebook</th>
+		<tr>Facebook ile bağlan</tr>
+		<in>Hubungkan dengan Facebook</in>
+		<vi>Kết nối với Facebook</vi>
+</Connect_With_Facebook>
+	<Skip_Page>
+		<en>Skip for now</en>
+		<de>Nicht jetzt</de>
+		<pt>Avançar por agora</pt>
+		<it>Salta per ora</it>
+		<ms>Langkau buat masa ini</ms>
+		<nl>Sla nu over</nl>
+		<es>Saltar por ahora</es>
+		<fr>Passer pour l'instant</fr>
+		<ar>تجاوز هذه المرة</ar>
+		<az>Hələlik ötür</az>
+		<bn>এড়িয়ে যান</bn>
+		<hi>अभी के लिए छोड़ दें</hi>
+		<ru>Пропустить</ru>
+		<si>danata maga harinna</si>
+		<ur>بعد میں دیکھئے</ur>
+		<fa>فعلاً از این مورد بگذر</fa>
+		<th>ข้ามไปก่อนตอนนี้</th>
+		<tr>Şimdilik atla</tr>
+		<in>Lewati untuk saat ini</in>
+		<vi>Tạm thời bỏ qua</vi>
+</Skip_Page>
+	<Use_Facebook_Info>
+		<en>Use your Facebook Info</en>
+		<de>Ihre Facebook Informationen verwenden</de>
+		<pt>Use a sua informação do Facebook</pt>
+		<it>Usa le tue Facebook Info</it>
+		<ms>Gunakan Info Facebook anda</ms>
+		<nl>Gebruik jouw Facebook informatie</nl>
+		<es>Utiliza la información de tu Facebook</es>
+		<fr>Utilisez vos informations Facebook</fr>
+		<ar>استخدم معلومات الفيسبوك</ar>
+		<az>Facebook məlumatlarından istifadə et</az>
+		<bn>আপনার ফেসবুকের তথ্য ব্যবহার করুন</bn>
+		<hi>अपनी फेसबुक जानकारी का प्रयोग करें</hi>
+		<ru>Использовать информацию с Facebook</ru>
+		<si>obe facebook thorathuru baawithaa karanna</si>
+		<ur>اپنی فیس بک کی انفارمیشن استمال کریں</ur>
+		<fa>از اطلاعات فیسبوک تان استفاده کنید</fa>
+		<th>ใช้ข้อมูล Facebook ของคุณ</th>
+		<tr>Facebook bilgilerinizi kullanın</tr>
+		<in>Gunakan Info Facebook Anda</in>
+		<vi>Sử dụng Thông tin Facebook của bạn</vi>
+</Use_Facebook_Info>
+	<Continue>
+		<en>Continue</en>
+		<de>Fortfahren</de>
+		<pt>Continue</pt>
+		<it>Continua</it>
+		<ms>Teruskan</ms>
+		<nl>Ga verder</nl>
+		<es>continuar</es>
+		<fr>Continuer</fr>
+		<ar>أكمل</ar>
+		<az>Davam et</az>
+		<bn>চালিয়ে যান</bn>
+		<hi>जारी रखें</hi>
+		<ru>Продолжить</ru>
+		<si>karagena yanna</si>
+		<ur>جاری رکھیں</ur>
+		<fa>ادامه دهید</fa>
+		<th>ดำเนินการต่อ</th>
+		<tr>Devam Et</tr>
+		<in>Lanjutkan</in>
+		<vi>Tiếp tục</vi>
+</Continue>
+	<or>
+		<en>or</en>
+		<de>oder</de>
+		<pt>ou</pt>
+		<it>oppure</it>
+		<ms>atau</ms>
+		<nl>of</nl>
+		<es>o</es>
+		<fr>ou</fr>
+		<ar>أو</ar>
+		<az>və ya</az>
+		<bn>অথবা</bn>
+		<hi>या</hi>
+		<ru>или</ru>
+		<si>hoa</si>
+		<ur>یا</ur>
+		<fa>یا</fa>
+		<th>หรือ</th>
+		<tr>veya</tr>
+		<in>atau</in>
+		<vi>hoặc</vi>
+</or>
+	<Sign_Up>
+		<en>Sign Up</en>
+		<de>Registrieren</de>
+		<pt>Registe-se</pt>
+		<it>Registrati</it>
+		<ms>Daftar</ms>
+		<nl>Schrijf je in</nl>
+		<es>Registrarse</es>
+		<fr>Inscrivez-vous</fr>
+		<ar>سجّل</ar>
+		<az>Qeydiyyatdan keç</az>
+		<bn>নিবন্ধন করুন</bn>
+		<hi>साइन अप करें</hi>
+		<ru>Зарегистрироваться</ru>
+		<si>sign up</si>
+		<ur>سائن اپ</ur>
+		<fa>ثبت نام کنید</fa>
+		<th>สมัครใช้บริการ</th>
+		<tr>Kayıt Ol</tr>
+		<in>Sign Up</in>
+		<vi>Đăng ký</vi>
+</Sign_Up>
+	<Do_Not_Show_Again>
+		<en>Do not show this again</en>
+		<de>Nicht noch einmal anzeigen</de>
+		<pt>Não mostrar isto novamente</pt>
+		<it>Non mostrarlo più</it>
+		<ms>Jangan tunjukkan ini lagi</ms>
+		<nl>Laat dit niet meer zien</nl>
+		<es>No repetir el mensaje</es>
+		<fr>Ne plus afficher ce message</fr>
+		<ar>لا تعرض هذه مرة أخرى</ar>
+		<az>Bir də göstərmə</az>
+		<bn>এটা পুনরায় আর দেখাবেন বা</bn>
+		<hi>इसे दोबारा न दिखाएँ</hi>
+		<ru>Не показывать больше</ru>
+		<si>meya nawatha nopenwanna</si>
+		<ur>یہ دوبارہ نہ دکھایں</ur>
+		<fa>این را دیگر نشان نده</fa>
+		<th>ห้ามแสดงข้อความนี้อีก</th>
+		<tr>Bunu bir daha gösterme</tr>
+		<in>Jangan tampilkan ini lagi</in>
+		<vi>Không hiển thị lại thông báo này</vi>
+</Do_Not_Show_Again>
+	<Unlock_All_Chapters>
+		<en>Unlock all chapters</en>
+		<de>Alle Kapitel entsperren</de>
+		<pt>Desbloquear todos os capítulos</pt>
+		<it>Sblocca tutti i capitoli</it>
+		<ms>Membuka kunci semua bab</ms>
+		<nl>Open alle hoofdstukken</nl>
+		<es>Desbloquear todos los capítulos</es>
+		<fr>Débloquer tous les chapitres</fr>
+		<ar>افتح كل المواد</ar>
+		<az>Bütün fəsilləri aç</az>
+		<bn>সমস্ত অধ্যায়য়ের তালা খুলুন</bn>
+		<hi>सभी चैप्टर अनलॉक करें</hi>
+		<ru>Открыть все главы</ru>
+		<si>siyalu parichcheeda sakriya karanna</si>
+		<ur>تمام اسباق تک رسایی حاصل کریں</ur>
+		<fa>تمام بخش‌ها را باز کن</fa>
+		<th>ปลดล็อกบทเรียนทั้งหมด</th>
+		<tr>Tüm bölümleri kilitle</tr>
+		<in>Buka semua bab</in>
+		<vi>Mở khóa tất cả các chương</vi>
+</Unlock_All_Chapters>
+	<Get_All_Chapters_For>
+		<en>Full course only</en>
+		<de>Nur kompletter Kurs</de>
+		<pt>Curso completo por apenas</pt>
+		<it>Solo corso completo</it>
+		<ms>Hanya kursus penuh</ms>
+		<nl>Alleen de gehele cursus</nl>
+		<es>Curso completo sólo</es>
+		<fr>Cours complet seulement</fr>
+		<ar>فقط المادة كاملة</ar>
+		<az>Yalnız "Tam kurs" tələbələri üçün</az>
+		<bn>শুধুমাত্র সম্পূর্ণ কোর্স</bn>
+		<hi>केवल पूरा कोर्स</hi>
+		<ru>Полный курс</ru>
+		<si>sampoorna paatamaalaawa pamani</si>
+		<ur>صرف مکمّل سبق</ur>
+		<fa>تنها درس‌های کامل</fa>
+		<th>เฉพาะหลักสูตรฉบับเต็มเท่านั้น</th>
+		<tr>Yalnızca tam kurs</tr>
+		<in>Hanya kursus lengkap</in>
+		<vi>Chỉ khóa học đầy đủ</vi>
+</Get_All_Chapters_For>
+	<Read_One_Chapter_Free>
+		<en>Try 1 FREE chapter</en>
+		<de>Testen Sie 1 KOSTENLOSES Kapitel</de>
+		<pt>Tente um capitulo de graça</pt>
+		<it>Prova 1 capitolo GRATIS</it>
+		<ms>Cuba 1 bab PERCUMA</ms>
+		<nl>Probeer 1 GRATIS hoofdstuk</nl>
+		<es>Probar un capítulo GRATIS</es>
+		<fr>Essayez 1 CHAPITRE GRATUIT</fr>
+		<ar>جرب قسم واحد مجانا</ar>
+		<az>1-ci hissəni PULSUZ oxu</az>
+		<bn>একটি বিনামূল্যের অধ্যায় দেখুন</bn>
+		<hi>एक फ्री चैप्टर का अभ्यास करें</hi>
+		<ru>1 глава БЕСПЛАТНО</ru>
+		<si>ek nomilee parichchedayak uthsaha karanna</si>
+		<ur>١ سبق مفت میں دیکھے</ur>
+		<fa>یک بخش را به صورت رایگان امتحان کنید</fa>
+		<th>ลอง 1 บทเรียนฟรี</th>
+		<tr>1 ÜCRETSİZ bölüm dene</tr>
+		<in>Coba 1 bab GRATIS</in>
+		<vi>Thử 1 chương MIỄN PHÍ</vi>
+</Read_One_Chapter_Free>
+	<Just_Hang_On>
+		<en>Just hang on...</en>
+		<de>Bitte warten...</de>
+		<pt>Espere...</pt>
+		<it>Basta aspettare ...</it>
+		<ms>Tunggu sebentar...</ms>
+		<nl>Even geduld …</nl>
+		<es>Sólo espera ...</es>
+		<fr>Patientez ...</fr>
+		<ar>انتظر...</ar>
+		<az>Bir azca gözlə...</az>
+		<bn>একটু অপেক্ষা করুন</bn>
+		<hi>थोड़ी देर इंतजार करें...</hi>
+		<ru>Подождите...</ru>
+		<si>elba sitinna...</si>
+		<ur>انتظار فرمایے</ur>
+		<fa>کمی صبر کنید...</fa>
+		<th>เพียงแค่รอ...</th>
+		<tr>Bekleyin…</tr>
+		<in>Tunggu sebentar…</in>
+		<vi>Chờ chút...</vi>
+</Just_Hang_On>
+	<Downloading_Chapters>
+		<en>Downloading chapters...</en>
+		<de>Download der Kapitel...</de>
+		<pt>A transferir capítulos...</pt>
+		<it>Download dei capitoli ...</it>
+		<ms>Memuat turun bab ...</ms>
+		<nl>Hoofdstukken worden gedownload…</nl>
+		<es>Descargando capítulos ...</es>
+		<fr>Téléchargement des chapitres ...</fr>
+		<ar>عملية تنزيل الأقسام...</ar>
+		<az>Fəsilləri yükləmək</az>
+		<bn>অধ্যায়গুলি নামছে...</bn>
+		<hi>चैप्टर डाउनलोड हो रहा है...</hi>
+		<ru>Загрузка глав...</ru>
+		<si>baagatha karana parichcheda...</si>
+		<ur>سبق ڈاؤن لوڈ ہو رہے ہیں</ur>
+		<fa>در حال دانلود بخش‌ها...</fa>
+		<th>กำลังดาวน์โหลดบทเรียน...</th>
+		<tr>Bölümler indiriliyor…</tr>
+		<in>Mengunduh bab…</in>
+		<vi>Đang tải xuống chương...</vi>
+</Downloading_Chapters>
+	<Downloading_Images>
+		<en>Downloading images...</en>
+		<de>Download der Bilder...</de>
+		<pt>A transferir imagens...</pt>
+		<it>Download delle immagini ...</it>
+		<ms>Memuat turun imej ...</ms>
+		<nl>Afbeeldingen worden gedownload …</nl>
+		<es>Descargando imágenes ...</es>
+		<fr>Téléchargement des images ...</fr>
+		<ar>عملية تنزيل الصور...</ar>
+		<az>Şəkilləri yükləmək</az>
+		<bn>ছবিগুলি নামছে...</bn>
+		<hi>इमेज डाउनलोड हो रही हैं...</hi>
+		<ru>Загрузка изображений ...</ru>
+		<si>baagatha karana pinthoora...</si>
+		<ur>تصاویر ڈاؤن لوڈ ہو رہی ہیں</ur>
+		<fa>در حال دانلود تصاویر...</fa>
+		<th>กำลังดาวน์โหลดรูป...</th>
+		<tr>Resimler indiriliyor…</tr>
+		<in>Mengunduh gambar…</in>
+		<vi>Đang tải xuống hình ảnh...</vi>
+</Downloading_Images>
+	<Downloading_Videos>
+		<en>Downloading videos...</en>
+		<de>Download der Videos...</de>
+		<pt>A transferir vídeos...</pt>
+		<it>Download dei video ...</it>
+		<ms>Memuat turun video ...</ms>
+		<nl>Video's worden gedownload …</nl>
+		<es>Descargando vídeos ...</es>
+		<fr>Téléchargement des vidéos ...</fr>
+		<ar>عملية تنزيل مقاطع الفيديو...</ar>
+		<az>Videoları yükləmək</az>
+		<bn>চলচিত্রগুলি নামছে...</bn>
+		<hi>वीडियो डाउनलोड हो रही हैं...</hi>
+		<ru>Загрузка видео ...</ru>
+		<si>baagatha karana videos…</si>
+		<ur>ویڈیوز ڈاؤن لوڈ ہو رہی ہیں</ur>
+		<fa>در حال دانلود ویدئوها...</fa>
+		<th>กำลังดาวน์โหลดวิดีโอ...</th>
+		<tr>Videolar indiriliyor…</tr>
+		<in>Mengunduh video…</in>
+		<vi>Đang tải xuống video...</vi>
+</Downloading_Videos>
+	<Introduction>
+		<en>Introduction</en>
+		<de>Einführung</de>
+		<pt>Introdução</pt>
+		<it>Introduzione</it>
+		<ms>Pengenalan</ms>
+		<nl>Introductie</nl>
+		<es>introducción</es>
+		<fr>Présentation</fr>
+		<ar>المقدّمة</ar>
+		<az>Giriş</az>
+		<bn>ভূমিকা</bn>
+		<hi>परिचय</hi>
+		<ru>Введение</ru>
+		<si>upades</si>
+		<ur>تعارف</ur>
+		<fa>معرفی</fa>
+		<th>คำนำ</th>
+		<tr>Giriş</tr>
+		<in>Introduksi</in>
+		<vi>Giới thiệu</vi>
+</Introduction>
+	<Male>
+		<en>Male</en>
+		<de>Männlich</de>
+		<pt>Homem</pt>
+		<it>Maschio</it>
+		<ms>lelaki</ms>
+		<nl>Man</nl>
+		<es>Hombre</es>
+		<fr>Homme</fr>
+		<ar>ذكر</ar>
+		<az>Kişi</az>
+		<bn>পুরুষ</bn>
+		<hi>पुरुष</hi>
+		<ru>мужской</ru>
+		<si>pirimi</si>
+		<ur>مرد</ur>
+		<fa>مرد</fa>
+		<th>ผู้ชาย</th>
+		<tr>Erkek</tr>
+		<in>Laki-laki</in>
+		<vi>Nam</vi>
+</Male>
+	<Female>
+		<en>Female</en>
+		<de>Weiblich</de>
+		<pt>Mulher</pt>
+		<it>Femmina</it>
+		<ms>Perempuan</ms>
+		<nl>Vrouw</nl>
+		<es>Mujer</es>
+		<fr>Femme</fr>
+		<ar>أنثى</ar>
+		<az>Qadın</az>
+		<bn>নারী</bn>
+		<hi>स्त्री</hi>
+		<ru>женский</ru>
+		<si>gahanu</si>
+		<ur>عورت</ur>
+		<fa>زن</fa>
+		<th>ผู้หญิง</th>
+		<tr>Kadın</tr>
+		<in>Perempuan</in>
+		<vi>Nữ</vi>
+</Female>
+	<Country>
+		<en>Select your country here</en>
+		<de>Klicken Sie hie um Ihr Land</de>
+		<pt>Seleccione aqui o seu país</pt>
+		<it>Seleziona il tuo paese qui</it>
+		<ms>Pilih negara anda di sini</ms>
+		<nl>Selecteer hier je land</nl>
+		<es>selecciona tu país aquí</es>
+		<fr>Sélectionnez votre pays ici</fr>
+		<ar>اختر بلدك هنا</ar>
+		<az>Öz ölkənizi seçin</az>
+		<bn>আপনার দেশ নির্বাচন করুন</bn>
+		<hi>अपना देश चुनें</hi>
+		<ru>Выбрать вашу страну</ru>
+		<ur>اپنے ملک کا انتخاب یہاں سے کریں</ur>
+		<fa>کشور خود را انتخاب کنید.</fa>
+		<th>เลือกประเทศของคุณที่นี่</th>
+		<tr>Buradan ülkenizi seçin</tr>
+		<in>Pilih negara Anda di sini</in>
+		<vi>Chọn quốc gia của bạn ở đây</vi>
+</Country>
+	<Mobile_Number>
+		<en>Mobile Number</en>
+		<de>Handynummer</de>
+		<pt>Telemóvel</pt>
+		<it>Numero di cellulare</it>
+		<ms>Nombor Telefon</ms>
+		<nl>Mobiele nummer</nl>
+		<es>Número de móvil</es>
+		<fr>Numéro mobile</fr>
+		<ar>رقم الجوّال</ar>
+		<az>Telefon nömrəsi (mobil)</az>
+		<bn>মুঠোফোনের নম্বর</bn>
+		<hi>मोबाइल नंबर</hi>
+		<ru>Номер мобильного</ru>
+		<si>jangama durakathana ankaya</si>
+		<ur>موبائل نمبر</ur>
+		<fa>شماره موبایل</fa>
+		<th>เบอร์มือถือ</th>
+		<tr>Cep Telefonu Numarası</tr>
+		<in>Nomor Ponsel</in>
+		<vi>Số Điện thoại Di động</vi>
+</Mobile_Number>
+	<Sign_Up_With_Details>
+		<en>Sign up with your details</en>
+		<de>Mit Ihren Details registrieren</de>
+		<pt>Registe-se com os seus detalhes</pt>
+		<it>Iscriviti con i tuoi dati</it>
+		<ms>Mendaftar dengan butir-butir diri anda</ms>
+		<nl>Voer je persoonlijke gegevens in</nl>
+		<es>Regístrarse con tus datos</es>
+		<fr>Inscrivez-vous avec vos coordonnées</fr>
+		<ar>التوقيع مع التفاصيل الخاصة بك</ar>
+		<az>Məlumatları daxil etməklə qeydiyyatdan keç</az>
+		<bn>আপনার তথ্য দিয়ে নিবন্ধন করুন</bn>
+		<hi>अपने विवरण के साथ साइन अप करें</hi>
+		<ru>Зарегистрируйтесь с вашими данными</ru>
+		<si>obage wisthara samagin sign up wanna</si>
+		<ur>اپنی تفصیلات کے ساتھ سائن اپ کریں</ur>
+		<fa>با اطلاعات خود ثبت نام کنید</fa>
+		<th>สมัครด้วยรายละเอียดของคุณ</th>
+		<tr>Bilgileriniz ile kayıt olun</tr>
+		<in>Sign up dengan detail Anda</in>
+		<vi>Đăng ký với thông tin của bạn</vi>
+</Sign_Up_With_Details>
+	<By>
+		<en>By</en>
+		<de>Von</de>
+		<pt>Por</pt>
+		<it>Tramite</it>
+		<ms>oleh</ms>
+		<nl>Door</nl>
+		<es>por</es>
+		<fr>Par</fr>
+		<ar>بواسطة</ar>
+		<az>tərəfindən</az>
+		<bn>দ্বারা</bn>
+		<hi>द्वारा</hi>
+		<ru>согласно</ru>
+		<si>magin</si>
+		<ur>کی طرف سے</ur>
+		<fa>توسط</fa>
+		<th>โดย</th>
+		<tr>Tarafından</tr>
+		<in>Oleh</in>
+		<vi>Bởi</vi>
+</By>
+	<Macademy_Description>
+		<en>Never stop learning!<br/>Learn any time, any where.</en>
+		<de>Nie aufhören zu lernen! Lernen Sie jederzeit und überall.</de>
+		<pt>Nunca pare de aprender! Aprenda a qualquer altura, em qualquer lugar!</pt>
+		<it>Mai smettere di imparare! Impara in qualsiasi momento, in qualsiasi luogo.</it>
+		<ms>Jangan sekali-kali berhenti belajar ! Belajar pada bila-bila masa , di mana-mana.</ms>
+		<nl>Stop nooit met leren! Leer overal waar jij wilt.</nl>
+		<es>nunca dejes de aprender! Aprende en cualquier momento y lugar.</es>
+		<fr>Ne cesser jamais d'apprendre! Apprenez n'importe quand et n'importe où.</fr>
+		<ar>لا تتوقف عن التعلّم. تعلّم في اي وقت, في اي مكان!</ar>
+		<az>Heç vaxt öyrənməyi dayandırmayın ! Hər yerdə və hər zaman öyrənin</az>
+		<bn>কখনো শেখা থামাবেন না! শিখুন যেকোনো সময়, যেকোনো যায়গা থেকে।</bn>
+		<hi>सीखने से कभी न रुकें! किसी भी समय, कहीं भी सीखें।</hi>
+		<ru>Не прекращайте учиться! Учитесь, в любое время, в любом месте.</ru>
+		<ur>کبھی علم حاصل کرنا نہ چھوڑیں! سیکھیں، کبھی بھی کہیں بھی</ur>
+		<fa>هرگز از یادگیری دست نکشید! در هر زمان و هر جایی یاد بگیرید</fa>
+		<th>ไม่เคยหยุดการเรียนรู้!<br/>เรียนรู้ได้ทุกที่ ทุกเวลา</th>
+		<tr>Asla öğrenmeyi bırakmayın!<br/>Her zaman, her yerde öğrenin.</tr>
+		<in>Jangan pernah berhenti belajar!<br/>Belajar kapan pun, di mana pun.</in>
+		<vi>Không bao giờ ngừng học tập!<br/>Học bất cứ lúc nào, ở bất cứ đâu.</vi>
+</Macademy_Description>
+	<Restore_Purchase>
+		<en>Restore Purchase</en>
+		<de>Erwerben und wieder herstellen</de>
+		<pt>Restaurar compra</pt>
+		<it>Ripristina l'Acquisto</it>
+		<ms>Simpan Semula Pembelian</ms>
+		<nl>Herstel aankoop</nl>
+		<es>restaurar la compra</es>
+		<fr>restaurez votre achat</fr>
+		<ar>استعادة شراء</ar>
+		<az>Alğı əməliyyatlnl bırpa etmək</az>
+		<bn>ক্রয় ফিরিয়ে আনুন</bn>
+		<hi>परचेज रिस्टोर करें</hi>
+		<ru>Восстановить покупку</ru>
+		<ur>خریداری بحال کریں</ur>
+		<fa>بازگشت خرید</fa>
+		<th>กู้คืนการสั่งซื้อ</th>
+		<tr>Satın Almayı Yenile</tr>
+		<in>Pulihkan Pembelian</in>
+		<vi>Khôi phục khóa học đã mua</vi>
+</Restore_Purchase>
+	<Swipe_Left_Right>
+		<en>Swipe left or right to navigate between Flashcards.</en>
+		<de>Streichen Sie nach links oder rechts, um zwischen den Karteikarten zu navigieren.</de>
+		<pt>Passe para a esquerda ou direita para navegar entre as fichas de estudo.</pt>
+		<it>Scorri verso sinistra o destra per spostarsi tra le Flashcards.</it>
+		<ms>Leret ke kiri atau kekanan untuk mengemudi di antara Kad-kad Flash.</ms>
+		<nl>Swipe naar links of recht om te navigeren in de Flashcards.</nl>
+		<es>Pasa a la izquierda o a la derecha para navegar entre las tarjetas</es>
+		<fr>Faites Glisser vers la gauche ou la droite pour naviguer entre les fiches de vocabulaire.</fr>
+		<ar>تحرّك الى اليسار أو اليمين لتتنقّل بين البطاقات</ar>
+		<az>Fləşkartları idarə etmək üçün sağa və ya sola hərəkət etdirin</az>
+		<bn>ফ্লাশকার্ডগুলি দেখতে সুইপ করুন।</bn>
+		<hi>फ़्लैशकार्डस के बीच नेविगेट करने के लिए दाएँ या बाएँ स्वाइप करें।</hi>
+		<ru>Проведите влево или вправо для перехода между Флеш-картами.</ru>
+		<ur>فلیش کارڈز کے مابین ردوبدل کے لئے دائیں یا بائیں جانب سوائپ کریں</ur>
+		<fa>صفحه را به سمت راست یا چپ لمس کنید تا فلش کارت ها را عوض کنید</fa>
+		<th>วาดนิ้วมือไปทางซ้ายหรือขวาเพื่อนำทางระหว่างบัตรคำ</th>
+		<tr>Hafıza Kartları arasında arama yapmak için sola ya da sağa hareket ettirin.</tr>
+		<in>Geser ke kiri atau kanan untuk mengarahkan di antara Flashcard.</in>
+		<vi>Vuốt trái hoặc phải để duyệt giữa các thẻ Flash.</vi>
+</Swipe_Left_Right>
+	<Swipe_Go_Forward>
+		<en>Swipe to go forward.</en>
+		<de>Streichen um Vorwärts zu gehen.</de>
+		<pt>Passe para avançar.</pt>
+		<it>Sfiora per andare avanti.</it>
+		<ms>Leret untuk pergi ke seterusnya.</ms>
+		<nl>Swipe om verder te gaan</nl>
+		<es>Pasa para seguir adelante.</es>
+		<fr>faites glisser pour avancer</fr>
+		<ar>حرّك لتتجه للأمام</ar>
+		<az>İrəli getmək üçün buraya basın</az>
+		<bn>অগ্রসর হতে সুইপ করুন।</bn>
+		<hi>आगे जाने के लिए स्वाइप करें।</hi>
+		<ru>Проведите, чтобы продолжить.</ru>
+		<ur>آگے بڑھنے کے لئے سوائپ کریں</ur>
+		<fa>برای ادامه لمس کنید</fa>
+		<th>วาดนิ้วมือเพื่อดำเนินการต่อไป</th>
+		<tr>İlerlemek için hareket ettirin.</tr>
+		<in>Geser untuk maju.</in>
+		<vi>Vuốt để đi tiếp.</vi>
+</Swipe_Go_Forward>
+	<Ready_To_Go>
+		<en>You're ready to go.</en>
+		<de>Sie sind bereit um loszulegen</de>
+		<pt>Você está pronto para começar!</pt>
+		<it>Sei pronto ad andare.</it>
+		<ms>Anda sudah bersedia untuk bermula.</ms>
+		<nl>Je bent klaar om te beginnen.</nl>
+		<es>Estás listo para continuar</es>
+		<fr>vous êtes prêt à avancer</fr>
+		<ar>أنت مستعد لتبدأ!</ar>
+		<az>Davam etmək üçün hazırsınız</az>
+		<bn>আপনি অগ্রসর হতে প্রস্তুত।</bn>
+		<hi>आप आगे बढने के लिए तैयार हैं।</hi>
+		<ru>Вы готовы начать</ru>
+		<ur>آپ جانے کے لئے تیار ہیں</ur>
+		<fa>برای شروع آماده اید</fa>
+		<th>คุณพร้อมแล้ว</th>
+		<tr>İlerlemek için hazırsınız.</tr>
+		<in>Anda siap untuk mulai.</in>
+		<vi>Bạn đã sẵn sàng.</vi>
+</Ready_To_Go>
+	<Start_Course>
+		<en>Start the Course</en>
+		<de>Starten Sie den Kurs</de>
+		<pt>Começar o Curso</pt>
+		<it>Inizia il corso</it>
+		<ms>Mulakan Kursus</ms>
+		<nl>Start de cursus</nl>
+		<es>Inicia el Curso</es>
+		<fr>commencer le cours</fr>
+		<ar>ابدأ المادة</ar>
+		<az>Kursa başla</az>
+		<bn>কোর্সটি শুরু করুন</bn>
+		<hi>कोर्स शुरू करें</hi>
+		<ru>Начать курс</ru>
+		<ur>کورس کا آغاز کریں</ur>
+		<fa>درس را آغاز کنید</fa>
+		<th>เริ่มหลักสูตร</th>
+		<tr>Kursa Başla</tr>
+		<in>Mulai Kursus</in>
+		<vi>Bắt đầu Khóa học</vi>
+</Start_Course>
+	<Track_Progress>
+		<en>Track your&lt;br&gt; progress</en>
+		<de>Verfolgen Sie Ihre &lt;br&gt; Fortschritte</de>
+		<pt>Registe o seu&lt;br&gt;progresso</pt>
+		<it>Monitora i tuoi&lt;br&gt;progressi</it>
+		<ms>Menjejaki kemajuan &lt;br&gt; anda</ms>
+		<nl>Hou jouw voortgang bij</nl>
+		<es>Seguimiento de tu progreso &lt;br&gt;</es>
+		<fr>suivez vos &lt;br&gt; progrès</fr>
+		<ar>تتبّع تقدمك</ar>
+		<az>&lt;br&gt; nailiyyətlərinizi izləyin</az>
+		<bn>আপনার &lt;br&gt; অগ্রগতি দেখুন</bn>
+		<hi>अपनी प्रोग्रेस &lt;br&gt; ट्रैक करें</hi>
+		<ru>Отслеживать ваши &lt;br&gt; успехи</ru>
+		<ur>اگے بڑھنے سے باخبر رہیں</ur>
+		<fa>پیشر فت خود را &lt;br&gt; دنبال کنید</fa>
+		<th>ติดตามความก้าวหน้า&lt;br&gt; ของคุณ</th>
+		<tr>Gelişiminizi takip edin&lt;br&gt;</tr>
+		<in>Lacak kemajuan&lt;br&gt; Anda</in>
+		<vi>Theo dõi &lt;br&gt; tiến bộ của bạn</vi>
+</Track_Progress>
+	<Already_A_Subscriber>
+		<en>Have you already registered?</en>
+		<de>Hast Du Dich schon angemeldet?</de>
+		<pt>Já se registrou?</pt>
+		<it>Ti sei già registrato?</it>
+		<ms>Sudahkah anda mendaftar?</ms>
+		<nl>Heb jij je al aangemeld?</nl>
+		<es>Ya te has registrado?</es>
+		<fr>Avez-vous déjà enregistré?</fr>
+		<ar>هل قمت بالتسجيل بالفعل؟</ar>
+		<az>Siz artıq qeydiyyatdan keçmisiniz?</az>
+		<bn>তুমি কি ইতিমধ্যেই নথিভুক্ত?</bn>
+		<hi>क्या आपने पहले से ही पंजीकरण कर लिया है?</hi>
+		<ru>Вы уже зарегистрировались?</ru>
+		<ur>پہلے سی رجسٹریشن کارا لی ہے ؟</ur>
+		<fa>آیا شما در حال حاضر عضو Mobile Academy هستید؟</fa>
+		<sw>Je umeshajiandikisha?</sw>
+		<th>คุณลงทะเบียนเรียบร้อยแล้วใช่ไหม?</th>
+		<tr>Zaten kayıtlı mısınız?</tr>
+		<in>Apa Anda telah terdaftar?</in>
+		<vi>Bạn đã đăng ký chưa?</vi>
+</Already_A_Subscriber>
+	<Mobile_Number_Validate>
+		<en>Enter your mobile number to validate</en>
+		<de>Geben Sie Ihre Handynummer ein um zu bestätigen</de>
+		<pt>Introduza o seu número de telemóvel para validar</pt>
+		<it>Inserisci il tuo numero di cellulare per confermare</it>
+		<ms>Masukkan nombor telefon bimbit anda untuk pengesahan</ms>
+		<nl>Vul je mobiele nummer in om te verifiëren</nl>
+		<es>Introduce tu número de móvil para validar</es>
+		<fr>Saisissez votre numéro de téléphone mobile pour valider</fr>
+		<ar>أدخل رقم جوالك للتفعيل</ar>
+		<az>Təsdiq etmək üçün mobil nömrənizi daxil edin</az>
+		<bn>নিশ্চিত করতে আপনার মুঠোফোনের নম্বর দিন</bn>
+		<hi>वैलीडेट करने के लिए अपना मोबाइल नंबर दर्ज करें</hi>
+		<ru>Для проверки, введите номер своего мобильного телефона</ru>
+		<ur>توثیق کے لئے اپنا موبائل نمبر درج کریں</ur>
+		<fa>برای معتبر کردن حساب شماره موبایل خود را وارد کنید</fa>
+		<th>ใส่เบอร์มือถือของคุณเพื่อยืนยันความถูกต้อง</th>
+		<tr>Onaylamak için cep telefonu numaranızı girin</tr>
+		<in>Masukkan nomor ponsel Anda untuk memvalidasi</in>
+		<vi>Nhập số điện thoại di động của bạn để xác thực</vi>
+</Mobile_Number_Validate>
+	<You_Will_Receive_Pin>
+		<en>You will receive a pin through SMS to confirm your mobile number</en>
+		<de>Sie werden einen Pin via SMS empfangen, um Ihre Handy-Nummer zu bestätigen</de>
+		<pt>Voce irá receber um pin através de SMS para confirmar o seu número de telemóvel</pt>
+		<it>Riceverai un codice pin tramite SMS per confermare il tuo numero di cellulare</it>
+		<ms>Anda akan menerima pin melalui SMS untuk mengesahkan nombor telefon bimbit anda</ms>
+		<nl>Je ontvangt een sms met pincode om je mobiele nummer te verifiëren</nl>
+		<es>Recibirás un pin por SMS para confirmar tu número de móvil</es>
+		<fr>Vous allez recevoir par sms un code PIN pour confirmer votre numéro de téléphone mobile</fr>
+		<ar>سوف تستلم رقم سري بواسطة رسالة نصية لتأكيد رقم جوالك</ar>
+		<az>Sizə mobil nömrəni təsdiq etmək üçün SMS vasitəsilə pin kod göndəriləcək</az>
+		<bn>মুঠোফোনের নম্বর নিশ্চিত করতে মুঠোবার্তার মাধ্যমে আপনি একটি গোপন সংকেত পাবেন</bn>
+		<hi>अपने मोबाइल नंबर की पुष्टि करने के लिए आपको एसएमएस के माध्यम से एक पिन प्राप्त होगा</hi>
+		<ru>Вы получите код на СМС для подтверждения вашего номера телефона</ru>
+		<ur>آپ کو ایس۔ایم۔ایس کے ذریعے موبائل نمبر کی توثیق کے لئے ایک پن موصول ہوگا</ur>
+		<fa>برای تائید شماره موبایل یک کُد از طریق SMS دریافت خواهید کرد</fa>
+		<th>คุณจะได้รับรหัสพินผ่านทาง SMS เพื่อยืนยันเบอร์มือถือของคุณ</th>
+		<tr>Cep telefonu numaranızı onaylamak için SMS ile bir pin numarası alacaksınız</tr>
+		<in>Anda akan menerima pin melalui SMS untuk mengonfirmasikan nomor ponsel Anda</in>
+		<vi>Bạn sẽ nhận được mã pin thông qua SMS để xác nhận số điện thoại di động của bạn</vi>
+</You_Will_Receive_Pin>
+	<Login_With_MSISDN>
+		<en>Login</en>
+		<de>Anmelden</de>
+		<pt>Entrar</pt>
+		<it>Entra</it>
+		<ms>Masuk</ms>
+		<nl>Inloggen</nl>
+		<es>Iniciar sesión</es>
+		<fr>connexion</fr>
+		<ar>تسجيل دخول</ar>
+		<az>Login</az>
+		<bn>প্রবেশ</bn>
+		<hi>लॉग इन</hi>
+		<ru>Логин</ru>
+		<ur>لوگن</ur>
+		<fa>ورود</fa>
+		<th>ล็อกอิน</th>
+		<tr>Giriş yap</tr>
+		<in>Login</in>
+		<vi>Đăng nhập</vi>
+</Login_With_MSISDN>
+	<Unregistered_Mobile_Number>
+		<en>This mobile number is not registered with us.</en>
+		<de>Diese Handynummer ist nicht bei uns registriert.</de>
+		<pt>Este número de telemóvel não está registado connosco.</pt>
+		<it>Questo numero di cellulare non è registrato con noi.</it>
+		<ms>Nombor telefon bimbit ini tidak berdaftar dengan kami.</ms>
+		<nl>Dit mobiele nummer is nog niet geregistereerd bij ons.</nl>
+		<es>Este número de móvil no se ha registrado con nosotros.</es>
+		<fr>Ce numéro de téléphone mobile n'est pas inscrit avec nous.</fr>
+		<ar>هذا الرقم غير مسجل معنا</ar>
+		<az>Bu mobil nömrə bizim saytda qeydiyyatdan keçməyib</az>
+		<bn>এই মুঠোফোন নম্বর আমাদের সাথে নিবন্ধিত নয়।</bn>
+		<hi>यह मोबाइल नंबर सिस्टम में पंजीकृत नहीं है।</hi>
+		<ru>Этот мобильный номер у нас не зарегистрирован</ru>
+		<ur>یہ موبائل نمبر ہمارے ساتھ رجسٹرڈ نہیں ہے</ur>
+		<fa>این شماره موبایل در پایگاه ما ثبت نشده است</fa>
+		<th>เบอร์มือถือนี้ไม่ได้ลงทะเบียนไว้กับเรา</th>
+		<tr>Bu cep telefonu numarası bizde kayıtlı değil.</tr>
+		<in>Nomor ponsel ini tidak terdaftar dengan kami</in>
+		<vi>Số điện thoại di động này chưa được đăng ký với chúng tôi.</vi>
+</Unregistered_Mobile_Number>
+	<You_Can_Try>
+		<en>You can try</en>
+		<de>Sie können versuchen</de>
+		<pt>Você pode tentar</pt>
+		<it>Puoi provare</it>
+		<ms>Anda boleh cuba</ms>
+		<nl>Je kan het proberen</nl>
+		<es>Puedes intentarlo</es>
+		<fr>vous pouvez essayer</fr>
+		<ar>يمكنك ان تجرب</ar>
+		<az>Cəhd edin</az>
+		<bn>আপনি চেষ্টা করতে পারেন</bn>
+		<hi>आप प्रयास कर सकते हैं</hi>
+		<ru>Вы можете попробовать</ru>
+		<ur>آپ کوشش کرسکتے ہیں</ur>
+		<fa>میتوانید امتحان کنید</fa>
+		<th>คุณสามารถลองดูได้</th>
+		<tr>Deneyebilirsiniz</tr>
+		<in>Anda boleh mencoba</in>
+		<vi>Bạn có thể thử</vi>
+</You_Can_Try>
+	<Enter_Pin>
+		<en>Please enter the PIN you received to confirm</en>
+		<de>Bitte geben Sie die Pinnummer ein, die Sie erhalten haben, um zu bestätigen</de>
+		<pt>Por favor introduza o pin que recebeu para confirmar</pt>
+		<it>Si prega di inserire il PIN che hai ricevuto per confermare</it>
+		<ms>Sila masukkan PIN yang anda terima untuk pengesahan</ms>
+		<nl>Vul aub de ontvangen pincode in om te bevestigen</nl>
+		<es>Por favor introduce el PIN que recibiste para confirmar</es>
+		<fr>Veuillez saisir le code PIN que vous avez reçu pour confirmer</fr>
+		<ar>الرجاء ادخال الرقم السري الذي استلمته للتأكيد</ar>
+		<az>Xahiş edirik, qəbul etdiyiniz PİN-i təsdiqləmək üçün daxil edəsiniz</az>
+		<bn>দয়া করে গোপন সংকেতটি প্রবেশ করুন যেটা আপনি পেয়েছেন।</bn>
+		<hi>पुष्टि करने के लिए अपना पिन डालें</hi>
+		<ru>Для подтверждения, пожалуйста, введите полученный PIN-код</ru>
+		<ur>براہ کرم وصول شدہ پن، یہاں تصدیق کے لئے درج کریں</ur>
+		<fa>برای تائید لطفاً کُدی که دریافت کرده‌اید را وارد کنید</fa>
+		<th>โปรดใส่รหัสพินที่คุณได้รับเพื่อยืนยัน</th>
+		<tr>Lütfen onay için aldığınız PIN'i girin</tr>
+		<in>Harap masukkan PIN yang Anda terima untuk mengonfirmasikan</in>
+		<vi>Hãy nhập mã PIN mà bạn vừa nhận để xác nhận</vi>
+</Enter_Pin>
+	<Advantage_Of_Facebook>
+		<en>If you connect with Facebook, we can include some good suggestions that you may like.</en>
+		<de>Wenn Sie sich mit Facebook verbinden, können wir einige gute Vorschläge einschließen, die Sie gerne hören.</de>
+		<pt>Se você se conectar com o Facebook, nós podemos incluir algumas boas sugestões que você possa gostar.</pt>
+		<it>Se ti connetti con Facebook, possiamo includere alcuni buoni suggerimenti che potrebbero piacerti.</it>
+		<ms>Jika anda berhubung dengan Facebook, kami boleh masukkan beberapa cadangan yang baik yang anda mungkin suka.</ms>
+		<nl>Als je inlogt met je Facebook account, kunnen we een aantal goede suggesties voor je doen die bij je passen.</nl>
+		<es>Si te conectas a Facebook , podemos incluir algunas buenas sugerencias que pueden gustarte</es>
+		<fr>Si vous vous connectez avec Facebook, nous pouvons inclure quelques bonnes suggestions que vous allez aimer.</fr>
+		<ar>اذا اتصلت بفيسبوك, يمكننا اعطائك بعض الإقتراحات التي قد تعجبك</ar>
+		<az>Əgər Facebook vasitəsilə qoşulsanız, xoşunuza gələcək bir neçə təklif göndərə bilərik</az>
+		<bn>যদি আপনি ফেসবুকের সাথে সংযুক্ত থাকেন, তবে আমরা কিছু ভালো প্রস্তাব দিতে পারি যা আপনার পছন্দ হতে পারে।</bn>
+		<hi>अगर आप फेसबुक के साथ कनेक्ट करते हैं, तो हम आपको पसंद आने वाले कुछ अच्छे सुझाव शामिल कर सकते हैं।</hi>
+		<ru>Подключитесь через Facebook, и вы сможете получить от нас интересные предложения.</ru>
+		<ur>اگر آپ فیس بُک کے ساتھ منسلک ہیں تو ہم چند اچھی تجاویز شامل کرسکتے ہیں جو کہ شاید آپ کو پسند آئیں</ur>
+		<fa>اگر به فیسبوک متصل شوید میتوانیم پیشنهادهای خوبی به شما بدهیم که دوست خواهید داشت</fa>
+		<th>หากคุณเชื่อมต่อด้วย Facebook เราจะรวมคำแนะนำดี ๆ บางส่วนที่คุณอาจจะชอบไว้ด้วย</th>
+		<tr>Facebook ile bağlanırsanız, hoşunuza gidebilecek bazı güzel öneriler sunabiliriz.</tr>
+		<in>Jika Anda terhubung dengan Facebook, kami dapat memberikan beberapa saran yang mungkin Anda sukai.</in>
+		<vi>Nếu bạn kết nối với Facebook, chúng tôi có thể đưa ra một số đề xuất tốt mà bạn có thể thích.</vi>
+</Advantage_Of_Facebook>
+	<No_Thanks>
+		<en>No Thanks!</en>
+		<de>Nein Danke!</de>
+		<pt>Não obrigado!</pt>
+		<it>No Grazie!</it>
+		<ms>Tidak, Terima kasih !</ms>
+		<nl>Nee dank je!</nl>
+		<es>No, gracias!</es>
+		<fr>non merci!</fr>
+		<ar>لا شكرا!</ar>
+		<az>Yox, təşəkkürlər</az>
+		<bn>না, ধন্যবাদ!</bn>
+		<hi>जी नहीं, धन्यवाद!</hi>
+		<ru>Нет, спасибо!</ru>
+		<ur>جی نہیں، شکریہ!</ur>
+		<fa>نه، متشکرم!</fa>
+		<th>ไม่ ขอบคุณ!</th>
+		<tr>Hayır. Teşekkürler!</tr>
+		<in>Tidak, terima kasih!</in>
+		<vi>Không cảm ơn!</vi>
+</No_Thanks>
+	<Good_To_Go>
+		<en>You're good to go!</en>
+		<de>Legen Sie los!</de>
+		<pt>Você está pronto para começar!</pt>
+		<it>Tu sei a posto!</it>
+		<ms>Anda bersedia untuk pergi!</ms>
+		<nl>Je bent klaar om te beginnen!</nl>
+		<es>Estás listo para seguir!</es>
+		<fr>vous êtes prêt à avancer</fr>
+		<ar>انت جيد لتبدأ</ar>
+		<az>Davam edin</az>
+		<bn>আপনার যাওয়া ভালো !</bn>
+		<hi>आप जाने के लिए पूरी तरह से तैयार हैं!</hi>
+		<ru>Готовы приступить!</ru>
+		<ur>آپ جانےکے لئے تیار ہیں!</ur>
+		<fa>برای شروع آماده اید</fa>
+		<th>คุณพร้อมแล้ว!</th>
+		<tr>Başlamak için iyisiniz!</tr>
+		<in>Anda boleh melanjutkan!</in>
+		<vi>Bạn đã sẵn sàng rồi!</vi>
+</Good_To_Go>
+	<Go_Back>
+		<en>Back</en>
+		<de>Zurück</de>
+		<pt>Voltar</pt>
+		<it>Indietro</it>
+		<ms>Kembali</ms>
+		<nl>Terug</nl>
+		<es>espaldaatrás</es>
+		<fr>retour</fr>
+		<ar>العودة</ar>
+		<az>Geriyə</az>
+		<bn>পেছনে</bn>
+		<hi>वापस</hi>
+		<ru>Назад</ru>
+		<ur>واپسی</ur>
+		<fa>بازگشت</fa>
+		<th>กลับ</th>
+		<tr>Geri Dön</tr>
+		<in>Kembali</in>
+		<vi>Quay lại</vi>
+</Go_Back>
+	<Invalid_Pin_Error>
+		<en>Invalid Pin</en>
+		<de>Ungültige Pinnummer</de>
+		<pt>Pin inválido</pt>
+		<it>Pin non valido</it>
+		<ms>Pin tidak sah</ms>
+		<nl>Ongeldige pincode</nl>
+		<es>Pin inválido</es>
+		<fr>pin invalide</fr>
+		<ar>الرقم السري غير صحيح</ar>
+		<az>Pin düzgün deyil</az>
+		<bn>ভুল গোপন সংকেত</bn>
+		<hi>गलत पिन</hi>
+		<ru>Неверный Pin- код</ru>
+		<ur>غلط پن</ur>
+		<fa>کُد نامعتبر</fa>
+		<th>รหัสพินไม่ถูกต้อง</th>
+		<tr>Geçersiz Pin</tr>
+		<in>Pin Invalid</in>
+		<vi>PIN không hợp lệ</vi>
+</Invalid_Pin_Error>
+	<Subscribe_To_Enjoy>
+		<en>You can subscribe to enjoy unlimited service!</en>
+		<de>Sie können sich abonnieren und unbegrenzten Service genießen!</de>
+		<pt>Voce pode subscrever para ter um serviço ilimitado!</pt>
+		<it>Puoi iscriverti per godere del servizio illimitato!</it>
+		<ms>Anda boleh melanggan untuk menikmati perkhidmatan yang tidak terhad !</ms>
+		<nl>Je kunt je aanmelden om onbeperkt gebruik te maken van de service!</nl>
+		<es>puedes suscribirte disfrutar de un servicio ilimitado !</es>
+		<fr>Vous pouvez vous abonner pour profiter d'un service illimité!</fr>
+		<ar>يمكنك الإشتراك لتستمتع بخدمة غير متناهية!</ar>
+		<az>Limitsiz xidmət haqqı üçün abunə ola bilərsiniz</az>
+		<bn>আপনি অফুরন্ত সেবা পেতে নিবন্ধন করতে পারেন!</bn>
+		<hi>असीमित सेवा का आनंद लेने के लिए आप सब्सक्राइब कर सकते हैं!</hi>
+		<ru>Вы можете подписаться на безлимитный сервис!</ru>
+		<ur>آپ لامحدود سروس سے لطف اندوز ہونے کےلئے سبسکرائب کرسکتے ہیں</ur>
+		<fa>میتوانید برای استفاده از سرویس نامحدود ثبت نام کنید</fa>
+		<th>คุณสามารถสมัครสมาชิกเพื่อสนุกกับบริการไร้ขีดจำกัดได้!</th>
+		<tr>Sınırsız hizmetin keyfini sürmek için abone olabilirsiniz!</tr>
+		<in>Anda dapat berlangganan untuk menikmati layanan tidak terbatas!</in>
+		<vi>Bạn có thể đăng ký để thưởng thức dịch vụ không giới hạn!</vi>
+</Subscribe_To_Enjoy>
+	<PhysicalAddress/>
+	<Preview_For_Free>
+		<en>Preview the course for FREE</en>
+		<de>GRATIS Vorschau auf den Kurs</de>
+		<pt>Veja o curso de graça</pt>
+		<it>Anteprima corso gratis</it>
+		<ms>Pratonton kursus secara PERCUMA</ms>
+		<nl>GRATIS de cursus bekijken</nl>
+		<es>Vista previa del curso GRATIS</es>
+		<fr>prévisualiser le cours gratuitement</fr>
+		<ar>قم بمعاينة المادة مجانا</ar>
+		<az>PULSUZ olaraq kursu nəzərdən keçirin</az>
+		<bn>বিনামূল্যে কোর্সগুলো দেখুন</bn>
+		<hi>कोर्स का नि:शुल्क पूर्वावलोकन करें</hi>
+		<ru>Предварительный просмотр курса, БЕСПЛАТНО</ru>
+		<ur>کورس کا بالکل مفت جائزہ لیں</ur>
+		<fa>این درس را به صورت رایگان بررسی کنید</fa>
+		<th>ดูตัวอย่างหลักสูตรได้ฟรี</th>
+		<tr>Kursu ÜCRETSİZ önizle</tr>
+		<in>Pratinjau kursus secara GRATIS</in>
+		<vi>Xem trước MIỄN PHÍ khóa học</vi>
+</Preview_For_Free>
+	<Download_Course>
+		<en>Download the course</en>
+		<de>Den Kurs downloaden</de>
+		<pt>Transfira o curso</pt>
+		<it>Scarica il corso</it>
+		<ms>Muat kursus</ms>
+		<nl>De cursus downloaden</nl>
+		<es>Descarga el curso</es>
+		<fr>télécharger le cours</fr>
+		<ar>قم بتحميل المادة</ar>
+		<az>Kursu yüklə</az>
+		<bn>কোর্সগুলো নামান</bn>
+		<hi>कोर्स डाउनलोड करें</hi>
+		<ru>Скачать курс</ru>
+		<ur>کورس ڈاؤن لوڈ کریں</ur>
+		<fa>این درس را دانلود کنید</fa>
+		<th>ดาวน์โหลดหลักสูตร</th>
+		<tr>Kursu indir</tr>
+		<in>Unduh kursus</in>
+		<vi>Tải xuống khóa học</vi>
+</Download_Course>
+	<Trial_Period>
+		<en>You have &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; free minutes left</en>
+		<de>Sie haben &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; Freiminuten</de>
+		<pt>Você têm &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; minutos restantes</pt>
+		<it>Hai &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; minuti gratis alla fine</it>
+		<ms>Anda mempunyai baki &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; minit percuma</ms>
+		<nl>Je hebt nog &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; gratis minuten te besteden</nl>
+		<es>Tienes &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; minutos gratis</es>
+		<fr>Vous avez &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; minutes gratuites restantes</fr>
+		<ar>متبقي لديك &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; دقيقة مجانية</ar>
+		<az>Sizin &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; dəqiqə pulsuz vaxtınız qalıb.</az>
+		<bn>আপনার &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; ফ্রি মিনিট বাকি আছে</bn>
+		<hi>आपके पास &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; नि:शुल्क मिनट शेष हैं</hi>
+		<ru>У вас осталось &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; бесплатных минут</ru>
+		<ur>آپ کے پاس &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; مفت منٹ بچے ہیں</ur>
+		<fa>You have &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; free minutes left</fa>
+		<th>คุณมีเวลาใช้บริการฟรีเหลืออีก &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; นาที</th>
+		<tr>&lt;b&gt;{{ÜcretsizdenemeSürenizkaldı}}&lt;/b&gt; bedava dakikanız kaldı</tr>
+		<in>Anda punya &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; menit waktu gratis tersisa</in>
+		<vi>Bạn còn &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; phút miễn phí</vi>
+</Trial_Period>
+	<Subscription_Benefits>
+		<en>You can subscribe to enjoy unlimited service!</en>
+		<de>Sie können sich abonnieren und unbegrenzten Service genießen!</de>
+		<pt>Voce pode subscrever para ter um serviço ilimitado!</pt>
+		<it>Puoi iscriverti per godere del servizio illimitato!</it>
+		<ms>Anda boleh melanggan untuk menikmati perkhidmatan yang tidak terhad !</ms>
+		<nl>Je kunt je aanmelden om onbeperkt gebruik te maken van de service!</nl>
+		<es>Puedes suscribirte y disfrutar de un servicio ilimitado !</es>
+		<fr>Vous pouvez vous abonner pour profiter d'un service illimité!</fr>
+		<ar>يمكنك الإشتراك لتستمتع بخدمة غير متناهية!</ar>
+		<az>Limitsiz xidmət haqqı üçün abunə ola bilərsiniz</az>
+		<bn>আপনি অফুরন্ত সেবা পেতে নিবন্ধন করতে পারেন!</bn>
+		<hi>असीमित सेवा का आनंद लेने के लिए आप सब्सक्राइब कर सकते हैं!</hi>
+		<ru>Вы можете подписаться на безлимитный сервис!</ru>
+		<ur>آپ لامحدود سروس سے لطف اندوز ہونے کےلئے سبسکرائب کرسکتے ہیں</ur>
+		<fa>میتوانید برای استفاده از سرویس نامحدود ثبت نام کنید</fa>
+		<th>คุณสามารถสมัครสมาชิกเพื่อสนุกกับบริการไร้ขีดจำกัดได้!</th>
+		<tr>Sınırsız hizmetin keyfini sürmek için abone olabilirsiniz!</tr>
+		<in>Anda dapat berlangganan untuk menikmati layanan tidak terbatas!</in>
+		<vi>Bạn có thể đăng ký để thưởng thức dịch vụ không giới hạn!</vi>
+</Subscription_Benefits>
+	<Subscribe_For>
+		<en>Subscribe for only {{price}}/{{duration}}</en>
+		<de>Abonnieren für nur {{price}}/{{duration}}</de>
+		<pt>Subscreva por apenas {{price}}/{{duration}}</pt>
+		<it>Iscriviti per soli {{price}}/{{duration}}</it>
+		<ms>Melanggan untuk hanya {{price}}/{{duration}}</ms>
+		<nl>Aanmelden voor slechts {{price}}/{{duration}}</nl>
+		<es>Suscríbete por sólo {{price}}/{{duration}}</es>
+		<fr>Abonnez-vous pour {{price}}/{{duration}}</fr>
+		<ar>اشترك مقابل فقط {{price}}/{{duration}}</ar>
+		<az>Sadəcə {{price}}/{{duration}} məbləğində abunə olun</az>
+		<bn>নিবন্ধন শুধুমাত্র {{price}}/{{duration}}</bn>
+		<hi>केवल {{price}}/{{duration}} के लिए सदस्यता लें</hi>
+		<ru>Подписаться только на {{price}}/{{duration}}</ru>
+		<ur>صرف {{price}}/{{duration}} کے لئے سبسکرائب کریں</ur>
+		<fa>تنها با {{price}}/{{duration}} ثبت نام کنید.</fa>
+		<th>สมัครสมาชิกในราคา {{price}}/{{duration}} เท่านั้น</th>
+		<tr>Yalnızca {{fiyat}}/{{süre}}'e abone olun</tr>
+		<in>Berlangganan hanya dengan {{price}}/{{duration}}</in>
+		<vi>Đăng ký chỉ với {{price}}/{{duration}}</vi>
+</Subscribe_For>
+	<Download_Benefits>
+		<en>Download this course to your Mobile</en>
+		<de>Diesen Kurs auf Ihr Handy herunterladen</de>
+		<pt>Faça o download deste curso para o seu telemóvel</pt>
+		<it>Scarica questo corso per il tuo cellulare</it>
+		<ms>Muat Turun kursus ini ke telefon bimbit anda</ms>
+		<nl>Download deze cursus naar je mobiele telefoon</nl>
+		<es>descárgate este curso en tu móvil</es>
+		<fr>Téléchargez ce cours sur votre portable</fr>
+		<ar>أحصل على هذه المادة على جواّلك</ar>
+		<az>Bu kursu öz mobil telefonunuza yükləyin</az>
+		<bn>এই কোর্সটি আপনার মুঠোফোনে নামান</bn>
+		<hi>अपने मोबाइल पे ये कोर्स डाउनलोड करें</hi>
+		<ru>Скачать этот курс на свой телефон</ru>
+		<ur>اس کورس کو اپنے موبائل پر ڈاؤن لوڈ کریں</ur>
+		<fa>این درس را در گوشی موبایل خود ذخیره کنید</fa>
+		<th>ดาวน์โหลดหลักสูตรนี้ลงในมือถือของคุณ</th>
+		<tr>Bu kursu Cep Telefonunuza indirin</tr>
+		<in>Unduh kursus ini ke perangkat seluler Anda</in>
+		<vi>Tải khóa học này xuống Điện thoại Di động của bạn</vi>
+</Download_Benefits>
+	<Trial_Time_Left>
+		<en>You have &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; minutes left</en>
+		<de>Sie haben &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; Freiminuten</de>
+		<pt>Você têm &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; minutos restantes</pt>
+		<it>Hai &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; minuti alla fine</it>
+		<ms>Anda mempunyai baki &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; minit</ms>
+		<nl>Je hebt &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; minuten over</nl>
+		<es>Tienes &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; minutos</es>
+		<fr>vous avez &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; minutes restantes</fr>
+		<ar>متبقي لديك &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; دقيقة</ar>
+		<az>Sizin &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; dəqiqə vaxtınız qalıb.</az>
+		<bn>আপনার &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; ফ্রি মিনিট বাকি আছে</bn>
+		<hi>आपके &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; मिनट शेष हैं</hi>
+		<ru>У вас осталось &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; минут</ru>
+		<ur>آپ کے پاس &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; مفت منٹ بچے ہیں</ur>
+		<fa>شما &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; دقیقه باقی دارید</fa>
+		<th>คุณมีเวลาใช้บริการฟรีเหลืออีก &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; นาที</th>
+		<tr>&lt;b&gt;{{ÜcretsizdenemeSürenizkaldı}}&lt;/b&gt; bedava dakikanız kaldı</tr>
+		<in>Anda punya &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; menit tersisa</in>
+		<vi>Bạn còn &lt;b&gt;{{trialTimeLeft}}&lt;/b&gt; phút</vi>
+</Trial_Time_Left>
+	<daily>
+		<en>Day</en>
+		<de>Tag</de>
+		<pt>Dia</pt>
+		<it>Giorno</it>
+		<ms>hari</ms>
+		<nl>Dag</nl>
+		<es>día</es>
+		<fr>jour</fr>
+		<ar>يوم</ar>
+		<az>Gün</az>
+		<bn>দিন</bn>
+		<hi>दिन</hi>
+		<ru>День</ru>
+		<ur>دن</ur>
+		<fa>روز</fa>
+		<th>วัน</th>
+		<tr>Gün</tr>
+		<in>Hari</in>
+		<vi>Ngày</vi>
+</daily>
+	<weekly1>
+		<en>Week</en>
+		<de>Woche</de>
+		<pt>Semana</pt>
+		<it>Settimana</it>
+		<ms>minggu</ms>
+		<nl>Week</nl>
+		<es>semana</es>
+		<fr>semaine</fr>
+		<ar>أسبوع</ar>
+		<az>Həftə</az>
+		<bn>সপ্তাহ</bn>
+		<hi>सप्ताह</hi>
+		<ru>Неделя</ru>
+		<ur>ہفتہ</ur>
+		<fa>هفته</fa>
+		<th>สัปดาห์</th>
+		<tr>Hafta</tr>
+		<in>Minggu</in>
+		<vi>Tuần</vi>
+</weekly1>
+	<monthly>
+		<en>Month</en>
+		<de>Monat</de>
+		<pt>Mês</pt>
+		<it>Mese</it>
+		<ms>bulan</ms>
+		<nl>Maand</nl>
+		<es>mes</es>
+		<fr>mois</fr>
+		<ar>شهر</ar>
+		<az>Ay</az>
+		<bn>মাস</bn>
+		<hi>माह</hi>
+		<ru>Месяц</ru>
+		<ur>مہینہ</ur>
+		<fa>ماه</fa>
+		<th>เดือน</th>
+		<tr>Ay</tr>
+		<in>Bulan</in>
+		<vi>Tháng</vi>
+</monthly>
+	<Unlock_Course>
+		<en>Unlock this course to continue</en>
+		<de>Entsperren Sie diesen Kurs um fortzusetzen</de>
+		<pt>Desbloquear este curso para continuar</pt>
+		<it>Sblocca questo corso per continuare</it>
+		<ms>Membuka kursus ini untuk teruskan</ms>
+		<nl>Ontgrendel deze curus om verder te gaan</nl>
+		<es>Desbloquear este curso para continuar</es>
+		<fr>débloquer ce cours pour continuer</fr>
+		<ar>قم بفتح هذه المادة لتكمل</ar>
+		<az>Davam etmək üçün bu kursu açın</az>
+		<bn>অব্যাহত রাখতে কোর্সটি উন্মোচন করুন</bn>
+		<hi>जारी रखने के लिए यह पाठ्यक्रम अनलॉक करें</hi>
+		<ru>Открыть этот курс, чтобы продолжить</ru>
+		<ur>جاری رکھنے کے لئے اس کورس کو ان لاک کریں</ur>
+		<fa>برای ادامه این درس را باز کنید</fa>
+		<th>ปลดล็อกหลักสูตรนี้เพื่อดำเนินการต่อไป</th>
+		<tr>Devam etmek için bu kursu açın</tr>
+		<in>Buka kunci kursus ini untuk melanjutkan</in>
+		<vi>Mở khóa khóa học này để tiếp tục</vi>
+</Unlock_Course>
+	<Unlock_Benefits>
+		<en>Get unlimited access to the entire collection of courses</en>
+		<de>Holen Sie sich uneingeschränkten Zugriff auf die gesamte Kollektion von Kursen</de>
+		<pt>Obter acesso ilimitado à coleção inteira de cursos</pt>
+		<it>Ottieni l'accesso illimitato all'intero insieme di corsi</it>
+		<ms>Dapatkan akses yang tidak terhad untuk koleksi keseluruhan kursus</ms>
+		<nl>Krijg onbeperkt toegang tot het volledige cursus aanbod</nl>
+		<es>Obtener acceso ilimitado a toda la colección de cursos</es>
+		<fr>Porfitez d'un accès illimité à toute la collection des cours</fr>
+		<ar>احصل على ولوج لا متناهي للمجموعة الكاملة من المواد</ar>
+		<az>Bütün kurslara limitsiz giriş əldə edin</az>
+		<bn>সংগ্রহে থাকা সমস্ত কোর্সের অফুরন্ত প্রবেশাধিকার নিন</bn>
+		<hi>कोर्स की पूरी कलेक्शन तक असीमित पहुंच प्राप्त करें</hi>
+		<ru>Получить неограниченный доступ ко всей коллекции курсов</ru>
+		<ur>کورسز کی لامحدود رسائی حاصل کریں</ur>
+		<fa>به تمام مجموعه درس‌ها دسترسی نامحدود پیدا کنید</fa>
+		<th>รับสิทธิ์การเข้าถึงชุดของหลักสูตรทั้งหมดโดยไม่จำกัด</th>
+		<tr>Kurs koleksiyonun tamamına sınırsız erişim kazanın</tr>
+		<in>Dapatkan akses tidak terbatas ke seluruh koleksi kursus</in>
+		<vi>Nhận quyền truy cập không giới hạn đến toàn bộ bộ sưu tập các khóa học</vi>
+</Unlock_Benefits>
+	<Connect_With_Facebook_Short>
+		<en>Connect</en>
+		<de>Verbinden</de>
+		<pt>Conectar-se</pt>
+		<it>Collega</it>
+		<ms>Berhubung</ms>
+		<nl>Verbinden</nl>
+		<es>conectar</es>
+		<fr>se connecter</fr>
+		<ar>اربط</ar>
+		<az>Qoşulma</az>
+		<bn>সংযোগ</bn>
+		<hi>कनेक्ट</hi>
+		<ru>Войти</ru>
+		<ur>منسلک ہوں</ur>
+		<fa>اتصال</fa>
+		<th>เชื่อมต่อ</th>
+		<tr>Bağlan</tr>
+		<in>Hubungkan</in>
+		<vi>Kết nối</vi>
+</Connect_With_Facebook_Short>
+	<Connect_With_Facebook_Full>
+		<en>Connect with Facebook</en>
+		<de>Mit Facebook verbinden</de>
+		<pt>Conectar-se com o Facebook</pt>
+		<it>Connettiti con Facebook</it>
+		<ms>Berhubungan dengan Facebook</ms>
+		<nl>Aanmelden met Facebook</nl>
+		<es>Conectar con Facebook</es>
+		<fr>connectez-vous avec Facebook</fr>
+		<ar>اتصل بالفيسبوك</ar>
+		<az>Facebook vasitəsilə qoşulun</az>
+		<bn>ফেসবুকের সাথে সংযোগ</bn>
+		<hi>फेसबुक के साथ कनेक्ट करें</hi>
+		<ru>Войти через Facebook</ru>
+		<ur>فیس بُک سے منسلک ہوں</ur>
+		<fa>اتصال به فیسبوک</fa>
+		<th>เชื่อมต่อด้วย Facebook</th>
+		<tr>Facebook ile bağlan</tr>
+		<in>Hubungkan dengan Facebook</in>
+		<vi>Kết nối với Facebook</vi>
+</Connect_With_Facebook_Full>
+	<Sign_Up_Short>
+		<en>Sign up</en>
+		<de>Registrieren</de>
+		<pt>Registar</pt>
+		<it>Iscriviti</it>
+		<ms>Daftar</ms>
+		<nl>Aanmelden</nl>
+		<es>contratar</es>
+		<fr>inscription</fr>
+		<ar>سجّل</ar>
+		<az>Qeydiyyatdan keç</az>
+		<bn>নিবন্ধন</bn>
+		<hi>साइन अप करें</hi>
+		<ru>Регистрация</ru>
+		<ur>سائن اپ</ur>
+		<fa>ثبت نام</fa>
+		<th>สมัครใช้บริการ</th>
+		<tr>Kayıt ol</tr>
+		<in>Sign up</in>
+		<vi>Đăng ký</vi>
+</Sign_Up_Short>
+	<Sign_Up_Full>
+		<en>Sign up now!</en>
+		<de>Jetzt registrieren</de>
+		<pt>Registar agora!</pt>
+		<it>Iscriviti ora!</it>
+		<ms>Daftar sekarang !</ms>
+		<nl>Nu aanmelden!</nl>
+		<es>¡Inscríbete ahora!</es>
+		<fr>Inscrivez-vous maintenant</fr>
+		<ar>سجّل الأن!</ar>
+		<az>Elə indi qeydiyyatdan keç</az>
+		<bn>এখনই নিবন্ধন!</bn>
+		<hi>अभी साइन अप करें!</hi>
+		<ru>Зарегистрироваться!</ru>
+		<ur>ابھی سائن اپ ہوں!</ur>
+		<fa>هم‌اکنون ثبت نام کنید!</fa>
+		<th>สมัครตอนนี้!</th>
+		<tr>Hemen kayıt ol!</tr>
+		<in>Sign up sekarang!</in>
+		<vi>Đăng ký ngay!</vi>
+</Sign_Up_Full>
+	<Trial_Time_Expired>
+		<en>Your trial time has expired!</en>
+		<de>Ihre Demozeit ist abgelaufen!</de>
+		<pt>O seu tempo de demonstração expirou!</pt>
+		<it>Il tempo di prova è scaduto!</it>
+		<ms>Masa percubaan anda telah tamat tempoh !</ms>
+		<nl>Je testperiode is afgelopen!</nl>
+		<es>Tu tiempo de prueba ha caducado !</es>
+		<fr>Votre temps d'essai a expiré</fr>
+		<ar>وقتك التجريبي قد انتهى</ar>
+		<az>Sizin sınaq vaxtınız bitdi</az>
+		<bn>আপনার বিনামূল্যের সময় শেষ হয়ে গেছে!</bn>
+		<hi>आपका ट्रायल पीरियड समाप्त हो गया है!</hi>
+		<ru>Ваше время истекло!</ru>
+		<ur>آپ کا آزمائشی وقت ختم ہوچکا ہے!</ur>
+		<fa>زمان آزمایشی شما به پایان رسیده است</fa>
+		<th>ช่วงเวลาทดลองใช้บริการของคุณหมดเวลาแล้ว!</th>
+		<tr>Deneme süreniz sona erdi!</tr>
+		<in>Waktu uji coba Anda telah selesai!</in>
+		<vi>Thời gian học thử của bạn đã kết thúc!</vi>
+</Trial_Time_Expired>
+	<Todays_Pick>
+		<en>Today's picks</en>
+		<de>Picks des tages</de>
+		<pt>Escolhas de Hoje</pt>
+		<it>Scelte di Oggi</it>
+		<ms>Pilihan hari ini</ms>
+		<nl>De keuze van vandaag</nl>
+		<es>Selecciones de hoy</es>
+		<fr>Les choix d'aujourd'hui</fr>
+		<ar>اختيارات اليوم</ar>
+		<az>Bu günün seçmələri</az>
+		<bn>আজকের বিষয়</bn>
+		<hi>आज की पसंद</hi>
+		<ru>Сегодняшний выбор</ru>
+		<ur>آج کا انتخاب</ur>
+		<fa>انتخاب روز</fa>
+		<th>รายการที่ได้รับเลือกในวันนี้</th>
+		<tr>Bugünün seçenekleri</tr>
+		<in>Pilihan hari ini</in>
+		<vi>Các khóa học chọn lọc của ngày hôm nay</vi>
+</Todays_Pick>
+	<Most_Popular>
+		<en>Most popular</en>
+		<de>Am beliebtesten</de>
+		<pt>Mais Populares</pt>
+		<it>Più Popolari</it>
+		<ms>paling Popular</ms>
+		<nl>Meest populair</nl>
+		<es>Los más populares</es>
+		<fr>les plus populaires</fr>
+		<ar>الأكثر طلبا</ar>
+		<az>Ən məçhurlar</az>
+		<bn>অধিক জনপ্রিয়</bn>
+		<hi>सर्वाधिक लोकप्रिय</hi>
+		<ru>Самое популярное</ru>
+		<ur>سب سے مشہور</ur>
+		<fa>محبوب‌ترین ها</fa>
+		<th>ยอดนิยม</th>
+		<tr>En popüler</tr>
+		<in>Paling populer</in>
+		<vi>Phổ biến nhất</vi>
+</Most_Popular>
+	<Best_New_Courses>
+		<en>Best new courses</en>
+		<de>Die besten neuen Kurse</de>
+		<pt>Os Melhores Cursos Novos</pt>
+		<it>Migliori Nuovi Corsi</it>
+		<ms>Kursus Baru yang menyeronokkan</ms>
+		<nl>De beste nieuwe cursussen</nl>
+		<es>Mejores Nuevos Cursos</es>
+		<fr>meilleurs nouveaux cours</fr>
+		<ar>أفضل المواد الجديدة</ar>
+		<az>Ən yaxşı yeni kurslar</az>
+		<bn>সেরা নতুন কোর্স</bn>
+		<hi>सर्वश्रेष्ठ नए पाठ्यक्रम</hi>
+		<ru>Лучшие Новые курсы</ru>
+		<ur>بہترین نئے کورسز</ur>
+		<fa>بهترین درس‌های جدید</fa>
+		<th>หลักสูตรใหม่ยอดเยี่ยม</th>
+		<tr>En iyi yeni kurslar</tr>
+		<in>Kursus baru terbaik</in>
+		<vi>Khóa học mới tốt nhất</vi>
+</Best_New_Courses>
+	<Others_Have_Also_Viewed>
+		<en>Others have also viewed</en>
+		<de>Andere haben sich auch angesehen</de>
+		<pt>Outros também viram</pt>
+		<it>Gli altri hanno anche visualizzato</it>
+		<ms>Yang lain juga banyak menonton</ms>
+		<nl>Andere hebben ook dit bekeken</nl>
+		<es>Otros también han visto</es>
+		<fr>les autres ont également revu</fr>
+		<ar>اهتمامات أخرى من الأخرين</ar>
+		<az>Digərləri də buna baxıb</az>
+		<bn>অন্য লোকেরাও দেখেছে</bn>
+		<hi>दूसरों ने भी देखा है</hi>
+		<ru>Другие также смотрят</ru>
+		<ur>دوسروں نے بھی دیکھیں ہیں</ur>
+		<fa>درس‌هایی که دیگران مشاهده کرده‌اند</fa>
+		<th>นอกจากนี้คนอื่น ๆ ยังดูรายการต่อไปนี้</th>
+		<tr>Diğerleri şunları da görüntüledi</tr>
+		<in>Juga dilihat oleh yang lain</in>
+		<vi>Những người khác đã xem</vi>
+</Others_Have_Also_Viewed>
+	<Cancel_IAP_Request>
+		<en>Please wait while we connect to the app store, if this is taking too long please check your internet connection or double tap to cancel</en>
+		<de>Bitte warten Sie, während wir die Verbindung zum App-Store herstellen, wenn dies zu lange dauert bitte überprüfen Sie Ihre Internetverbindung oder doppelklicken um abzubrechen</de>
+		<pt>Por favor aguarde enquanto nos conectamos com a loja de aplicações, se demorar muito, por favor verifique a sua ligação à Internet ou clique duas vezes para cancelar</pt>
+		<it>Si prega di attendere mentre noi ci colleghiamo all'App Store, se ci sta mettendo troppo tempo si prega di controllare il tuo collegamento internet o fai un doppio colpetto per annullare</it>
+		<ms>Sila tunggu sementara kami menyambung ke stor aplikasi , jika ini mengambil masa terlalu lama Sila semak sambungan internet anda atau klik dua kali untuk membatalkannya</ms>
+		<nl>Een moment geduld alstublieft terwijl we linken naar de app store, als dit te lang duurt controleer dan u internet verbinding of dubbel klik om te annuleren</nl>
+		<es>Por favor espera mientras conectamos con la tienda de aplicaciones , si tarda demasiado tiempo por favor revisa tu conexión a Internet o toca dos veces para cancelar</es>
+		<fr>Veuillez patienter pendant que nous nous connectons à l'app store, si cela va prendre un peu du temps veuillez vérifier votre connexion Internet ou faites un double-clic pour annuler</fr>
+		<ar>الرجاء الإنتظار ريثما نوصلك ب مخزن التطبيقات, اذا كانت العملية بطيئة فيرجى التأكد من سرعة الإنترنت او أنقر مرّتين للإلغاء</ar>
+		<az>Xahiş edirik, app store-a qoşulana kimi gözləyin, əgər qoşulma uzun çəkərsə ya internetə çıxışınızı yoxlayın, və ya iki dəfə klikləməklə imtina edin</az>
+		<bn>দয়া করে অপেক্ষা করুন যতক্ষন না আমরা অ্যাপ্লিকেশন বাজারের সাথে সংযুক্ত হচ্ছি, যদি এটা অনেক সময় নেয় তবে আপনি আপনার ইন্টারনেট/বিশ্বজাল সংযোগটি পরিক্ষা করুন বা বাতিল করতে দুইবার খোঁচা দিন</bn>
+		<hi>कृपया प्रतीक्षा करें, जब तक हम ऐप्प स्टोर से कनेक्ट कर रहे हैं, अगर यह काफी समय ले रहा है तो अपने इंटरनेट कनेक्शन की जाँच करें या रद्द करने के लिए दो बार टैप करें</hi>
+		<ru>Пожалуйста, подождите подключения к магазину приложений, если это занимает слишком много времени, проверьте ваше интернет-соединение или нажмите два раза, чтобы отменить</ru>
+		<ur>برائے مہربانی انتظار کریں تاکہ ہم آپ کو ایپ سٹور سے منسلک کردیں، اگر ایسا ہونے میں زیادہ وقت لگے تو براہ کرم اپنا انٹرنیٹ کنکشن دیکھیں یا منسوخی کے لئے دوبار ٹیپ کریں!</ur>
+		<fa>لطفاً کمی صبر کنید تا به فروشگاه برنامه‌ها متصل شویم، اگر این کار بیش از حد طول کشید، لطفاً اتصال اینترنت خود را بررسی کنید و یا برای لغو دوبار بر روی صفحه ضربه بزنید</fa>
+		<th>โปรดรอในขณะที่เรากำลังเชื่อมต่อกับร้านค้าแอป หากการดำเนินการนี้ใช้เวลานานเกินไป โปรดตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของคุณ หรือแตะสองครั้งติดกันเพื่อยกเลิก</th>
+		<tr>Lütfen biz uygulama mağazasına bağlanırken bekleyin, bu çok uzun sürerse lütfen internet bağlantınızı kontrol edin ya da iptal etmek için çift dokunun</tr>
+		<in>Harap menunggu selagi kami menghubungkan ke app store, jika ini terlalu lama harap memeriksa koneksi internet Anda atau ketuk dua kali untuk membatalkan</in>
+		<vi>Vui lòng chờ trong khi chúng tôi kết nối với cửa hàng ứng dụng, nếu việc này kéo dài quá lâu, hãy kiểm tra kết nối Internet của bạn hoặc bấm kép để hủy bỏ</vi>
+</Cancel_IAP_Request>
+	<Cancel_Facebook_Request>
+		<en>Please wait while we connect with facebook, if this is taking too long you could double tap to cancel</en>
+		<de>Bitte warten Sie während wir uns mit Facebook verbinden. Wenn dies zu lange dauert können Sie doppelklicken um abzubrechen</de>
+		<pt>Por favor aguarde enquanto nos conectamos com o Facebook, se demorar muito você pode clicar duas vezes para cancelar</pt>
+		<it>Si prega di attendere mentre ci colleghiamo con facebook, se ci sta mettendo troppo tempo potresti fare un doppio colpetto per annullare</it>
+		<ms>Sila tunggu sementara kami menyambung dengan facebook , jika ini mengambil masa terlalu lama anda boleh klik dua kali untuk membatalkannya</ms>
+		<nl>Een moment geduld alstublieft terwijl we linken naar FB, als dit te lang duurt kunt u dubbel klikken om te annuleren</nl>
+		<es>Por favor espera mientras conectamos con facebook, si tarda demasiado tiempo toca dos veces para cancelar</es>
+		<fr>Veuillez patienter pendant que nous nous connectons sure Facebook, si cela va prendre un peu du temps veuillez vérifier votre connexion Internet ou Faites un double-clic pour annuler</fr>
+		<ar>الرجاء الإنتظار ريثما نوصلك ب فيسبوك, اذا كانت العملية بطيئة فيرجى التأكد من سرعة الإنترنت او أنقر مرّتين للإلغاء</ar>
+		<az>Xahiş edirik, facebook-a qoşulmaq üçün bir az gözləyin, əgər uzun çəkərsə iki dəfə klikləməklə imtina edin</az>
+		<bn>দয়া করে অপেক্ষা করুন যতক্ষন না আমরা ফেসবুকের সাথে সংযুক্ত হচ্ছি, যদি এটা অনেক সময় নেয় তবে আপনি বাতিল করতে দুইবার খোঁচা দিন</bn>
+		<hi>कृपया प्रतीक्षा करें, जब तक हम फेसबुक से कनेक्ट कर रहे हैं, अगर इसमें काफी समय ले रहा है तो रद्द करने के लिए दो बार टैप करें</hi>
+		<ru>Пожалуйста, подождите соединения с Facebook, если это занимает слишком много времени вы можете нажать два раза, чтобы отменить</ru>
+		<ur>براہ کرم انتظار کریں تاکہ ہم آپ کو فیس بُک کےساتھ منسلک کردیں، اگر ایسا ہونے میں بہت وقت لگے تو منسوخی کے لئے دوبار ٹیپ کردیں!</ur>
+		<fa>لطفاً کمی صبر کنید تا به فیسبوک متصل شویم، اگر این کار بیش از حد طول کشید، لطفاً لغو دوبار بر روی صفحه ضربه بزنید</fa>
+		<th>โปรดรอในขณะที่เรากำลังเชื่อมต่อกับ Facebook หากการดำเนินการนี้ใช้เวลานานเกินไป คุณอาจจะแตะสองครั้งติดกันเพื่อยกเลิก</th>
+		<tr>Lütfen biz uygulama mağazasına bağlanırken bekleyin, bu çok uzun sürerse iptal etmek için çift dokunabilirsiniz</tr>
+		<in>Harap menunggu selagi kami menghubungkan dengan Facebook, jika ini terlalu lama Anda dapat mengetuk dua kali untuk membatalkan</in>
+		<vi>Vui lòng chờ trong khi chúng tôi kết nối với Facebook, nếu việc này kéo dài quá lâu, bạn có thể bấm kép để hủy bỏ</vi>
+</Cancel_Facebook_Request>
+	<Trial_Expired>
+		<en>Your trial time has expired</en>
+		<de>Ihre Demozeit ist abgelaufen!</de>
+		<pt>O seu tempo de demonstração expirou</pt>
+		<it>Il tempo di prova è scaduto</it>
+		<ms>Masa percubaan anda telah tamat tempoh</ms>
+		<nl>Je testperiode is afgelopen!</nl>
+		<es>Tu tiempo de prueba ha caducado</es>
+		<fr>Votre temps d'essai a expiré</fr>
+		<ar>وقتك التجريبي قد انتهى</ar>
+		<az>Sizin sınaq vaxtınız bitdi</az>
+		<bn>আপনার বিনামূল্যের সময় শেষ হয়ে গেছে</bn>
+		<hi>आपका ट्रायल पीरियड समाप्त हो गया है</hi>
+		<ru>Ваше время истекло</ru>
+		<ur>آپ کا آزمائشی وقت ختم ہوچکا ہے!</ur>
+		<fa>زمان آزمایشی شما به پایان رسیده است</fa>
+		<th>ช่วงเวลาทดลองใช้บริการของคุณหมดเวลาแล้ว</th>
+		<tr>Deneme süreniz sona erdi</tr>
+		<in>Waktu uji coba Anda telah selesai</in>
+		<vi>Thời gian học thử của bạn đã kết thúc</vi>
+</Trial_Expired>
+	<Lets_Begin>
+		<en>Let's Begin!</en>
+		<de>Lass uns loslegen!</de>
+		<pt>Vamos Começar!</pt>
+		<it>Cominciamo!</it>
+		<ms>Mari Mulakan !</ms>
+		<nl>Laten we beginnen!</nl>
+		<es>Vamos a comenzar!</es>
+		<fr>Commençons!</fr>
+		<ar>فلنبدأ!</ar>
+		<az>Getdik</az>
+		<bn>শুরু করুন!</bn>
+		<hi>आओ शुरू करते हैं!</hi>
+		<ru>Давайте начнем!</ru>
+		<ur>چلیں شروعات کرتے ہیں!</ur>
+		<fa>بیایید شروع کنیم</fa>
+		<th>มาเริ่มกันเลย!</th>
+		<tr>Haydi Başlayalım!</tr>
+		<in>Mari Kita Mulai!</in>
+		<vi>Hãy Bắt đầu!</vi>
+</Lets_Begin>
+	<Start_Loading>
+		<en>Start Loading</en>
+		<de>Wird geladen</de>
+		<pt>Começar a carregar</pt>
+		<it>Iniziare il caricamento</it>
+		<ms>Sedang memuatnaik</ms>
+		<nl>Start laden</nl>
+		<es>Empezando a descargar</es>
+		<fr>Démarrer le chargement</fr>
+		<ar>ابدأ التنزيل</ar>
+		<az>Yükləməyə başla</az>
+		<bn>লোডিং শুরু</bn>
+		<hi>लोडिंग शुरू करें</hi>
+		<ru>Начать Загрузку</ru>
+		<ur>لوڈنگ کا آغاز</ur>
+		<fa>شروع بارگذاری</fa>
+		<th>เริ่มการโหลด</th>
+		<tr>Yüklemeye Başla</tr>
+		<in>Mulai Memuat</in>
+		<vi>Bắt đầu Tải</vi>
+</Start_Loading>
+	<Load_It_Now>
+		<en>Load It Now</en>
+		<de>Laden Sie es jetzt</de>
+		<pt>Carregar agora</pt>
+		<it>Caricalo ora</it>
+		<ms>Muatnaik Ia Sekarang</ms>
+		<nl>Nu aan het laden</nl>
+		<es>Cargado ya!</es>
+		<fr>charger maintenant</fr>
+		<ar>نزّل الأن</ar>
+		<az>Elə indi yüklə</az>
+		<bn>এখনই লোড করুন</bn>
+		<hi>इसे अभी लोड करें</hi>
+		<ru>Загрузить сейчас</ru>
+		<ur>ابھی لوڈ کریں</ur>
+		<fa>هم‌اکنون بارگذاری کن</fa>
+		<th>โหลดตอนนี้เลย</th>
+		<tr>Hemen Şimdi Yükle</tr>
+		<in>Memuat Sekarang</in>
+		<vi>Tải Ngay</vi>
+</Load_It_Now>
+	<Get_Content>
+		<en>Get Content</en>
+		<de>Inhalte erhalten</de>
+		<pt>Obter Conteúdo</pt>
+		<it>Ottieni il contenuto</it>
+		<ms>Dapatkan Kandungan</ms>
+		<nl>Laden content</nl>
+		<es>Recibir el contenido</es>
+		<fr>obtenir le contenu</fr>
+		<ar>أحصل على المحتويات</ar>
+		<az>Məzmunu əldə edin</az>
+		<bn>বিষয়গুলি নিন</bn>
+		<hi>कंटेंट प्राप्त करें</hi>
+		<ru>Получить Контент</ru>
+		<ur>مواد حاصل کریں</ur>
+		<fa>دریافت محتویات</fa>
+		<th>รับเนื้อหา</th>
+		<tr>İçeriği Al</tr>
+		<in>Dapatkan Konten</in>
+		<vi>Tải Nội dung</vi>
+</Get_Content>
+	<Fetch_From_Server>
+		<en>Fetch From Server</en>
+		<de>Von Sever abholen</de>
+		<pt>Procure a partir do servidor</pt>
+		<it>Recupera dal Server</it>
+		<ms>Ambil Dari Server</ms>
+		<nl>Ophalen van de server</nl>
+		<es>Buscar en el servidor</es>
+		<fr>recherche du serveur</fr>
+		<ar>ابحث في الخادم</ar>
+		<az>Serverdən əldə edin</az>
+		<bn>সার্ভার থেকে আনুন</bn>
+		<hi>सर्वर से लायें</hi>
+		<ru>Получить с Сервера</ru>
+		<ur>سرور سے حاصل کریں</ur>
+		<fa>دریافت از سرور</fa>
+		<th>ดึงมาจากเซิร์ฟเวอร์</th>
+		<tr>Sunucudan Al</tr>
+		<in>Ambil dari Server</in>
+		<vi>Lấy từ Máy chủ</vi>
+</Fetch_From_Server>
+	<Load_Content>
+		<en>Load Content</en>
+		<de>Inhalt laden</de>
+		<pt>A carregar conteúdo</pt>
+		<it>Carica contenuto</it>
+		<ms>Memuatnaik Kandungan</ms>
+		<nl>Content laden</nl>
+		<es>El contenido de cargacargar el contenido</es>
+		<fr>obtenir le contenu</fr>
+		<ar>نزّل المحتويات</ar>
+		<az>Məzmunu yüklə</az>
+		<bn>বিষয়গুলি লোড করুন</bn>
+		<hi>कंटेंट लोड करें</hi>
+		<ru>Загрузить Контент</ru>
+		<ur>مواد دکھائیں</ur>
+		<fa>بارگذاری محتویات</fa>
+		<th>โหลดเนื้อหา</th>
+		<tr>İçeriği Yükle</tr>
+		<in>Muat Konten</in>
+		<vi>Nạp Nội dung</vi>
+</Load_Content>
+	<Successfully_Subscribed>
+		<en>You have been successfully subscribed!</en>
+		<de>Sie haben sich erfolgreich registriert!</de>
+		<pt>Você subscreveu corretamente!</pt>
+		<it>Ti sei iscritto con successo!</it>
+		<ms>Anda telah berjaya melanggan !</ms>
+		<nl>Je hebt je succesvol geabonneerd!</nl>
+		<es>Te has suscrito con éxito !</es>
+		<fr>Vous avez été abonné avec succès!</fr>
+		<ar>لقد تم اشراكك بنجاح</ar>
+		<az>Sİz uğurla abunə oldunuz</az>
+		<bn>আপনি সফলভাবে নিবন্ধন করেছেন!</bn>
+		<hi>आपने सफलतापूर्वक सब्सक्राइब कर लिया है!</hi>
+		<ru>Вы успешно подписались!</ru>
+		<ur>آپ کامیابی سے سبسکرائب ہوگئےہیں!</ur>
+		<fa>نام نویسی شما با موفقیت انجام شد</fa>
+		<th>คุณได้สมัครสมาชิกเสร็จเรียบร้อยแล้ว!</th>
+		<tr>Başarıyla abone oldunuz!</tr>
+		<in>Anda telah berhasil berlangganan!</in>
+		<vi>Bạn đã đăng ký thành công!</vi>
+</Successfully_Subscribed>
+	<Subscription_Not_Found_Or_Expired>
+		<en>Subscription not found or expired!</en>
+		<de>Abonnement nicht gefunden oder abgelaufen!</de>
+		<pt>Subscrição não encontrada ou expirada!</pt>
+		<it>Abbonamento non trovato o scaduto!</it>
+		<ms>Langganan tidak dijumpai atau telah tamat!</ms>
+		<nl>Abonnement niet gevonden of verlopen!</nl>
+		<es>Suscripción no encontrada o que ha caducado !</es>
+		<fr>Abonnement introuvable ou expiré!</fr>
+		<ar>لم يتم ايجاد الإشتراك او قد انتهت صلاحيته</ar>
+		<az>Abunəlik haqqınız bitib və ya mövcud deyil</az>
+		<bn>নিবন্ধন কখুজে পাওয়া যায়নি বা অতিক্রান্ত হয়েছে!</bn>
+		<hi>सब्सक्रिप्शन नहीं मिली या समाप्त हो चुकी है!</hi>
+		<ru>Прописка не найдена или истекла!</ru>
+		<ur>سبسکربشن موجودنہیں یا ختم ہوگئی ہے!</ur>
+		<fa>نام نویسی یاقت نشد و یا مهلت آن به اتمام رسیده است</fa>
+		<th>ไม่พบการสมัครสมาชิก หรือมันอาจจะหมดอายุแล้ว!</th>
+		<tr>Abonelik bulunamadı ya da süresi doldu!</tr>
+		<in>Langganan tidak ditemukan atau kedaluwarsa!</in>
+		<vi>Không tìm thấy đăng ký, hoặc đăng ký đã hết hạn!</vi>
+</Subscription_Not_Found_Or_Expired>
+	<Unable_To_Connect>
+		<en>Unable to contact server</en>
+		<de>Kann Server nicht kontaktieren</de>
+		<pt>Não é possível contactar o servidor</pt>
+		<it>Impossibile contattare il server</it>
+		<ms>Tidak dapat menghubungi server</ms>
+		<nl>niet mogelijk om te verbinden met server</nl>
+		<es>No se ha podido contactar con el servidor</es>
+		<fr>Impossible de contacter le serveur</fr>
+		<ar>عملية الإتصال بالخادم غير ممكنة</ar>
+		<az>Serverə qoşulmaq mümkün deyil</az>
+		<bn>সার্ভারের সাথে সংযুক্ত হতে ব্যর্থ</bn>
+		<hi>सर्वर से संपर्क करने में असमर्थ</hi>
+		<ru>Ошибка соединения с сервером</ru>
+		<ur>سرور کا رابطہ ہونے سے قاصر ہے</ur>
+		<fa>قادر به تماس با سرور نمی باشد</fa>
+		<th>ไม่สามารถติดต่อเซิร์ฟเวอร์ได้</th>
+		<tr>Sunucuya bağlanılamıyor</tr>
+		<in>Tidak dapat menghubungi server</in>
+		<vi>Không thể liên lạc với máy chủ</vi>
+</Unable_To_Connect>
+	<VideoPlayer_Error>
+		<en>Video not playing?&lt;br/&gt;Check your internet connection.&lt;br/&gt;For offline viewing &lt;i&gt;Start Course&lt;/i&gt;.</en>
+		<nl>Speelt video niet af?&lt;br/&gt;Controleer je internet verbinding.&lt;br/&gt;Voor offline bekijken &lt;i&gt;Start cursus&lt;/i&gt;.</nl>
+		<th>วิดีโอไม่เล่น?&lt;br/&gt;ตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของคุณ&lt;br/&gt;สำหรับการดูแบบออฟไลน์ &lt;i&gt;เริ่มหลักสูตร&lt;/i&gt;.</th>
+		<tr>Video oynatılamıyor mu?&lt;br/&gt;İnternet bağlanıtınızı kontrol edin.&lt;br/&gt;Çevrim dışı görüntüleme için &lt;i&gt;Kursu Başlat&lt;/i&gt;.</tr>
+		<in>Video tidak menyala?&lt;br/&gt;Periksa koneksi internet Anda.&lt;br/&gt;Untuk menampilkan luring &lt;i&gt;Mulai Kursus&lt;/i&gt;.</in>
+		<vi>Video không chạy?&lt;br/&gt;Kiểm tra kết nối Internet của bạn.&lt;br/&gt;Nếu xem ngoại tuyến &lt;i&gt;Bắt đầu Khóa học&lt;/i&gt;.</vi>
+</VideoPlayer_Error>
+	<Tap_Again>
+		<en>Tap to try again.</en>
+		<nl>Klik om het opnieuw te proberen</nl>
+		<th>แตะเพื่อลองอีกครั้ง</th>
+		<tr>Tekrar denemek için dokunun.</tr>
+		<in>Ketuk untuk mencoba lagi.</in>
+		<vi>Bấm để thử lại.</vi>
+</Tap_Again>
+	<Logout>
+		<en>Log Out</en>
+		<de>Abmelden</de>
+		<pt>Sair</pt>
+		<it>Logout</it>
+		<ms>keluar</ms>
+		<nl>Afmelden</nl>
+		<es>Salir</es>
+		<fr>Déconnexion</fr>
+		<ar>تسجيل الخروج</ar>
+		<az>Çıxış</az>
+		<bn>প্রস্থান</bn>
+		<hi>लॉग आउट करें</hi>
+		<ru>Выйти</ru>
+		<ur>لاگ آؤٹ</ur>
+		<fa>خروج</fa>
+		<th>ออกจากระบบ</th>
+		<tr>Çıkış Yap</tr>
+		<in>Log Out</in>
+		<vi>Đăng xuất</vi>
+</Logout>
+	<ProfileManagement>
+		<en>Profile Management</en>
+		<de>Profilmanagement</de>
+		<pt>Gestão do Perfil</pt>
+		<it>Gestione profilo</it>
+		<ms>Pengurusan Profil</ms>
+		<nl>Profielbeheer</nl>
+		<es>Gestión de perfiles</es>
+		<fr>Gestion du profil</fr>
+		<ar>إدارة الملف الشخصي</ar>
+		<az>Profilin idarə edilməsi</az>
+		<bn>প্রোফাইল ব্যবস্থাপনা</bn>
+		<hi>प्रोफाइल मैनेजमेंट</hi>
+		<ru>Управление профилем</ru>
+		<si>Pathikada kalamanaakaranaya</si>
+		<ur>kawaif ka intezaam</ur>
+		<sw>usimamizi profile</sw>
+		<th>การจัดการโปรไฟล์</th>
+		<tr>Profil Yönetimi</tr>
+		<in>Manajemen Profil</in>
+		<vi>Quản lý Hồ sơ</vi>
+</ProfileManagement>
+	<ServiceInfo>
+		<en>Service info &amp; deactivation</en>
+		<de>Dienstleistung Informationen und Deaktivierung</de>
+		<it>Servizio informazioni &amp; disattivazione</it>
+		<nl>Service info &amp; afmelden</nl>
+		<es>Servicio de información &amp; desactivación</es>
+		<fr>Info service et désinscription</fr>
+		<th>ข้อมูลบริการ &amp; การปิดการทำงาน</th>
+		<tr>Hizmet bilgisi &amp; devre dışı bırakma</tr>
+		<in>Penonaktifan info &amp; layanan</in>
+		<vi>Thông tin &amp; ngắt Dịch vụ</vi>
+		<tr>Abonelik Detayları</tr>
+</ServiceInfo>
+	<You_Might_Also_Like>
+		<en>You might also like:</en>
+		<de>Ihnen gefällt vielleicht außerdem:</de>
+		<pt>Pode também gostar de:</pt>
+		<it>Ti potrebbe piacere anche:</it>
+		<ms>Anda juga mungkin suka:</ms>
+		<nl>Hier heb je miscchien ook interesse in:</nl>
+		<es>Quizá te guste también</es>
+		<fr>Vous pourriez aussi aimer:</fr>
+		<ar>قد ترغب أيضًا في مطالعة</ar>
+		<az>Buna da baxin:</az>
+		<bn>আপনি পছন্দ করতে পারেন :</bn>
+		<hi>आपको यह भी पसंद आ सकता है :</hi>
+		<ru>Вам также может понравиться:</ru>
+		<si>එසේම ඔබ කැමති විය හැකිය :</si>
+		<ur>aap ko bhi yeh pasand aaye ga:</ur>
+		<sw>Unaweza pia kama:</sw>
+		<th>นอกจากนี้คุณยังอาจจะชอบ:</th>
+		<tr>Bunları da beğenebilirsiniz:</tr>
+		<in>Anda mungkin juga suka:</in>
+		<vi>Bạn cũng có thể thích:</vi>
+		<zh>您可能也喜欢：</zh>
+</You_Might_Also_Like>
+	<Enter_Valid_Number>
+		<en>Please enter a valid mobile number</en>
+		<th>โปรดใส่เบอร์มือถือที่ถูกต้อง</th>
+		<tr>Lütfen geçerli bir cep telefonu numarası girin</tr>
+		<in>Harap masukkan nomor ponsel valid</in>
+		<vi>Hãy nhập một số điện thoại di động hợp lệ</vi>
+</Enter_Valid_Number>
+	<Successful_Logout>
+		<en>Logged out successfully</en>
+		<th>ออกจากระบบเสร็จเรียบร้อยแล้ว</th>
+		<tr>Başarıyla çıkış yapıldı</tr>
+		<in>Berhasil log out</in>
+		<vi>Đăng xuất thành công</vi>
+</Successful_Logout>
+	<To_Finish>
+		<en>to finish</en>
+		<th>เพื่อเสร็จสิ้น</th>
+		<tr>bitirmek için</tr>
+		<in>untuk menyelesaikan</in>
+		<vi>để hoàn tất</vi>
+</To_Finish>
+	<Subscription_Message_Para_1>
+		<en>Only the first chapter of every course is free to try.</en>
+		<th>เฉพาะบทเรียนแรก ๆ ของทุก ๆ หลักสูตรเท่านั้นที่มีให้ลองเรียนได้ฟรี</th>
+		<tr>Her kursun yalnızca ilk bölümünü denemek ücretsizdir.</tr>
+		<in>Hanya bab pertama dari setiap kursus gratis dicoba.</in>
+		<vi>Chỉ chương đầu của tất cả các khóa học là có thể được học thử miễn phí.</vi>
+</Subscription_Message_Para_1>
+	<Subscription_Message_Para_2>
+		<en>Subscribe to Mobile Academy and get unlimited access to the largest collection of high quality courses on your mobile!</en>
+		<th>สมัครเป็นสมาชิกกับ Mobile Academy แล้วรับสิทธิ์การเข้าถึงชุดรวมหลักสูตรคุณภาพสูงที่ใหญ่ที่สุดได้ไร้ขีดจำกัดผ่านทางมือถือของคุณ!</th>
+		<tr>Mobile Academy'e Abone olun ve en geniş kaliteli kurs koleksiyonuna cep telefonundan sınırsız erişim kazanın!</tr>
+		<in>Berlangganan Mobile Academy dan dapatkan akses tidak terbatas ke koleksi terbesar dari kursus bekualitas tinggi di perangkat seluler Anda!</in>
+		<vi>Đăng ký với Học viện Di động và nhận quyền truy cập không giới hạn đến bộ sưu tập các khóa học chất lượng cao lớn nhất trên điện thoại di động của bạn!</vi>
+</Subscription_Message_Para_2>
+	<swipe_to_flip_question>
+		<en>Swipe to flip the flashcard and see the answer.</en>
+		<th>วาดนิ้วมือเพื่อหงายบัตรคำแล้วดูคำตอบ</th>
+		<tr>Hafıza kartını çevirmek için hareket ettir ve cevabı gör.</tr>
+		<in>Geser untuk membalik flashcard dan melihat jawabannya.</in>
+		<vi>Vuốt để lật thẻ flash và xem đáp án.</vi>
+</swipe_to_flip_question>
+	<swipe_to_flip_answer>
+		<en>Swipe again to go to next flashcard.</en>
+		<th>วาดนิ้วมืออีกครั้งเพื่อไปยังบัตรคำใบต่อไป</th>
+		<tr>Sonraki hafıza kartını görmek için tekrar hareket ettirin.</tr>
+		<in>Geser kembali untuk masuk ke flashcard berikutnya.</in>
+		<vi>Vuốt lại lần nữa để đến thẻ flash tiếp theo.</vi>
+</swipe_to_flip_answer>
+	<tap_on_any_course>
+		<en>Tap on any course to start. Scroll down to discover more choices.</en>
+		<th>แตะบนหลักสูตรใดก็ได้เพื่อเริ่ม เลื่อนลงเพื่อค้นตัวเลือกเพิ่มเติม</th>
+		<tr>Başlamak için istediğiniz kursa dokunun. Daha fazla seçenek keşfetmek için aşağıya kaydırın.</tr>
+		<in>Ketuk kursus untuk memulai. Gulirkan ke bawah untuk menemukan lebih banyak pilihan.</in>
+		<vi>Chạm vào bất kỳ khóa học nào để bắt đầu. Cuộn xuống để khám phá thêm các lựa chọn khác.</vi>
+</tap_on_any_course>
+	<quiz_tutorial>
+		<en>Tap on the right answer to continue to the next question.</en>
+		<th>แตะบนคำตอบที่ถูกต้องเพื่อดำเนินการต่อไปยังคำถามถัดไป</th>
+		<tr>Sonraki soruya devam etmek için doğru cevaba dokunun.</tr>
+		<in>Ketuk jawaban yang benar untuk melanjutkan ke pertanyaan berikutnya.</in>
+		<vi>Chạm vào câu trả lời đúng để tiếp tục sang câu hỏi tiếp theo.</vi>
+</quiz_tutorial>
+	<No_Internet_Title>
+		<en>Error</en>
+		<th>ข้อผิดพลาด</th>
+		<tr>Hata</tr>
+		<in>Kesalahan</in>
+		<vi>Lỗi</vi>
+</No_Internet_Title>
+	<No_Internet_Message>
+		<en>This course has not ben downloaded yet. Please check your internet connection.</en>
+		<th>ยังไม่ได้ดาวน์โหลดหลักสูตรนี้ โปรดตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของคุณ</th>
+		<tr>Bu kurs henüz indirilmedi. Lütfen internet bağlantınızı kontrol edin.</tr>
+		<in>Kursus ini belum diunduh. Harap periksa koneksi internet Anda.</in>
+		<vi>Khóa học này vẫn chưa được tải xuống. Bạn vui lòng kiểm tra kết nối Internet của mình.</vi>
+</No_Internet_Message>
+	<Buy_From_External_Book_Store>
+		<en>For an overview and reviews of this and other books of the writer go to:</en>
+		<th>สำหรับคำอธิบายคร่าว ๆ และรีวิวของหนังสือเล่มนี้และเล่มอื่น ๆ ของผู้เขียนไปยัง:</th>
+		<tr>Bunun ve yazarın diğer kitaplarının bir gözden geçirmesi ve incelemesi için şuraya gidin:</tr>
+		<in>Untuk ikhtisar dan tinjauan buku ini dan buku lainnya dari penulis tersebut masuk ke:</in>
+		<vi>Để xem tổng quan và đánh giá của quyển sách này, cũng như các sách khác của tác giả này, hãy truy cập:</vi>
+</Buy_From_External_Book_Store>
+	<Contact_Us_Mail_Subject>
+		<en>Mobile Academy Feedback</en>
+		<th>ผลตอบรับของ Mobile Academy</th>
+		<tr>Mobile Academy Geri Bildirimi</tr>
+		<in>Umpan Balik Mobile Academy</in>
+		<vi>Phản hồi cho Học viện Di động</vi>
+</Contact_Us_Mail_Subject>
+	<Support_Email>
+		<en>support@mobileacademy.com</en>
+		<th>support@mobileacademy.com</th>
+		<tr>destek@mobileacademy.com</tr>
+		<in>support@mobileacademy.com</in>
+		<vi>support@mobileacademy.com</vi>
+</Support_Email>
+	<Contact_Us_Mail_Message>
+		<en>Hi,&lt;br/&gt;&lt;br/&gt;We love to hear from you so please let us know your thoughts.&lt;br/&gt;&lt;br/&gt;Thanks!&lt;br/&gt;&lt;br/&gt;The Mobile Academy Team</en>
+		<th>สวัสดี&lt;br/&gt;&lt;br/&gt;เรายินดีรับฟังความคิดเห็นจากคุณ ดังนั้นได้โปรดบอกให้เราทราบถึงความคิดของคุณ&lt;br/&gt;&lt;br/&gt;ขอบคุณ!&lt;br/&gt;&lt;br/&gt;ทีมงาน Mobile Academy</th>
+		<tr>Hi,&lt;br/&gt;&lt;br/&gt;Sizden haber almaktan memnuniyet duyuyoruz bu nedenle lütfen düşüncelerinizi bize ulaştırın.&lt;br/&gt;&lt;br/&gt;Thanks!&lt;br/&gt;&lt;br/&gt;Mobile Academy Ekibi</tr>
+		<in>Hai,&lt;br/&gt;&lt;br/&gt;Kami ingin mendengar dari Anda, jadi silakan berikan pendapat Anda.&lt;br/&gt;&lt;br/&gt;Terima kasih!&lt;br/&gt;&lt;br/&gt;The Mobile Academy Team</in>
+		<vi>Xin chào,&lt;br/&gt;&lt;br/&gt;Chúng tôi rất mong nhận được ý kiến của bạn, hãy viết thư cho chúng tôi.&lt;br/&gt;&lt;br/&gt;Cảm ơn bạn!&lt;br/&gt;&lt;br/&gt;Nhóm Học viện Di động</vi>
+</Contact_Us_Mail_Message>
+	<Share_Message>
+		<en><![CDATA[Hey I'm using the Mobile Academy app giving unlimited access to high quality courses on my mobile! They have a wide variety of courses from personal development, business and language courses to hobbies, book summeries and other general interest topics. It is free to try, so you can check it out yourself at: http://app.mobileacademy.com/]]></en>
+		<th><![CDATA[เฮ้ ฉันกำลังใช้แอป Mobile Academy ที่ให้สิทธิ์การเข้าถึงหลักสูตรคุณภาพสูงไม่จำกัดผ่านทางมือถือของฉัน! พวกเขามีหลักสูตรให้บริการมากมายหลากหลายตั้งแต่หลักสูตรการพัฒนาตนเอง หลักสูตรธุรกิจและหลักสูตรภาษาไปจนถึงงานอดิเรก บทสรุปของหนังสือโดยย่อ และหัวข้อที่น่าสนใจอื่น ๆ  สามารถลองใช้บริการได้ฟรี คุณจึงสามารถลองดูได้ด้วยตัวคุณเองที่: http://app.mobileacademy.com/]]></th>
+		<tr><![CDATA[Hey cep telefonumdan yüksek kaliteli kurslara sınırsız erişim sağlayan Mobile Academy uygulamasını kullanıyorum! Kişisel gelişim, işletme ve dil kurslarından hobilere, kitap özetlerine ve diğer genel ilgi konularına kadar geniş bir yelpazede kurslar mevcut. Denemek ücretsiz, bu yüzden kendiniz şu adresten bakabilirsiniz: http://app.mobileacademy.com/]]></tr>
+		<in><![CDATA[Hei, saya sedang menggunakan aplikasi Mobile Academy yang memberikan akses tidak terbatas ke kursus berkualitas tinggi di perangkat seluler saya! Aplikasi ini punya beragam kursus, mulai dari kursus pengembangan pribadi, bisnis, dan bahasa hingga hobi, ringkasan buku, dan topik kepentingan umum. Ini gratis untuk dicoba, kalian dapat memeriksanya sendiri di: http://app.mobileacademy.com/]]></in>
+		<vi><![CDATA[Này, tôi đang sử dụng ứng dụng Học viện Di động với quyền truy cập không giới hạn đến các khóa học chất lượng cao trên điện thoại di động của tôi! Họ có một loạt các khóa học từ phát triển bản thân, kinh doanh và ngôn ngữ đến sở thích, tóm lược sách và các chủ đề quan tâm khác. Bạn có thể học thử miễn phí, hãy xem thế nào: http://app.mobileacademy.com/]]></vi>
+</Share_Message>
+	<End_Of_Introduction>
+		<en>End of introduction</en>
+		<th>จบคำนำ</th>
+		<tr>Tanıtımın sonu</tr>
+		<in>Bagian akhir introduksi</in>
+		<vi>Kết thúc giới thiệu.</vi>
+</End_Of_Introduction>
+	<Quiz_Passed>
+		<en>Well done, you gave all the correct answers!</en>
+		<th>เก่งมาก คุณได้ให้คำตอบที่ถูกต้องทั้งหมด!</th>
+		<tr>Aferin, hepsini doğru cevapladınız!</tr>
+		<in>Bagus sekali, seluruh jawaban Anda benar!</in>
+		<vi>Tốt lắm, tất cả các câu trả lời bạn đưa ra đều đúng!</vi>
+</Quiz_Passed>
+	<End_Of_Chapter>
+		<en>End of chapter {{chapterIndex}}:</en>
+		<th>จบบท {{chapterIndex}}:</th>
+		<tr>Bölüm sonu {{bölümİndeksi}}:</tr>
+		<in>Bagian akhir bab {{chapterIndex}}:</in>
+		<vi>Kết thúc chương {{chapterIndex}}:</vi>
+</End_Of_Chapter>
+	<Quiz_Failed>
+		<en>{{correctAnswers}} out of {{totalQuestions}} answers were correct.</en>
+		<th>คำตอบถูกต้อง {{correctAnswers}} ข้อ จากคำถามทั้งหมด {{totalQuestions}} ข้อ</th>
+		<tr>{{toplamSoru}}'dan {{doğruCevap}} cevap doğru.</tr>
+		<in>{{correctAnswers}} dari {{totalQuestions}} jawaban adalah benar.</in>
+		<vi>{{correctAnswers}} trên {{totalQuestions}} câu trả lời là đúng.</vi>
+</Quiz_Failed>
+	<Share_Twitter_Message>
+		<en><![CDATA[Hey! I am using the Mobile Academy app giving unlimited access to high quality courses on my mobile!]]></en>
+		<th><![CDATA[เฮ้! ฉันกำลังใช้แอป Mobile Academy ที่ให้สิทธิ์การเข้าถึงหลักสูตรคุณภาพสูงไม่จำกัดผ่านทางมือถือของฉัน!]]></th>
+		<tr><![CDATA[Hey! cep telefonumdan yüksek kaliteli kurslara sınırsız erişim sağlayan Mobile Academy uygulamasını kullanıyorum!]]></tr>
+		<in><![CDATA[Hei! Saya sedang menggunakan aplikasi Mobile Academy yang memberikan akses tidak terbatas ke kursus berkualitas tinggi di perangkat seluler saya!]]></in>
+		<vi><![CDATA[Này! Tôi đang sử dụng ứng dụng Học viện Di động với quyền truy cập không giới hạn đến các khóa học chất lượng cao trên điện thoại di động của tôi!]]></vi>
+</Share_Twitter_Message>
+	<Rate_Popup_Title>
+		<en>Mobile Academy</en>
+		<th>Mobile Academy</th>
+		<tr>Mobile Academy</tr>
+		<in>Mobile Academy</in>
+		<vi>Học viện Di động</vi>
+</Rate_Popup_Title>
+	<Rate_Popup_Message>
+		<en>Love using Mobile Academy? Then leave a 5 star review in the App Store!</en>
+		<th>ชอบใช้ Mobile Academy? งั้นให้คะแนนรีวิว 5 ดาวใน App Store!</th>
+		<tr>Mobile Academy'i kullanmayı seviyor musunuz? O zaman Uygulama Mağazası'nda 5 yıldızlı bir yorum yapın!</tr>
+		<in>Senang menggunakan Mobile Academy? Berikan nilai 5 bintang di App Store!</in>
+		<vi>Bạn thích dùng Học viện Di động? Hãy cho chúng tôi 5 sau trên App Store!</vi>
+</Rate_Popup_Message>
+	<Rate_Now>
+		<en>Rate Now!</en>
+		<th>ให้คะแนนตอนนี้!</th>
+		<tr>Şimdi Değerlendir!</tr>
+		<in>Beri Nilai Sekarang!</in>
+		<vi>Cho điểm Ngay!</vi>
+</Rate_Now>
+	<Remind_Me_Later>
+		<en>Remind me later</en>
+		<th>เตือนฉันภายหลัง</th>
+		<tr>Daha sonra hatırlat</tr>
+		<in>Ingatkan lagi nanti</in>
+		<vi>Nhắc tôi sau</vi>
+</Remind_Me_Later>
+	<Never_Show_Rate_Popup_Again>
+		<en>Never ask me again</en>
+		<th>อย่าถามฉันอีก</th>
+		<tr>Bir daha asla sorma</tr>
+		<in>Jangan pernah tanyakan lagi</in>
+		<vi>Không hỏi lại tôi</vi>
+</Never_Show_Rate_Popup_Again>
+	<Send_Us_Feedback>
+		<en>Send us feedback</en>
+		<th>ส่งผลตอบรับถึงเรา</th>
+		<tr>Bize geri bildirim gönderin</tr>
+		<in>Kirimkan umpan balik kepada kami</in>
+		<vi>Gửi phản hồi cho chúng tôi</vi>
+</Send_Us_Feedback>
+	<Cross_Banner_Head_LineA>
+		<en>Get unlimited access anywhere.</en>
+		<de>Erhalten Sie überall unlimitierten Zugriff.</de>
+		<pt>Tem acesso ilimitado em qualquer lado.</pt>
+		<it>Ottieni un accesso illimitato ovunque.</it>
+		<ms>Dapatkan akses tanpa had di mana jua.</ms>
+		<nl>Krijg onbeperkt toegang, waar je ook bent.</nl>
+		<es>Obtén acceso directo estés donde estés.</es>
+		<fr>Obtenez un accès illimité</fr>
+		<ar>أحصل على ولوج غير محدود</ar>
+		<bn>যেকোনো জায়গা থেকে সীমাহীন প্রবেশাধিকার পেতে ।</bn>
+		<hi>कहीं भी अनलिमिटेड एक्सेस का आनंद उठाएं</hi>
+		<ru>получить неограниченный доступ в любом месте</ru>
+		<si>Onama thanakata asimitha praveshayak labaganna.</si>
+		<ur>کہیں بھی لا محدود رسائی حاصل کریں</ur>
+		<fa>دسترسی نامحدود در هر جا که باشید</fa>
+		<th>รับสิทธิ์การเข้าถึงไม่จำกัดได้ทุกที่</th>
+		<tr>Her yerden sınırsız erişim kazan.</tr>
+		<in>Dapatkan akses tidak terbatas di mana saja.</in>
+		<vi>Truy cập không giới hạn từ mọi nơi.</vi>
+</Cross_Banner_Head_LineA>
+	<Cross_Banner_Head_LineB>
+		<en>Download the complimentary app for free.</en>
+		<de>Laden Sie die Zusatz-App kostenlos herunter.</de>
+		<pt>Faz o Download da App complementar grátis.</pt>
+		<it>Scarica gratis l'app gratuita.</it>
+		<ms>Muat turun aplikasi secara percuma.</ms>
+		<nl>Download de complementaire app voor niets.</nl>
+		<es>Descarga la aplicación complementaria de manera gratuita</es>
+		<fr>Télécharger gratuitement l'application complémentaire</fr>
+		<ar>قم بتنزيل التطبيق الاضافي مجانا</ar>
+		<bn>বিনামূল্যে সৌজন্য অ্যাপ্লিকেশন ডাউনলোড করুন ।</bn>
+		<hi>मुफ्त कॉम्प्लीमेंट्री एप्प डाउनलोड करें</hi>
+		<ru>загрузить дополнительное приложение бесплатно</ru>
+		<si>Anupuraka yeduma nomilema baaganna.</si>
+		<ur>مفت اعزازی اپلی کیشن ڈاؤن لوڈ کریں</ur>
+		<fa>برنامه موبایل را رایگان دانلود کنید.</fa>
+		<th>ดาวน์โหลดแอปสมนาคุณนี้ได้ฟรี</th>
+		<tr>Hediye uygulamayı ücretsiz indir.</tr>
+		<in>Unduh aplikasi pelengkap secara gratis.</in>
+		<vi>Tải xuống ứng dụng bổ sung miễn phí.</vi>
+</Cross_Banner_Head_LineB>
+	<Cross_Banner_Button>
+		<en>Get the app now for free!</en>
+		<de>Erhalten Sie die App kostenlos!</de>
+		<pt>Obtém a App agora grátis!</pt>
+		<it>Ottieni subito l'app gratis!</it>
+		<ms>Dapatkan aplikasi ini secara percuma!</ms>
+		<nl>Krijg de app nu voor niets!</nl>
+		<es>Obtén la aplicación gratuitamente!</es>
+		<fr>Télécharger gratuitement l'application!</fr>
+		<ar>أحصل على التطبيق الأن مجانا!</ar>
+		<bn>অ্যাপ্লিকেশনটি এখন বিনামূল্যে পান !</bn>
+		<hi>नयी एप्प मुफ्त डाउनलोड करें!</hi>
+		<ru>получить приложение прямо сейчас совершенно бесплатно!</ru>
+		<si>Yeduma dan nomilema labaganna!</si>
+		<ur>مفت ایپ حاصل کریں</ur>
+		<fa>برنامه موبایل را همین حالا رایگان دریافت کنید!</fa>
+		<th>โหลดแอปตอนนี้ฟรี!</th>
+		<tr>Uygulamayı hemen şimdi ücretsiz indir.</tr>
+		<in>Dapatkan aplikasi sekarang secara gratis!</in>
+		<vi>Tải miễn phí ứng dụng ngay!</vi>
+</Cross_Banner_Button>
+	<Cross_Banner_SkipLink>
+		<en>Or go to the mobile site.</en>
+		<de>Oder besuchen Sie die mobile Seite.</de>
+		<pt>Ou visita o site mobile.</pt>
+		<it>Oppure vai al sito mobile.</it>
+		<ms>atau lawati laman telefon bimbit.</ms>
+		<nl>Of ga naar de mobiele site.</nl>
+		<es>O dirígete al sitio móvil</es>
+		<fr>Ou Accéder à la version mobile du site</fr>
+		<ar>أو اذهب الى الموقع المخصص للجوال</ar>
+		<bn>অথবা মোবাইল সাইটে যান ।</bn>
+		<hi>या मोबाइल साईट पर जाएं</hi>
+		<ru>или зайти на мобильную версию сайта</ru>
+		<si>Ho jangama adaviyata yanna.</si>
+		<ur>یا موبائل سائٹ پر جائیں</ur>
+		<fa>و یا به سایت موبایل ما سر بزنید.</fa>
+		<th>หรือ ไปยังเว็บไซต์ของมือถือ</th>
+		<tr>Ya da mobil siteye gidin.</tr>
+		<in>Atau masuk ke situs seluler.</in>
+		<vi>Hoặc đến trang web di động.</vi>
+</Cross_Banner_SkipLink>
+	<Cross_Banner_Free>
+		<en>FREE complementary app!</en>
+		<de>KOSTENLOSE Zusatz-App!</de>
+		<pt>GRÁTIS App complementar!</pt>
+		<it>App complementare GRATIS!</it>
+		<ms>PERCUMA aplikasi!</ms>
+		<nl>GRATIS complementaire app!</nl>
+		<es>Aplicación complemetaria gratuita!</es>
+		<fr>Gratuit: l'application complémentaire!</fr>
+		<ar>تطبيق اضافي مجاني!</ar>
+		<bn>বিনামূল্যের সৌজন্য অ্যাপ্লিকেশন !</bn>
+		<hi>फ्री कोम्प्लेमेंट्री एप्प!</hi>
+		<ru>бесплатное дополнительное приложение!</ru>
+		<si>Anupuraka yeduma nomilaye!</si>
+		<ur>مفت اعزازی اپلی کیشن</ur>
+		<fa>برنامه موبایل رایگان!</fa>
+		<th>แอปสมนาคุณฟรี</th>
+		<tr>ÜCRETSİZ hediye uygulama!</tr>
+		<in>Aplikasi pelengkap GRATIS!</in>
+		<vi>Ứng dụng bổ sung MIỄN PHÍ!</vi>
+</Cross_Banner_Free>
+	<Cross_Banner_AppStore>
+		<en>Now on the App Store</en>
+		<de>Jetzt im App Store.</de>
+		<pt>Agora na App Store</pt>
+		<it>Ora su App Store</it>
+		<ms>Kini terdapat di App Store</ms>
+		<nl>Nu in de App Store</nl>
+		<es>Ahora en el app Store</es>
+		<fr>Maintenant sur l'App Store</fr>
+		<ar>الأن في محل التطبيقات</ar>
+		<bn>এখন অ্যাপ স্টোরে</bn>
+		<hi>अब एप्प स्टोर में उपलब्ध</hi>
+		<ru>теперь на App Store</ru>
+		<si>Dan App Store thulada atha</si>
+		<ur>اب اپلی کیشن سٹور پر</ur>
+		<fa>حالا در App Store</fa>
+		<th>มีให้บน App Store แล้วตอนนี้</th>
+		<tr>Şimdi App Store'da</tr>
+		<in>Sekarang di App Store</in>
+		<vi>Hiện đã có trên App Store</vi>
+</Cross_Banner_AppStore>
+	<Unsubscribe>
+		<en>Unsubscribe</en>
+		<th>ยกเลิกการเป็นสมาชิก</th>
+		<tr>Abonelikten çık</tr>
+		<in>Batalkan langganan</in>
+		<vi>Bỏ đăng ký</vi>
+		<es>Desactivar servicio</es>
+        <fr>Terminer abonnement</fr>
+</Unsubscribe>
+</texts>
