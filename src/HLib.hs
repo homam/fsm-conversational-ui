@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings, FlexibleInstances, ScopedTypeVariables, RankNTypes #-}
 
 module HLib
-    ( someFunc
+    ( main
     )
 where
 
@@ -17,24 +17,23 @@ import Debug.Trace (trace)
 import Data.Maybe (fromMaybe)
 import Control.Applicative ((<|>))
 
-column :: Int -> V.Vector [a] -> [a]
-column i = map (!! i) . V.toList
+type Language = String
 
 toDic :: (Ord a, Show a) => V.Vector [a] -> M.Map a a
-toDic = M.fromList . map (\ (a:b:_) -> trace (show a) (a, b) ) . V.toList
+toDic = M.fromList . map (\ (a:b:_) -> (a, b) ) . V.toList
 
 instance ToRecord (String, M.Map String String) where
   toRecord (key, dic) = record $ toField key : map (\ (_, val) -> toField val) (L.sortOn fst $ M.toList dic)
 
-websiteXMLTranslationMatrix :: String -> IO ([String], M.Map String (M.Map String String))
+websiteXMLTranslationMatrix :: String -> IO ([Language], M.Map String (M.Map Language String))
 websiteXMLTranslationMatrix fileName = do
-  ens <- X.runX $
+  nodes <- X.runX $
     X.readDocument [] fileName
     X.>>> X.getChildren
     X.>>> X.getChildren
     X.>>> (X.getName X.&&& (X.getChildren X.>>> (X.getName X.&&& X.deep X.getText)))
 
-  let translations = M.map M.fromList $ M.unionsWith (++) $ map (M.fromList . (\(a, b) -> [(a, [b])])) ens
+  let translations = M.map M.fromList $ M.unionsWith (++) $ map (M.fromList . (\(a, b) -> [(a, [b])])) nodes
   let allLangs = L.nub . concatMap M.keys . M.elems $ translations
 
   let emptyLangs = M.fromList $ map (\l -> (l, "")) allLangs
@@ -42,11 +41,17 @@ websiteXMLTranslationMatrix fileName = do
 
   return (allLangs, normalizedTranslations)
 
-writeWebstireTranslationMatrix :: String -> [String] -> M.Map String (M.Map String String) -> IO ()
-writeWebstireTranslationMatrix path allLangs matrix = Char8.writeFile path (cs $ encode $ ("_", M.fromList $ map (\x -> (x,x)) allLangs) : M.toList matrix)
+writeWebstireTranslationMatrix :: String -> [Language] -> M.Map String (M.Map Language String) -> IO ()
+writeWebstireTranslationMatrix path allLangs matrix = Char8.writeFile path (cs . encode $ ("_", M.fromList $ map (\x -> (x,x)) allLangs) : M.toList matrix)
 
-someFunc :: IO ()
-someFunc = do
+updateTranslations :: M.Map String String -> M.Map String (M.Map Language String) -> M.Map String (M.Map Language String)
+updateTranslations dic = M.map (\d -> M.update (\ e ->
+  let en = fromMaybe "-" (M.lookup "en" d)
+  in (if not (null e) then Just e else Nothing) <|> (M.lookup en dic <|> Just "-") ) "fi" d)
+
+
+main :: IO ()
+main = do
   (allLangs, normalizedTranslations) <- websiteXMLTranslationMatrix "./Website_.xml"
   -- Char8.writeFile "./website_.csv" (cs $ encode $ ("_", M.fromList $ map (\x -> (x,x)) allLangs) : M.toList normalizedTranslations)
 
@@ -54,17 +59,8 @@ someFunc = do
   case decode NoHeader csvData of
     Left err -> print err
     Right vs -> do
-      let english1 = column 0 vs :: [String]
-      let dic = toDic vs :: M.Map String String
-      let updatedT = updateTranslations dic normalizedTranslations
-      writeWebstireTranslationMatrix "./website_.csv" allLangs updatedT
+      let englishFinnishDic = toDic vs :: M.Map String String -- english finnish
+      let updatedTranslationMatrix = updateTranslations englishFinnishDic normalizedTranslations
+      writeWebstireTranslationMatrix "./website_.csv" allLangs updatedTranslationMatrix
 
   return ()
-
-empty [] = True
-empty _ = False
-
-updateTranslations :: M.Map String String -> M.Map String (M.Map String String) -> M.Map String (M.Map String String)
-updateTranslations dic = M.map (\d -> M.update (\ e ->
-  let en = fromMaybe "-" (M.lookup "en" d)
-  in (if not (empty e) then Just e else Nothing) <|> (M.lookup en dic <|> Just "-") ) "fi" d)
