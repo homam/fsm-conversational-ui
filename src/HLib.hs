@@ -16,6 +16,8 @@ import qualified Data.Vector as V
 import Debug.Trace (trace)
 import Data.Maybe (fromMaybe)
 import Control.Applicative ((<|>))
+import Control.Arrow ((>>>), (&&&))
+import qualified Text.XML.HXT.Parser.XmlParsec as XP
 
 type Language = String
 
@@ -29,9 +31,9 @@ websiteXMLTranslationMatrix :: String -> IO ([Language], M.Map String (M.Map Lan
 websiteXMLTranslationMatrix fileName = do
   nodes <- X.runX $
     X.readDocument [] fileName
-    X.>>> X.getChildren
-    X.>>> X.getChildren
-    X.>>> (X.getName X.&&& (X.getChildren X.>>> (X.getName X.&&& X.deep X.getText)))
+    >>> X.getChildren
+    >>> X.getChildren
+    >>> (X.getName &&& (X.getChildren >>> (X.getName &&& X.deep X.getText)))
 
   let translations = M.map M.fromList $ M.unionsWith (++) $ map (M.fromList . (\(a, b) -> [(a, [b])])) nodes
   let allLangs = L.nub . concatMap M.keys . M.elems $ translations
@@ -64,3 +66,35 @@ main = do
       writeWebstireTranslationMatrix "./website_.csv" allLangs updatedTranslationMatrix
 
   return ()
+
+translationMatrixToWebsiteXML :: X.ArrowXml a => M.Map String (M.Map Language String) -> a X.XmlTree X.XmlTree
+translationMatrixToWebsiteXML texts = X.mkelem "texts" [] children
+  where
+    children = map (\ (text, dic) -> X.mkelem text [] (dicChildren dic)) $ M.toList texts
+    dicChildren = map (\ (lang, text) -> X.mkelem lang [] [X.txt text]) . M.toList
+
+
+hello :: X.ArrowXml a => a X.XmlTree X.XmlTree
+hello =
+  X.mkelem "texts" []
+    [X.mkelem "PrivacyPolicy" [] []]
+
+main2 :: IO ()
+main2 = do
+  (allLangs, normalizedTranslations) <- websiteXMLTranslationMatrix "./Website_.xml"
+  _ <- duck normalizedTranslations
+  return ()
+  -- csvData <- cs <$> BL.readFile "./website_.csv"
+  -- case decode NoHeader csvData of
+  --   Left err -> print err
+  --   Right vs -> do
+  --     duck $ toDic vs
+  --     print "A"
+
+-- duck :: IO ()
+duck csv = X.runX $
+  X.root [] [translationMatrixToWebsiteXML csv]
+  >>>
+  X.putXmlSource ""
+  >>>
+  X.writeDocument [X.withIndent X.yes] "beep.xml"
