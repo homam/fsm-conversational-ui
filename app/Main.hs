@@ -1,6 +1,9 @@
 module Main where
 
-import Lib
+import HLib
 
 main :: IO ()
-main = someFunc
+main = do
+  putStrLn "Usage: "
+  putStrLn "websiteXMLToWebsiteCSV \"./Website_.xml\" \"./Website_.csv\""
+  putStrLn "websiteCSVToWebsiteXML \"./Website_.csv\" \"./Updated-Website_.xml\""

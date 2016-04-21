@@ -1,7 +1,9 @@
 {-# LANGUAGE OverloadedStrings, FlexibleInstances, ScopedTypeVariables, RankNTypes #-}
 
 module HLib
-    ( main
+    (
+        websiteCSVToWebsiteXML
+      , websiteXMLToWebsiteCSV
     )
 where
 
@@ -16,18 +18,34 @@ import qualified Data.Vector as V
 import Debug.Trace (trace)
 import Data.Maybe (fromMaybe)
 import Control.Applicative ((<|>))
-import Control.Arrow ((>>>), (&&&))
+import Control.Arrow ((>>>), (&&&), (<<<), (<<^))
 import qualified Text.XML.HXT.Parser.XmlParsec as XP
 
 type Language = String
+type TranslationMatrix = M.Map String (M.Map Language String)
+type Dic = M.Map String String
+-- data Dictionary = Dictionary {keyLang :: String, valueLang :: String, dictionary :: M.Map String String}
+data Dictionary a = Dictionary {keyLang :: String, valueLang :: String, dictionary :: a}
 
-toDic :: (Ord a, Show a) => V.Vector [a] -> M.Map a a
+missingTranslation :: String
+missingTranslation = "-"
+
+toDic :: (Ord a) => V.Vector [a] -> M.Map a a
 toDic = M.fromList . map (\ (a:b:_) -> (a, b) ) . V.toList
+
+toMatrix :: (Ord a) => V.Vector [a] -> M.Map a (M.Map a a)
+toMatrix = process . V.toList
+  where
+    process :: (Ord a) => [[a]] -> M.Map a (M.Map a a)
+    process (h:rest) =
+      M.fromList $ map (\(key:vals) -> (key, M.fromList $ langs `zip` vals) ) rest
+      where
+        langs = drop 1 h
 
 instance ToRecord (String, M.Map String String) where
   toRecord (key, dic) = record $ toField key : map (\ (_, val) -> toField val) (L.sortOn fst $ M.toList dic)
 
-websiteXMLTranslationMatrix :: String -> IO ([Language], M.Map String (M.Map Language String))
+websiteXMLTranslationMatrix :: FilePath -> IO ([Language], TranslationMatrix)
 websiteXMLTranslationMatrix fileName = do
   nodes <- X.runX $
     X.readDocument [] fileName
@@ -43,58 +61,71 @@ websiteXMLTranslationMatrix fileName = do
 
   return (allLangs, normalizedTranslations)
 
-writeWebstireTranslationMatrix :: String -> [Language] -> M.Map String (M.Map Language String) -> IO ()
-writeWebstireTranslationMatrix path allLangs matrix = Char8.writeFile path (cs . encode $ ("_", M.fromList $ map (\x -> (x,x)) allLangs) : M.toList matrix)
+writeWebstireTranslationMatrixCSV :: FilePath -> [Language] -> TranslationMatrix -> IO ()
+writeWebstireTranslationMatrixCSV path allLangs matrix = Char8.writeFile path (cs . encode $ ("_", M.fromList $ map (\x -> (x,x)) allLangs) : M.toList matrix)
 
-updateTranslations :: M.Map String String -> M.Map String (M.Map Language String) -> M.Map String (M.Map Language String)
-updateTranslations dic = M.map (\d -> M.update (\ e ->
-  let en = fromMaybe "-" (M.lookup "en" d)
-  in (if not (null e) then Just e else Nothing) <|> (M.lookup en dic <|> Just "-") ) "fi" d)
+-- usage: websiteXMLToWebsiteCSV "./Website_.xml" "./Website_.csv"
+websiteXMLToWebsiteCSV :: FilePath -> FilePath -> IO ()
+websiteXMLToWebsiteCSV xmlPath csvPath = websiteXMLTranslationMatrix xmlPath >>= uncurry (writeWebstireTranslationMatrixCSV csvPath)
 
-
-main :: IO ()
-main = do
-  (allLangs, normalizedTranslations) <- websiteXMLTranslationMatrix "./Website_.xml"
-  -- Char8.writeFile "./website_.csv" (cs $ encode $ ("_", M.fromList $ map (\x -> (x,x)) allLangs) : M.toList normalizedTranslations)
-
-  csvData <- cs <$> BL.readFile "./fi.csv"
+-- usage: websiteCSVToWebsiteXML "./Website_.csv" "./Updated-Website_.xml"
+websiteCSVToWebsiteXML :: FilePath -> FilePath -> IO ()
+websiteCSVToWebsiteXML csvPath xmlPath = do
+  csvData <- cs <$> BL.readFile csvPath
   case decode NoHeader csvData of
-    Left err -> print err
-    Right vs -> do
-      let englishFinnishDic = toDic vs :: M.Map String String -- english finnish
-      let updatedTranslationMatrix = updateTranslations englishFinnishDic normalizedTranslations
-      writeWebstireTranslationMatrix "./website_.csv" allLangs updatedTranslationMatrix
+    Left err -> error err
+    Right (vs :: V.Vector [String]) -> do
+      _ <- writeWebsiteCSV xmlPath (toMatrix vs)
+      return ()
 
-  return ()
-
-translationMatrixToWebsiteXML :: X.ArrowXml a => M.Map String (M.Map Language String) -> a X.XmlTree X.XmlTree
+translationMatrixToWebsiteXML :: X.ArrowXml a => TranslationMatrix -> a X.XmlTree X.XmlTree
 translationMatrixToWebsiteXML texts = X.mkelem "texts" [] children
   where
     children = map (\ (text, dic) -> X.mkelem text [] (dicChildren dic)) $ M.toList texts
-    dicChildren = map (\ (lang, text) -> X.mkelem lang [] [X.txt text]) . M.toList
+    dicChildren = concatMap (\ (lang, text) -> if isEmpty text then [] else [X.mkelem lang [] [cDataTxt text]]) . M.toList
 
+    cDataTxt :: X.ArrowXml a => String -> a n X.XmlTree
+    cDataTxt text = if '<' `L.elem` text then X.constA text >>> X.mkCdata else X.txt text
 
-hello :: X.ArrowXml a => a X.XmlTree X.XmlTree
-hello =
-  X.mkelem "texts" []
-    [X.mkelem "PrivacyPolicy" [] []]
+    isEmpty x = null x || missingTranslation == x
 
-main2 :: IO ()
-main2 = do
-  (allLangs, normalizedTranslations) <- websiteXMLTranslationMatrix "./Website_.xml"
-  _ <- duck normalizedTranslations
-  return ()
-  -- csvData <- cs <$> BL.readFile "./website_.csv"
-  -- case decode NoHeader csvData of
-  --   Left err -> print err
-  --   Right vs -> do
-  --     duck $ toDic vs
-  --     print "A"
-
--- duck :: IO ()
-duck csv = X.runX $
+writeWebsiteCSV :: FilePath -> TranslationMatrix -> IO [X.XmlTree]
+writeWebsiteCSV file csv = X.runX $
   X.root [] [translationMatrixToWebsiteXML csv]
   >>>
   X.putXmlSource ""
   >>>
-  X.writeDocument [X.withIndent X.yes] "beep.xml"
+  X.writeDocument [X.withSubstHTMLEntities False, X.withIndent X.yes] file
+
+
+--
+
+updateTranslationMatrixWithDictionary :: Dictionary Dic -> TranslationMatrix -> TranslationMatrix
+updateTranslationMatrixWithDictionary dics = M.map (\d -> M.update (\ e ->
+  let en = fromMaybe "-" (M.lookup keyL d)
+  in (if not (null e) then Just e else Nothing) <|> (M.lookup en dic <|> Just missingTranslation) ) valL d)
+  where
+    dic = dictionary dics
+    keyL = keyLang dics
+    valL = valueLang dics
+
+websiteXMLToWebsiteCSVUsingDictionaryCSV :: Dictionary FilePath -> FilePath -> FilePath -> IO ()
+websiteXMLToWebsiteCSVUsingDictionaryCSV dics xmlPath csvPath = do
+
+  (allLangs, normalizedTranslations) <- websiteXMLTranslationMatrix xmlPath
+  -- Char8.writeFile "./website_.csv" (cs $ encode $ ("_", M.fromList $ map (\x -> (x,x)) allLangs) : M.toList normalizedTranslations)
+
+  csvData <- cs <$> BL.readFile dic
+  case decode NoHeader csvData of
+    Left err -> print err
+    Right vs -> do
+      let englishFinnishDic = Dictionary {keyLang = keyL, valueLang = valL, dictionary = toDic vs}
+      let updatedTranslationMatrix = updateTranslationMatrixWithDictionary englishFinnishDic normalizedTranslations
+      writeWebstireTranslationMatrixCSV csvPath allLangs updatedTranslationMatrix
+
+  return ()
+
+  where
+    dic = dictionary dics
+    keyL = keyLang dics
+    valL = valueLang dics
