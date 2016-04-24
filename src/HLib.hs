@@ -93,7 +93,10 @@ writeWebsiteCSV :: FilePath -> TranslationMatrix -> IO [X.XmlTree]
 writeWebsiteCSV file csv = X.runX $
   X.root [] [translationMatrixToWebsiteXML csv]
   >>>
-  X.putXmlSource ""
+  X.indentDoc
+  >>>
+  X.putXmlDocument True ""
+
   >>>
   X.writeDocument [X.withSubstHTMLEntities False, X.withIndent X.yes] file
 

@@ -15,8 +15,9 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Lib
+  exposed-modules:     HLib
   build-depends:       base >= 4.7 && < 5
+                      , optparse-applicative
                       , containers
                       , split
                       , xml
@@ -40,7 +41,9 @@ executable ma-csv-xml-exe
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
+                     , optparse-applicative
                      , ma-csv-xml
+                     , directory
   default-language:    Haskell2010
 
 test-suite ma-csv-xml-test
