@@ -8,29 +8,35 @@ import System.Directory (doesFileExist)
 
 
 
-data CommandOptions = CommandOptions {input :: String, output :: String}
+data CommandOptions = Pipe | CommandOptions {input :: String, output :: String}
 data Command = CsvToXml CommandOptions | XmlToCsv CommandOptions
 
+optionsParser :: ParserInfo CommandOptions
+optionsParser = info commands $ progDesc "" where
+  commands = subparser $ mconcat [
+        command "pipe" $ info pipe (progDesc "")
+      , command "io" $ info inputOutput (progDesc "")
+    ]
+  pipe :: Parser CommandOptions
+  pipe = pure Pipe
 
+  inputOutput :: Parser CommandOptions
+  inputOutput = CommandOptions <$>
+        strOption (
+         long "input"
+      <> short 'i'
+      <> metavar "FILE"
+      <> help "Read input from FILE" )
+    <*> strOption (
+         long "output"
+      <> short 'o'
+      <> metavar "FILE"
+      <> help "Write output to FILE" )
 
-
-optionsParser :: Parser CommandOptions
-optionsParser = CommandOptions <$>
-      strOption (
-       long "input"
-    <> short 'i'
-    <> metavar "FILE"
-    <> help "Read input from FILE" )
-  <*> strOption (
-       long "output"
-    <> short 'o'
-    <> metavar "FILE"
-    <> help "Write output to FILE" )
-
-csvToXmlParser :: Parser Command
+csvToXmlParser :: ParserInfo Command
 csvToXmlParser = CsvToXml <$> optionsParser
 
-xmlToCsvParser :: Parser Command
+xmlToCsvParser :: ParserInfo Command
 xmlToCsvParser = XmlToCsv <$> optionsParser
 
 doIf :: IO Bool -> IO () -> IO () -> IO ()
@@ -51,12 +57,14 @@ doIfInputOutput input output action =
 doCommand :: Command -> IO ()
 doCommand (CsvToXml (CommandOptions input output)) = doIfInputOutput input output websiteCSVToWebsiteXML
 doCommand (XmlToCsv (CommandOptions input output)) = doIfInputOutput input output websiteXMLToWebsiteCSV
+doCommand (CsvToXml Pipe) = getContents >>= pipeWebsiteCSVToWebsiteXML
+doCommand (XmlToCsv Pipe) = getContents >>= putStrLn
 
 commandParser :: ParserInfo Command
 commandParser = info commands $ progDesc "Use ma-csv-xml-exe csv to convert CSV to XML.\nUse ma-csv-xml-exe xml to convert XML to CSV" where
   commands = subparser $ mconcat [
-      command "csv" (info csvToXmlParser (progDesc "Covert CSV to XML"))
-    , command "xml" (info xmlToCsvParser (progDesc "Covert XML to CSV"))
+      command "csv" csvToXmlParser
+    , command "xml" xmlToCsvParser
     ]
 
 main :: IO ()

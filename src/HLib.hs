@@ -1,15 +1,19 @@
-{-# LANGUAGE OverloadedStrings, FlexibleInstances, ScopedTypeVariables, RankNTypes #-}
+{-# LANGUAGE OverloadedStrings, FlexibleInstances, ScopedTypeVariables, RankNTypes, FlexibleContexts #-}
 
 module HLib
     (
         websiteCSVToWebsiteXML
+      , pipeWebsiteCSVToWebsiteXML
       , websiteXMLToWebsiteCSV
+      -- , pipeWebsiteXMLToWebsiteCSV
     )
 where
 
+import Control.Monad (void)
 import qualified Text.XML.HXT.Core as X
 import qualified Data.ByteString.Char8 as Char8
-import Data.String.Conversions (cs)
+import qualified Data.ByteString.Lazy.Internal as BLI
+import Data.String.Conversions (cs, ConvertibleStrings)
 import qualified Data.Map as M
 import qualified Data.List as L
 import qualified Data.ByteString as BL
@@ -61,6 +65,9 @@ websiteXMLTranslationMatrix fileName = do
 
   return (allLangs, normalizedTranslations)
 
+
+
+
 writeWebstireTranslationMatrixCSV :: FilePath -> [Language] -> TranslationMatrix -> IO ()
 writeWebstireTranslationMatrixCSV path allLangs matrix = Char8.writeFile path (cs . encode $ ("_", M.fromList $ map (\x -> (x,x)) allLangs) : M.toList matrix)
 
@@ -68,15 +75,23 @@ writeWebstireTranslationMatrixCSV path allLangs matrix = Char8.writeFile path (c
 websiteXMLToWebsiteCSV :: FilePath -> FilePath -> IO ()
 websiteXMLToWebsiteCSV xmlPath csvPath = websiteXMLTranslationMatrix xmlPath >>= uncurry (writeWebstireTranslationMatrixCSV csvPath)
 
--- usage: websiteCSVToWebsiteXML "./Website_.csv" "./Updated-Website_.xml"
+
+
+
+-- CSV to XML conversion:
 websiteCSVToWebsiteXML :: FilePath -> FilePath -> IO ()
 websiteCSVToWebsiteXML csvPath xmlPath = do
-  csvData <- cs <$> BL.readFile csvPath
-  case decode NoHeader csvData of
+  csvData <- BL.readFile csvPath
+  processWebsiteCSVToXml (writeWebsiteCSV xmlPath . toMatrix) csvData
+
+pipeWebsiteCSVToWebsiteXML :: ConvertibleStrings a BLI.ByteString => a -> IO ()
+pipeWebsiteCSVToWebsiteXML = processWebsiteCSVToXml (pipeWebsiteCSV . toMatrix)
+
+-- processWebsiteCSVToXml :: ConvertibleStrings s => (V.Vector [s] -> f a) -> b -> f ()
+processWebsiteCSVToXml act csvData =
+  case decode NoHeader $ cs csvData of
     Left err -> error err
-    Right (vs :: V.Vector [String]) -> do
-      _ <- writeWebsiteCSV xmlPath (toMatrix vs)
-      return ()
+    Right (vs :: V.Vector [String]) -> void $ act vs
 
 translationMatrixToWebsiteXML :: X.ArrowXml a => TranslationMatrix -> a X.XmlTree X.XmlTree
 translationMatrixToWebsiteXML texts = X.mkelem "texts" [] children
@@ -90,18 +105,25 @@ translationMatrixToWebsiteXML texts = X.mkelem "texts" [] children
     isEmpty x = null x || missingTranslation == x
 
 writeWebsiteCSV :: FilePath -> TranslationMatrix -> IO [X.XmlTree]
-writeWebsiteCSV file csv = X.runX $
+writeWebsiteCSV file = processWebsiteCSV (X.writeDocument [X.withSubstHTMLEntities False, X.withIndent X.yes] file)
+
+pipeWebsiteCSV :: TranslationMatrix -> IO [X.XmlTree]
+pipeWebsiteCSV = processWebsiteCSV (X.putXmlDocument True "")
+
+processWebsiteCSV :: X.IOSLA (X.XIOState ()) X.XmlTree c -> TranslationMatrix -> IO [c]
+processWebsiteCSV cont csv = X.runX $
   X.root [] [translationMatrixToWebsiteXML csv]
   >>>
   X.indentDoc
   >>>
-  X.putXmlDocument True ""
-
-  >>>
-  X.writeDocument [X.withSubstHTMLEntities False, X.withIndent X.yes] file
+  cont
 
 
---
+
+
+
+
+-- One-time utilities
 
 updateTranslationMatrixWithDictionary :: Dictionary Dic -> TranslationMatrix -> TranslationMatrix
 updateTranslationMatrixWithDictionary dics = M.map (\d -> M.update (\ e ->
