@@ -58,7 +58,7 @@ doCommand :: Command -> IO ()
 doCommand (CsvToXml (CommandOptions input output)) = doIfInputOutput input output websiteCSVToWebsiteXML
 doCommand (XmlToCsv (CommandOptions input output)) = doIfInputOutput input output websiteXMLToWebsiteCSV
 doCommand (CsvToXml Pipe) = getContents >>= pipeWebsiteCSVToWebsiteXML
-doCommand (XmlToCsv Pipe) = getContents >>= putStrLn
+doCommand (XmlToCsv Pipe) = getContents >>= pipeWebsiteXMLToWebsiteCSV
 
 commandParser :: ParserInfo Command
 commandParser = info commands $ progDesc "Use ma-csv-xml-exe csv to convert CSV to XML.\nUse ma-csv-xml-exe xml to convert XML to CSV" where

@@ -5,7 +5,7 @@ module HLib
         websiteCSVToWebsiteXML
       , pipeWebsiteCSVToWebsiteXML
       , websiteXMLToWebsiteCSV
-      -- , pipeWebsiteXMLToWebsiteCSV
+      , pipeWebsiteXMLToWebsiteCSV
     )
 where
 
@@ -28,31 +28,24 @@ import qualified Text.XML.HXT.Parser.XmlParsec as XP
 type Language = String
 type TranslationMatrix = M.Map String (M.Map Language String)
 type Dic = M.Map String String
--- data Dictionary = Dictionary {keyLang :: String, valueLang :: String, dictionary :: M.Map String String}
 data Dictionary a = Dictionary {keyLang :: String, valueLang :: String, dictionary :: a}
 
 missingTranslation :: String
 missingTranslation = "-"
 
-toDic :: (Ord a) => V.Vector [a] -> M.Map a a
-toDic = M.fromList . map (\ (a:b:_) -> (a, b) ) . V.toList
-
-toMatrix :: (Ord a) => V.Vector [a] -> M.Map a (M.Map a a)
-toMatrix = process . V.toList
-  where
-    process :: (Ord a) => [[a]] -> M.Map a (M.Map a a)
-    process (h:rest) =
-      M.fromList $ map (\(key:vals) -> (key, M.fromList $ langs `zip` vals) ) rest
-      where
-        langs = drop 1 h
+----------------------------------------
+-- XML to CSV Conversion
 
 instance ToRecord (String, M.Map String String) where
   toRecord (key, dic) = record $ toField key : map (\ (_, val) -> toField val) (L.sortOn fst $ M.toList dic)
 
 websiteXMLTranslationMatrix :: FilePath -> IO ([Language], TranslationMatrix)
-websiteXMLTranslationMatrix fileName = do
+websiteXMLTranslationMatrix fileName = processWebsiteXMLTranslationMatrix (X.readDocument [] fileName)
+
+
+processWebsiteXMLTranslationMatrix reader = do
   nodes <- X.runX $
-    X.readDocument [] fileName
+    reader
     >>> X.getChildren
     >>> X.getChildren
     >>> (X.getName &&& (X.getChildren >>> (X.getName &&& X.deep X.getText)))
@@ -66,19 +59,33 @@ websiteXMLTranslationMatrix fileName = do
   return (allLangs, normalizedTranslations)
 
 
-
+processWebsiteTranslationMatrixCSV :: (BL.ByteString -> IO ()) -> [Language] -> TranslationMatrix -> IO ()
+processWebsiteTranslationMatrixCSV act allLangs matrix = act (cs . encode $ ("_", M.fromList $ map (\x -> (x,x)) allLangs) : M.toList matrix)
 
 writeWebstireTranslationMatrixCSV :: FilePath -> [Language] -> TranslationMatrix -> IO ()
-writeWebstireTranslationMatrixCSV path allLangs matrix = Char8.writeFile path (cs . encode $ ("_", M.fromList $ map (\x -> (x,x)) allLangs) : M.toList matrix)
+writeWebstireTranslationMatrixCSV csvPath = processWebsiteTranslationMatrixCSV (Char8.writeFile csvPath)
 
 -- usage: websiteXMLToWebsiteCSV "./Website_.xml" "./Website_.csv"
 websiteXMLToWebsiteCSV :: FilePath -> FilePath -> IO ()
 websiteXMLToWebsiteCSV xmlPath csvPath = websiteXMLTranslationMatrix xmlPath >>= uncurry (writeWebstireTranslationMatrixCSV csvPath)
 
+pipeWebsiteXMLToWebsiteCSV :: String -> IO ()
+pipeWebsiteXMLToWebsiteCSV content = processWebsiteXMLTranslationMatrix (X.readString [] content) >>= uncurry (processWebsiteTranslationMatrixCSV Char8.putStrLn)
 
 
 
--- CSV to XML conversion:
+----------------------------------------
+-- CSV to XML conversion
+
+toMatrix :: (Ord a) => V.Vector [a] -> M.Map a (M.Map a a)
+toMatrix = process . V.toList
+  where
+    process :: (Ord a) => [[a]] -> M.Map a (M.Map a a)
+    process (h:rest) =
+      M.fromList $ map (\(key:vals) -> (key, M.fromList $ langs `zip` vals) ) rest
+      where
+        langs = drop 1 h
+
 websiteCSVToWebsiteXML :: FilePath -> FilePath -> IO ()
 websiteCSVToWebsiteXML csvPath xmlPath = do
   csvData <- BL.readFile csvPath
@@ -87,7 +94,6 @@ websiteCSVToWebsiteXML csvPath xmlPath = do
 pipeWebsiteCSVToWebsiteXML :: ConvertibleStrings a BLI.ByteString => a -> IO ()
 pipeWebsiteCSVToWebsiteXML = processWebsiteCSVToXml (pipeWebsiteCSV . toMatrix)
 
--- processWebsiteCSVToXml :: ConvertibleStrings s => (V.Vector [s] -> f a) -> b -> f ()
 processWebsiteCSVToXml act csvData =
   case decode NoHeader $ cs csvData of
     Left err -> error err
@@ -124,6 +130,9 @@ processWebsiteCSV cont csv = X.runX $
 
 
 -- One-time utilities
+
+toDic :: (Ord a) => V.Vector [a] -> M.Map a a
+toDic = M.fromList . map (\ (a:b:_) -> (a, b) ) . V.toList
 
 updateTranslationMatrixWithDictionary :: Dictionary Dic -> TranslationMatrix -> TranslationMatrix
 updateTranslationMatrixWithDictionary dics = M.map (\d -> M.update (\ e ->
