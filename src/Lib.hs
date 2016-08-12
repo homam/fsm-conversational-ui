@@ -9,95 +9,61 @@ import Control.Arrow ((>>>), (&&&), (<<<), (<<^), (<+>), arr)
 import Control.Monad ((>=>), liftM)
 import qualified Data.Map as M
 import Data.List (isSubsequenceOf)
+import qualified Data.Set as S
+import RedisHelper (getRedis, saveRedis)
+import Data.Maybe (fromMaybe)
+import Node
+import Serializable
+import UserState
 
-type NodeId = String
-type FSMId = String
 type UserId = String
-
-class (Read b, Show b) => Serializable a b where
-  serialize :: a -> b
-  deserialize :: b -> a
-
-data Node userState = Node {
-  nodeId :: NodeId,
-  ask :: String,
-  -- jumpIf :: userState -> Bool
-  receive :: String -> userState -> Either String userState
-}
-
-data EdgeTarget userState = Inside (Node userState) | Outside (FSM UserState)
-
-data Edge userState = Edge {
-  node :: Node userState,
-  exec :: userState -> Maybe (Node userState) -- EdgeTarget userState
-}
-
-data FSM userState = FSM {
-  fsmId :: FSMId,
-  nodes :: [Node userState],
-  edges :: [Edge userState]
-}
-
-data UFSM userState = UFSM {
-  fsm :: FSM userState,
-  currentNode :: Node userState,
-  answered :: Bool
-}
-
-data UserState = UserState {
-  height :: Maybe Int,
-  weight :: Maybe Int
-} deriving (Read, Show)
-
-instance Serializable UserState UserState where
-  serialize = id
-  deserialize = id
-
-instance Serializable (Node UserState) String where
-  serialize = nodeId
-  deserialize = getNode
-
-instance Serializable (FSM UserState) String where
-  serialize = fsmId
-  deserialize = getFSM
-
-instance Serializable (UFSM UserState) String where
-  serialize ufsm = serialize (fsm ufsm) ++ ";" ++ serialize (currentNode ufsm) ++ ";" ++ show (answered ufsm)
-  deserialize = undefined
-
-whatIsYourHeight :: Node UserState
-whatIsYourHeight = Node "whatIsYourHeight" "What is your height?" (\ a userState -> Right $ userState {height = read a})
-
-whatIsYourWeight :: Node UserState
-whatIsYourWeight = Node "whatIsYourHeight" "What is your weight?" (\ a userState -> Right $ userState {weight = read a})
-
-sizeSelection :: FSM UserState
-sizeSelection = FSM
-  "sizeSelection"
-  [whatIsYourHeight, whatIsYourWeight] -- is [Node] necessary?
-  [
-    -- Edge α must be unique, where α is a Node
-    Edge whatIsYourHeight (const $ Just whatIsYourWeight),
-    Edge whatIsYourWeight (const Nothing)
-  ]
-
-
-getUserState :: UserId -> IO UserState
-getUserState = undefined -- from redis
 
 saveUserState :: UserId -> UserState -> IO ()
 saveUserState = undefined -- save to redis
 
-getNode :: NodeId -> Node UserState
-getNode = undefined -- from memory map
 
-getFSM :: FSMId -> FSM UserState
-getFSM = undefined -- from memory map
+getUser :: UserId -> IO (Maybe (UFSM UserState))
+getUser userId = getRedis userId >>= maybe
+  (return Nothing)
+  (\ user ->
+     do let _ufsm = deserialize user :: UFSM UserState
+        return $ Just _ufsm)
 
-messageFromUser :: UserId -> String -> IO ()
-messageFromUser = undefined -- getUser >>= reconstructUFSM >>= currentNode.receive >>= if Right then fine the edge, edge.exec and update UFSM and send the question to user
+toEither :: a -> Maybe b -> Either a b
+toEither _ (Just b) = Right b
+toEither a _ = Left a
 
+messageFromUser :: UserId -> String -> IO String
+messageFromUser userId message = do -- getUser >>= reconstructUFSM >>= currentNode.receive >>= if Right then fine the edge, edge.exec and update UFSM and send the question to user
+  user <- getUser userId -- user :: UFSM
+  maybe
+    (error "No user was found")
+    (\user ->
+      either
+        error -- print error (user input is not valid)
+        (\ us -> do
+            let nuser = user {userState = us}
+            saveUser userId nuser
+            case findEdgeUFSM user of
+                Nothing -> error "Edge not found"
+                (Just e) -> case exec e us of
+                  Nothing -> do
+                    print $ "exec edge lead to Nothing, edge.node: " ++ show (nodeId $ node e)
+                    return ""
+                  (Just n) -> do
+                    saveUser userId (nuser { currentNode = n })
+                    return $ ask n
+        )
+        (receive (currentNode user) message (userState user)) -- receive
+    )
+    user
+  -- return ()
 
+newUser :: UserId -> IO ()
+newUser = flip saveUser $ UFSM sizeSelection whatIsYourHeight False (UserState Nothing Nothing)
+
+saveUser :: UserId -> UFSM UserState -> IO ()
+saveUser userId = saveRedis userId . serialize
 
 
 someFunc :: IO ()
