@@ -1,96 +1,104 @@
-{-# LANGUAGE OverloadedStrings, FlexibleInstances, ScopedTypeVariables, RankNTypes #-}
+{-# LANGUAGE MultiParamTypeClasses, OverloadedStrings, FlexibleInstances, ScopedTypeVariables, RankNTypes #-}
 
 module Lib
     ( someFunc
     )
 where
 
+import Control.Arrow ((>>>), (&&&), (<<<), (<<^), (<+>), arr)
+import Control.Monad ((>=>), liftM)
 import qualified Data.Map as M
-import Data.List.Split (splitOn, splitWhen)
-import qualified Data.Text as T
-import Data.Csv
-import qualified Data.Vector as V
-import Data.Either
-import Text.Read (readEither)
-import qualified Text.XML.Light.Input as XI
-import qualified Text.XML.Light as X
-import Debug.Trace (trace)
-import qualified Data.List as L
-import Data.ByteString.UTF8 (fromString)
-import qualified Data.Text.Encoding as TE
-import qualified Data.ByteString as BL
-import qualified Data.ByteString.Char8 as Char8
-import qualified Data.ByteString.UTF8 as UTF8
-import Data.String.Conversions (cs)
+import Data.List (isSubsequenceOf)
+
+type NodeId = String
+type FSMId = String
+type UserId = String
+
+class (Read b, Show b) => Serializable a b where
+  serialize :: a -> b
+  deserialize :: b -> a
+
+data Node userState = Node {
+  nodeId :: NodeId,
+  ask :: String,
+  -- jumpIf :: userState -> Bool
+  receive :: String -> userState -> Either String userState
+}
+
+data EdgeTarget userState = Inside (Node userState) | Outside (FSM UserState)
+
+data Edge userState = Edge {
+  node :: Node userState,
+  exec :: userState -> Maybe (Node userState) -- EdgeTarget userState
+}
+
+data FSM userState = FSM {
+  fsmId :: FSMId,
+  nodes :: [Node userState],
+  edges :: [Edge userState]
+}
+
+data UFSM userState = UFSM {
+  fsm :: FSM userState,
+  currentNode :: Node userState,
+  answered :: Bool
+}
+
+data UserState = UserState {
+  height :: Maybe Int,
+  weight :: Maybe Int
+} deriving (Read, Show)
+
+instance Serializable UserState UserState where
+  serialize = id
+  deserialize = id
+
+instance Serializable (Node UserState) String where
+  serialize = nodeId
+  deserialize = getNode
+
+instance Serializable (FSM UserState) String where
+  serialize = fsmId
+  deserialize = getFSM
+
+instance Serializable (UFSM UserState) String where
+  serialize ufsm = serialize (fsm ufsm) ++ ";" ++ serialize (currentNode ufsm) ++ ";" ++ show (answered ufsm)
+  deserialize = undefined
+
+whatIsYourHeight :: Node UserState
+whatIsYourHeight = Node "whatIsYourHeight" "What is your height?" (\ a userState -> Right $ userState {height = read a})
+
+whatIsYourWeight :: Node UserState
+whatIsYourWeight = Node "whatIsYourHeight" "What is your weight?" (\ a userState -> Right $ userState {weight = read a})
+
+sizeSelection :: FSM UserState
+sizeSelection = FSM
+  "sizeSelection"
+  [whatIsYourHeight, whatIsYourWeight] -- is [Node] necessary?
+  [
+    -- Edge α must be unique, where α is a Node
+    Edge whatIsYourHeight (const $ Just whatIsYourWeight),
+    Edge whatIsYourWeight (const Nothing)
+  ]
+
+
+getUserState :: UserId -> IO UserState
+getUserState = undefined -- from redis
+
+saveUserState :: UserId -> UserState -> IO ()
+saveUserState = undefined -- save to redis
+
+getNode :: NodeId -> Node UserState
+getNode = undefined -- from memory map
+
+getFSM :: FSMId -> FSM UserState
+getFSM = undefined -- from memory map
+
+messageFromUser :: UserId -> String -> IO ()
+messageFromUser = undefined -- getUser >>= reconstructUFSM >>= currentNode.receive >>= if Right then fine the edge, edge.exec and update UFSM and send the question to user
+
+
 
 
 someFunc :: IO ()
-someFunc = do
-  csvData <- cs . UTF8.toString <$> BL.readFile "./fi.csv"
-  case decode NoHeader csvData of
-    Left err -> print err
-    Right vs -> -- putStrLn $ (V.head v) !! 1
-      -- V.mapM_ (putStrLn . head) vs
-      let english = column 0 vs :: [String]
-      in print english
-      -- mapM_ (putStrLn ) (column 0 vs)
-
-column :: Int -> V.Vector [a] -> [a]
-column i = map (!! i) . V.toList
-
-parseTranslationXml :: [X.Content] -> M.Map String (M.Map String String)
-parseTranslationXml = M.unions . map (go 0 M.empty) where
-
-  go :: Int -> M.Map String (M.Map String String) -> X.Content -> M.Map String (M.Map String String)
-
-  go 0 dic (X.Elem d) = M.unions $ map (go 1 dic) (X.elContent d)
-  go 1 dic (X.Elem d) = M.insert (X.qName $ X.elName d) (M.unions $ map (go2 M.empty) (X.elContent d)) dic
-  go _ dic _ = dic
-
-  go2 :: M.Map String String -> X.Content -> M.Map String String
-  go2 dic (X.Elem d) = M.insert (X.qName $ X.elName d) (X.showContent $ head $ X.elContent d) dic
-  go2 dic _ = dic
-
-  -- go 2 dic _
-
-duck :: IO ()
-duck = do
-  xmlData <- BL.readFile "./Website_.xml"
-  let content = XI.parseXML xmlData
-  let translations = parseTranslationXml content
-
-  csvData <- cs <$> BL.readFile "./fi.csv"
-  case decode NoHeader csvData of
-    Left err -> print err
-    Right vs -> do
-      let english1 = column 0 vs :: [String]
-      let english2 = M.keys translations
-      print $ english1 `L.intersect` english2
-
-
--- String = record name
--- Map String = language, String = translated value
-instance ToRecord (String, M.Map String String) where
-  toRecord (key, dic) = record $ toField key : map (\ (_, val) -> toField val) (L.sortOn fst $ M.toList dic)
-
-websiteXMLTranslationMatrix :: IO ()
-websiteXMLTranslationMatrix = do
-  xmlData <- Char8.readFile "./Website_.xml"
-
-  let content = XI.parseXML xmlData
-
-  Char8.putStrLn $ Char8.concat $ map (cs . X.showContent) content
-
-  let translations = parseTranslationXml content
-
-
-  let allLangs = L.nub . concatMap M.keys . M.elems $ translations
-  let emptyLangs = M.fromList $ map (\l -> (l, "")) allLangs
-  let normalizedTranslations = M.map (`M.union` emptyLangs) translations
-  -- Char8.putStrLn $ cs $ encode $ M.toList normalizedTranslations
-  -- Char8.writeFile "./website_.csv" (cs $ encode $ M.toList normalizedTranslations)
-
-  print ""
-  -- mapM_ (go 0) content where
-  --   go depth (X.Elem d) = putStrLn ("depth " ++ (show depth) ++ " " ++ show (X.elName d)) >> mapM_ (go $ depth + 1) (X.elContent d)
-  --   go depth (X.Text d) = return ()
+someFunc = print "hello"

@@ -1,8 +1,8 @@
-name:                ma-csv-xml
+name:                fsm-conversation
 version:             0.1.0.0
 synopsis:            Initial project template from stack
 description:         Please see README.md
-homepage:            https://github.com/githubuser/ma-csv-xml#readme
+homepage:            https://github.com/githubuser/fsm-conversation#readme
 license:             BSD3
 license-file:        LICENSE
 author:              Author name here
@@ -15,8 +15,11 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     HLib
+  exposed-modules:     Lib
   build-depends:       base >= 4.7 && < 5
+                      , parallel-io
+                      , http-conduit
+                      , HandsomeSoup
                       , optparse-applicative
                       , containers
                       , split
@@ -33,28 +36,30 @@ library
                       , directory
                       , utf8-string
                       , string-conversions
-                      , hxt
+                      , hedis
   default-language:    Haskell2010
 
-executable ma-csv-xml-exe
+executable fsm-conversation-exe
   hs-source-dirs:      app
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
                      , optparse-applicative
-                     , ma-csv-xml
+                     , fsm-conversation
                      , directory
+                     , transformers
+                     , hedis
   default-language:    Haskell2010
 
-test-suite ma-csv-xml-test
+test-suite fsm-conversation-test
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test
   main-is:             Spec.hs
   build-depends:       base
-                     , ma-csv-xml
+                     , fsm-conversation
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   default-language:    Haskell2010
 
 source-repository head
   type:     git
-  location: https://github.com/githubuser/ma-csv-xml
+  location: https://github.com/githubuser/fsm-conversation
