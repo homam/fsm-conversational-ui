@@ -1,47 +1,59 @@
 module Node
 (
-  Node(..), NodeId(..),
-  FSM(..), FSMId(..),
+  Node(..),
+  Conversation(..),
   Edge(..),
-  UFSM(..)
+  UConversation(..),
+  findEdge, findEdgeUConversation, makeConversation
 )
 where
 
 import qualified Data.Map as M
 
-data NodeId = NodeWhatIsYourWeight | NodeWhatIsYourHeight deriving (Read, Show, Eq, Ord)
-data FSMId = FSMSizeSelection deriving (Read, Show, Eq, Ord)
 
-
-data EdgeTarget userState = Inside (Node userState) | Outside (FSM userState)
+-- data EdgeTarget us = Inside (Node us) | Outside (Conversation us)
 
 
 -- Node
-
-data Node userState = Node {
-  nodeId :: NodeId,
-  ask :: String,
-  receive :: String -> userState -> Either String userState
+-- @nid@ :: NodeId
+-- @us@ :: UserState
+data Node nid us = Node {
+  nodeId :: nid,
+  question :: String,
+  receive :: String -> us -> Either String us
 }
-instance Eq (Node userState) where
+
+instance (Eq nid) => Eq (Node nid us) where
   n1 == n2 = nodeId n1 == nodeId n2
-instance Ord (Node userState) where
+
+instance (Ord nid) => Ord (Node nid us) where
   n1 `compare` n2 = nodeId n1 `compare` nodeId n2
 
 
-data Edge userState = Edge {
-  node :: Node userState,
-  exec :: userState -> Maybe (Node userState) -- EdgeTarget userState
+-- Edge
+data Edge nid us = Edge {
+  node :: Node nid us,
+  exec :: us -> Maybe (Node nid us) -- EdgeTarget us
 }
 
-data FSM userState = FSM {
-  fsmId :: FSMId,
-  edges :: M.Map NodeId (Edge userState)
+-- Conversation
+data Conversation cid nid us = Conversation {
+  conversationId :: cid,
+  edges :: M.Map nid (Edge nid us)
 }
 
-data UFSM userState = UFSM {
-  fsm :: FSM userState,
-  currentNode :: Node userState,
+data UConversation cid nid us = UConversation {
+  conversation :: Conversation cid nid us,
+  currentNode :: Node nid us,
   answered :: Bool,
-  userState :: userState
+  userState :: us
 }
+
+findEdge :: (Ord nid) => nid -> Conversation cid nid us -> Maybe (Edge nid us)
+findEdge nodeId conversation = M.lookup nodeId (edges conversation)
+
+findEdgeUConversation :: (Ord nid) => UConversation cid nid us -> Maybe (Edge nid us)
+findEdgeUConversation user = findEdge (nodeId $ currentNode user) (conversation user)
+
+makeConversation :: (Ord nid) => cid -> [Edge nid us] -> Conversation cid nid us
+makeConversation convId list  = Conversation convId (M.fromList $ map (\e -> (nodeId $ node e, e)) list)

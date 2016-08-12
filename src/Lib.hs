@@ -18,24 +18,14 @@ import UserState
 
 type UserId = String
 
-saveUserState :: UserId -> UserState -> IO ()
-saveUserState = undefined -- save to redis
-
-
-getUser :: UserId -> IO (Maybe (UFSM UserState))
-getUser userId = getRedis userId >>= maybe
-  (return Nothing)
-  (\ user ->
-     do let _ufsm = deserialize user :: UFSM UserState
-        return $ Just _ufsm)
 
 toEither :: a -> Maybe b -> Either a b
 toEither _ (Just b) = Right b
 toEither a _ = Left a
 
 messageFromUser :: UserId -> String -> IO String
-messageFromUser userId message = do -- getUser >>= reconstructUFSM >>= currentNode.receive >>= if Right then fine the edge, edge.exec and update UFSM and send the question to user
-  user <- getUser userId -- user :: UFSM
+messageFromUser userId message = do -- getUser >>= reconstructUConversation >>= currentNode.receive >>= if Right then fine the edge, edge.exec and update UConversation and send the question to user
+  user <- getUser userId -- user :: UConversation
   maybe
     (error "No user was found")
     (\user ->
@@ -44,7 +34,7 @@ messageFromUser userId message = do -- getUser >>= reconstructUFSM >>= currentNo
         (\ us -> do
             let nuser = user {userState = us}
             saveUser userId nuser
-            case findEdgeUFSM user of
+            case findEdgeUConversation user of
                 Nothing -> error "Edge not found"
                 (Just e) -> case exec e us of
                   Nothing -> do
@@ -52,7 +42,7 @@ messageFromUser userId message = do -- getUser >>= reconstructUFSM >>= currentNo
                     return ""
                   (Just n) -> do
                     saveUser userId (nuser { currentNode = n })
-                    return $ ask n
+                    return $ question n
         )
         (receive (currentNode user) message (userState user)) -- receive
     )
@@ -60,11 +50,13 @@ messageFromUser userId message = do -- getUser >>= reconstructUFSM >>= currentNo
   -- return ()
 
 newUser :: UserId -> IO ()
-newUser = flip saveUser $ UFSM sizeSelection whatIsYourHeight False (UserState Nothing Nothing)
+newUser = flip saveUser $ UConversation sizeSelection whatIsYourHeight False (UserState Nothing Nothing)
 
-saveUser :: UserId -> UFSM UserState -> IO ()
+saveUser :: UserId -> MyUConversation -> IO ()
 saveUser userId = saveRedis userId . serialize
 
+getUser :: UserId -> IO (Maybe MyUConversation)
+getUser = liftM (fmap deserialize) . getRedis
 
 someFunc :: IO ()
 someFunc = print "hello"

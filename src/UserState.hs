@@ -2,9 +2,9 @@
 
 module UserState
 (
-  UserState(..),
+  UserState(..), MyNode, MyConversation, MyUConversation,
   SerializableUserState(..),
-  getNode, getFSM, findEdge, findEdgeUFSM,
+  getNode, getConversation, findEdge, findEdgeUConversation,
   whatIsYourHeight, whatIsYourWeight,
   sizeSelection
 ) where
@@ -13,50 +13,47 @@ import qualified Data.Map as M
 import Serializable
 import Node
 
+data NodeId = NodeWhatIsYourWeight | NodeWhatIsYourHeight deriving (Read, Show, Eq, Ord)
+data ConversationId = ConversationSizeSelection deriving (Read, Show, Eq, Ord)
 
 data UserState = UserState {
   height :: Maybe Int,
   weight :: Maybe Int
 } deriving (Read, Show)
 
-type SerializableUserState = (FSMId, NodeId, Bool, UserState)
+type MyNode = Node NodeId UserState
+type MyConversation = Conversation ConversationId NodeId UserState
+type MyUConversation = UConversation ConversationId NodeId UserState
 
-instance Serializable (UFSM UserState) String where
-  serialize ufsm = show (fsmId $ fsm ufsm, nodeId $ currentNode ufsm, answered ufsm, userState ufsm)
+type SerializableUserState = (ConversationId, NodeId, Bool, UserState)
+
+instance Serializable MyUConversation String where
+  serialize uconversation = show (conversationId $ conversation uconversation, nodeId $ currentNode uconversation, answered uconversation, userState uconversation)
   deserialize = construct . read where
-    construct :: SerializableUserState -> UFSM UserState
-    construct (_fsmId, _nodeId, _answered, _userState) = UFSM (getFSM _fsmId) (getNode _nodeId) _answered _userState
+    construct :: SerializableUserState -> MyUConversation
+    construct (_conversationId, _nodeId, _answered, _userState) = UConversation (getConversation _conversationId) (getNode _nodeId) _answered _userState
 
 
 -- all Nodes are defined in the code
-getNode :: NodeId -> Node UserState
+getNode :: NodeId -> MyNode
 getNode NodeWhatIsYourHeight = whatIsYourHeight
 getNode NodeWhatIsYourWeight = whatIsYourWeight
 
--- all FSMs are defined in the code
-getFSM :: FSMId -> FSM UserState
-getFSM FSMSizeSelection = sizeSelection
+-- all Conversations are defined in the code
+getConversation :: ConversationId -> MyConversation
+getConversation ConversationSizeSelection = sizeSelection
 
-
-findEdge :: NodeId -> FSM userState -> Maybe (Edge userState)
-findEdge nodeId fsm = M.lookup nodeId (edges fsm)
-
-findEdgeUFSM :: UFSM userState -> Maybe (Edge userState)
-findEdgeUFSM user = findEdge (nodeId $ currentNode user) (fsm user)
 
 -- Nodes
-whatIsYourHeight :: Node UserState
+whatIsYourHeight :: MyNode
 whatIsYourHeight = Node NodeWhatIsYourHeight "What is your height?" (\ a userState -> Right $ userState {height = read a})
 
-whatIsYourWeight :: Node UserState
+whatIsYourWeight :: MyNode
 whatIsYourWeight = Node NodeWhatIsYourWeight "What is your weight?" (\ a userState -> Right $ userState {weight = read a})
 
-makeConversation :: FSMId -> [Edge userState] -> FSM userState
-makeConversation convId list  = FSM convId (M.fromList $ map (\e -> (nodeId $ node e, e)) list)
-
--- FSMs
-sizeSelection :: FSM UserState
-sizeSelection = makeConversation FSMSizeSelection [
+-- Conversations
+sizeSelection :: MyConversation
+sizeSelection = makeConversation ConversationSizeSelection [
     Edge whatIsYourHeight (const $ Just whatIsYourWeight),
     Edge whatIsYourWeight (const Nothing)
   ]
