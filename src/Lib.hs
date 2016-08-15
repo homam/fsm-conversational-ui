@@ -34,19 +34,22 @@ messageFromUser userId message = do -- getUser >>= reconstructUConversation >>= 
         (\ us -> do
             let nuser = user {userState = us}
             saveUser userId nuser
-            case findEdgeUConversation user of
-                Nothing -> error "Edge not found"
-                (Just e) -> case exec e us of
-                  Nothing -> do
-                    print $ "exec edge lead to Nothing, edge.node: " ++ show (nodeId $ node e)
-                    return ""
-                  (Just n) -> do
-                    saveUser userId (nuser { currentNode = n })
-                    return $ question n
+
+            case go us user of
+              (Left e) -> do e; return ""
+              (Right n) -> do
+                saveUser userId (nuser { currentNode = n })
+                return $ question n
         )
         (receive (currentNode user) message (userState user)) -- receive
     )
     user
+
+  where
+    go us user = do
+      e <- toEither (error "Edge not found") (findEdgeUConversation user)
+      let newNode = exec e us -- if Nothing means Conversation ended
+      toEither (putStrLn $ "exec edge lead to Nothing, edge.node: " ++ show (nodeId $ node e)) newNode
   -- return ()
 
 newUser :: UserId -> IO ()

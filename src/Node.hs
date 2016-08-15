@@ -10,7 +10,6 @@ where
 
 import qualified Data.Map as M
 
-
 -- data EdgeTarget us = Inside (Node us) | Outside (Conversation us)
 
 
@@ -48,6 +47,7 @@ data UConversation cid nid us = UConversation {
   answered :: Bool,
   userState :: us
 }
+
 
 findEdge :: (Ord nid) => nid -> Conversation cid nid us -> Maybe (Edge nid us)
 findEdge nodeId conversation = M.lookup nodeId (edges conversation)
