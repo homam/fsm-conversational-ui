@@ -1,7 +1,8 @@
-{-# LANGUAGE MultiParamTypeClasses, FlexibleContexts #-}
+{-# LANGUAGE MultiParamTypeClasses, FlexibleContexts, DeriveFunctor, GeneralizedNewtypeDeriving #-}
 module HLib
 (
   Node(..), Conversation(..), SerializableUser(..),
+  ComputationResult,
   processSerializedUserMessageAndUpdateUser
 )
 where
@@ -17,11 +18,32 @@ toEither :: a -> Maybe b -> Either a b
 toEither _ (Just b) = Right b
 toEither a _ = Left a
 
+toComputationResult :: a -> Maybe b -> ComputationResult a b
+toComputationResult _ (Just b) = return b
+toComputationResult a _ = ComputationResult $ return (Left a)
+
 mapMTuples :: (Monad m) => (a -> m b) -> (c -> m d) -> [(a, c)] -> m [(b, d)]
 mapMTuples f g = mapM (sequenceTuple . (f *** g)) where
   sequenceTuple :: (Monad m) => (m a, m b) -> m (a, b)
   sequenceTuple (ma, mb) = (,) <$> ma <*> mb
 
+newtype ComputationResult a b = ComputationResult (IO (Either a b)) deriving (Functor)
+
+instance Applicative (ComputationResult a) where
+  pure = ComputationResult . return . Right
+  (ComputationResult mf) <*> (ComputationResult ma) = ComputationResult $ do
+    f <- mf
+    a <- ma
+    return $ f <*> a
+
+instance Monad (ComputationResult a) where
+  return = pure
+  (ComputationResult ma) >>= f = ComputationResult $ do
+    a <- ma
+    let b = f <$> a
+    case b of
+      (Left e) -> return $ Left e
+      (Right (ComputationResult x)) -> x
 
 -- Node
 -- @nid@ :: NodeId
@@ -29,7 +51,7 @@ mapMTuples f g = mapM (sequenceTuple . (f *** g)) where
 data Node nid us = Node {
   nodeId :: nid,
   question :: Question,
-  receive :: String -> us -> Either ErrorType us
+  receive :: String -> us -> ComputationResult ErrorType us
 }
 
 instance (Eq nid) => Eq (Node nid us) where
@@ -51,15 +73,16 @@ data User cid nid us = User {
   userState :: us
 }
 
-processMessage ::  (Ord nid) => User cid nid us -> String -> Either ErrorType (us, EdgeTarget cid nid us)
+processMessage ::  (Ord nid) => User cid nid us -> String -> ComputationResult ErrorType (us, EdgeTarget cid nid us)
 processMessage user input =
   let (conv, node) = head $ conversations user
       ustate = userState user
-      edge = toEither EdgeNotFoundError (M.lookup node (edges conv))
+      edge = toComputationResult EdgeNotFoundError (M.lookup node (edges conv))
   in do
     ef <- edge
     ustate' <- receive node input ustate
     return (ustate', ef ustate')
+
 
 updateUser :: User cid nid us -> (us, EdgeTarget cid nid us) -> User cid nid us
 updateUser user (_, EOC) = user { conversations = drop 1 (conversations user) }
@@ -70,8 +93,10 @@ updateUser user (ustate', ConversationTarget nconv) = user {
     userState = ustate'
   }
 
-processMessageAndUpdateUser :: (Ord nid) => User cid nid us -> String -> Either ErrorType (User cid nid us)
-processMessageAndUpdateUser user input = updateUser user <$> processMessage user input
+processMessageAndUpdateUser :: (Ord nid) => User cid nid us -> String -> ComputationResult ErrorType (User cid nid us)
+processMessageAndUpdateUser user input = do
+  et <- processMessage user input
+  return $ updateUser user et
 
 data SerializableUser cid nid us = SerializableUser {
   serializableConversations :: [(cid, nid)],
@@ -86,15 +111,15 @@ defaultUserDeserializer conversationGetter nodeGetter suser = do
 type UserId = String
 
 -- main export
-processSerializedUserMessageAndUpdateUser :: (Monad m, Ord nid) =>
+processSerializedUserMessageAndUpdateUser :: (Ord nid) =>
   (cid -> Maybe (Conversation cid nid us)) ->
   (nid -> Maybe (Node nid us)) ->
-  (UserId -> m (Either ErrorType (SerializableUser cid nid us))) ->
-  UserId -> String -> m (Either ErrorType (User cid nid us))
+  (UserId -> ComputationResult ErrorType (SerializableUser cid nid us)) ->
+  UserId -> String -> ComputationResult ErrorType (User cid nid us)
 processSerializedUserMessageAndUpdateUser conversationGetter nodeGetter userGetter userId input =
-  processEitherUserMessageAndUpdateUser <$> userGetter userId where
+  processEitherUserMessageAndUpdateUser (userGetter userId) where
 
     processEitherUserMessageAndUpdateUser fuser = do
       suser <- fuser
-      user <- defaultUserDeserializer (toEither ConversationNotFound . conversationGetter) (toEither NodeNotFound . nodeGetter) suser
+      user <- defaultUserDeserializer (toComputationResult ConversationNotFound . conversationGetter) (toComputationResult NodeNotFound . nodeGetter) suser
       processMessageAndUpdateUser user input
