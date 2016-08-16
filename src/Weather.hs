@@ -1,10 +1,10 @@
 {-# LANGUAGE OverloadedStrings, DeriveDataTypeable, DeriveGeneric #-}
 
 module Weather
-  -- (getWeather, Weather(..))
+  (getWeather, Weather(..))
 where
 
--- import Network.Wreq
+import Network.Wreq
 import Control.Lens
 import qualified Data.Text as T
 import Data.Aeson
@@ -30,10 +30,10 @@ instance ToJSON WeatherMain where
 instance FromJSON WeatherMain
 
 data Weather = Weather {  weatherDescription :: String, weatherTemp :: Float } deriving (Read, Show)
---
--- getWeather :: String -> IO (Maybe Weather)
--- getWeather city = do
---   r <- get $ "http://api.openweathermap.org/data/2.5/weather?appid=cac462b7a568be8d2f835d02c28a49e3&units=metric&q=" ++ city
---   let a = r ^. responseBody
---   let b = decode a :: Maybe WeatherReport
---   return $ Weather <$> ((description . head . weather) <$> b) <*> ((temp . main) <$> b)
+
+getWeather :: String -> IO (Maybe Weather)
+getWeather city = do
+  r <- get $ "http://api.openweathermap.org/data/2.5/weather?appid=cac462b7a568be8d2f835d02c28a49e3&units=metric&q=" ++ city
+  let a = r ^. responseBody
+  let b = decode a :: Maybe WeatherReport
+  return $ Weather <$> ((description . head . weather) <$> b) <*> ((temp . main) <$> b)

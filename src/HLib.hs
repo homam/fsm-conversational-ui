@@ -1,9 +1,11 @@
 {-# LANGUAGE MultiParamTypeClasses, FlexibleContexts, DeriveFunctor, GeneralizedNewtypeDeriving #-}
 module HLib
 (
-  Node(..), Conversation(..), SerializableUser(..),
-  ComputationResult,
-  processSerializedUserMessageAndUpdateUser
+  Node(..), Conversation(..), SerializableUser(..), EdgeTarget(..),
+  ComputationResult(..),
+  ErrorType(..),
+  processSerializedUserMessageAndUpdateUser,
+  toEither, toEitherM
 )
 where
 
@@ -11,12 +13,16 @@ import qualified Data.Map as M
 import Control.Monad.Trans
 import Control.Arrow ((***))
 type Question = String
-data ErrorType =  InvalidInputError | EdgeNotFoundError | ConversationNotFound | NodeNotFound
+type Answer = String
+data ErrorType =  InvalidInputError | EdgeNotFoundError | ConversationNotFound | NodeNotFound | APIError
 
 
 toEither :: a -> Maybe b -> Either a b
 toEither _ (Just b) = Right b
 toEither a _ = Left a
+
+toEitherM :: (Monad m) => a -> m (Maybe b) -> m (Either a b)
+toEitherM = fmap . toEither
 
 toComputationResult :: a -> Maybe b -> ComputationResult a b
 toComputationResult _ (Just b) = return b
@@ -48,11 +54,11 @@ instance Monad (ComputationResult a) where
 -- Node
 -- @nid@ :: NodeId
 -- @us@ :: UserState
-data Node nid us = Node {
+data Node nid us = ResponseNode {
   nodeId :: nid,
   question :: Question,
-  receive :: String -> us -> ComputationResult ErrorType us
-}
+  receive :: String -> us -> ComputationResult ErrorType (Answer, us)
+} | AutoExecNode { nodeId :: nid, exec :: us -> ComputationResult ErrorType (Answer, us) }
 
 instance (Eq nid) => Eq (Node nid us) where
   n1 == n2 = nodeId n1 == nodeId n2
@@ -64,7 +70,7 @@ data EdgeTarget cid nid us = EOC | NodeTarget (Node nid us) | ConversationTarget
 
 data Conversation cid nid us = Conversation {
   conversationId :: cid,
-  starter :: Node nid us,
+  starter :: us -> Node nid us,
   edges :: M.Map (Node nid us) (us -> EdgeTarget cid nid us)
 }
 
@@ -73,15 +79,15 @@ data User cid nid us = User {
   userState :: us
 }
 
-processMessage ::  (Ord nid) => User cid nid us -> String -> ComputationResult ErrorType (us, EdgeTarget cid nid us)
+processMessage ::  (Ord nid) => User cid nid us -> String -> ComputationResult ErrorType (Answer, us, EdgeTarget cid nid us)
 processMessage user input =
   let (conv, node) = head $ conversations user
       ustate = userState user
       edge = toComputationResult EdgeNotFoundError (M.lookup node (edges conv))
   in do
     ef <- edge
-    ustate' <- receive node input ustate
-    return (ustate', ef ustate')
+    (ans, ustate') <- receive node input ustate
+    return (ans, ustate', ef ustate')
 
 
 updateUser :: User cid nid us -> (us, EdgeTarget cid nid us) -> User cid nid us
@@ -89,14 +95,14 @@ updateUser user (_, EOC) = user { conversations = drop 1 (conversations user) }
 updateUser user (_, NodeTarget node) = let convs = conversations user in
   user { conversations = (fst $ head convs, node) : tail convs }
 updateUser user (ustate', ConversationTarget nconv) = user {
-    conversations = (nconv, starter nconv) : conversations user,
+    conversations = (nconv, starter nconv ustate') : conversations user,
     userState = ustate'
   }
 
-processMessageAndUpdateUser :: (Ord nid) => User cid nid us -> String -> ComputationResult ErrorType (User cid nid us)
+processMessageAndUpdateUser :: (Ord nid) => User cid nid us -> String -> ComputationResult ErrorType (Answer, User cid nid us)
 processMessageAndUpdateUser user input = do
-  et <- processMessage user input
-  return $ updateUser user et
+  (ans, ustate', et) <- processMessage user input
+  return (ans, updateUser user (ustate', et))
 
 data SerializableUser cid nid us = SerializableUser {
   serializableConversations :: [(cid, nid)],
@@ -115,7 +121,7 @@ processSerializedUserMessageAndUpdateUser :: (Ord nid) =>
   (cid -> Maybe (Conversation cid nid us)) ->
   (nid -> Maybe (Node nid us)) ->
   (UserId -> ComputationResult ErrorType (SerializableUser cid nid us)) ->
-  UserId -> String -> ComputationResult ErrorType (User cid nid us)
+  UserId -> String -> ComputationResult ErrorType (Answer, User cid nid us)
 processSerializedUserMessageAndUpdateUser conversationGetter nodeGetter userGetter userId input =
   processEitherUserMessageAndUpdateUser (userGetter userId) where
 
