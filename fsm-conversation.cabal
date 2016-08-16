@@ -37,6 +37,9 @@ library
                       , utf8-string
                       , string-conversions
                       , hedis
+                      , wreq
+                      , lens
+                      , unordered-containers
   default-language:    Haskell2010
 
 executable fsm-conversation-exe
@@ -49,6 +52,8 @@ executable fsm-conversation-exe
                      , directory
                      , transformers
                      , hedis
+                     , wreq
+                     , lens
   default-language:    Haskell2010
 
 test-suite fsm-conversation-test
