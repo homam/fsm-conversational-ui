@@ -2,6 +2,8 @@
 
 module RedisHelper (getRedis, saveRedis) where
 
+import Text.Read hiding (get)
+import Control.Monad
 import Database.Redis
 import Control.Monad.IO.Class
 import Data.ByteString.Char8 (pack, unpack)
@@ -19,8 +21,12 @@ getRedis key = do
   conn <- connect defaultConnectInfo
   runRedis conn $ do
     a <- get (pack key)
-    liftIO $ putStrLn $ "get " ++ key ++ show a
     liftIO $ go a
       where
         go (Left a) = return Nothing
         go (Right m) = return $ fmap unpack m
+
+readRedisValue :: Read a => String -> IO (Maybe a)
+readRedisValue key = do
+  s <- getRedis key
+  return $ join $ readMaybe <$> s
