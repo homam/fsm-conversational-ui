@@ -9,7 +9,7 @@ import qualified Data.Map as M
 type Message = String
 
 data UserInput = UIActionSumTwoNumbers | UIActionQuit | UIInt Int | UIString String | UIAny
-data AppOut = AOEnd (Maybe Message) FlowResult | AOLink (Maybe Message) App
+data AppOut = AOEnd (Maybe Message) FlowResult | AOLink (Maybe Message) App | AOFlower (FlowId, UserState)
 data FlowResult = FRNoting | FRInt Int | FRInts [Int]
 data UserState = USNothing | USInts [Int] | USInt Int | USArithOperation ([Int], String) deriving (Read, Show)
 type NodeId = String
@@ -17,29 +17,27 @@ type FlowId = String
 
 data App = Await {
   name :: NodeId,
-  message :: Message,
+  message :: UserState -> Message,
   parser :: String -> Maybe UserInput,
   handler :: UserInput -> StateT UserState IO AppOut
 } | Flower {
   name :: NodeId,
   withFlow :: (FlowId, UserState),
   continueWith :: FlowResult -> StateT UserState IO AppOut
-} | YieldFlower { -- YieldFlower is used in the globalApp (it's a jump and may be used to abrupt flows but then it has to remove the top of the stack flow )
-  withFlow :: (FlowId, UserState)
 }
 
 -- globalFlow
 
 globalApp = Await {
   name = "start",
-  message = "What do you want to do?",
+  message = const "What do you want to do?",
   parser = \ i -> case i of
     "quit" -> Just UIActionQuit
     "sum" -> Just UIActionSumTwoNumbers
     _ -> Nothing
   ,
   handler = \e -> case e of
-    UIActionSumTwoNumbers -> return $ AOLink Nothing YieldFlower { withFlow = ("arithFlow", USArithOperation ([], mempty)) }
+    UIActionSumTwoNumbers -> return $ AOFlower ("arithFlow", USArithOperation ([], mempty))
     UIActionQuit -> return $ AOEnd (Just "Goodbye!") FRNoting -- TODO: End is meaningless for globalApp
 }
 
@@ -51,7 +49,7 @@ globalFlow "start" = globalApp
 
 getANumberApp = Await {
   name = "start",
-  message = "Enter a number",
+  message = const "Enter a number",
   parser = fmap UIInt . readMaybe,
   handler = \ (UIInt i) -> return $ AOEnd Nothing (FRInt i)
 }
@@ -89,10 +87,10 @@ arithAppGetNextNumber = Flower {
 
 getOperation = Await {
   name = "getOperation",
-  message = "What operation do you want to do?",
+  message = \ (USArithOperation (b:a:_, _)) -> "What operation do you want to do? with " ++ show a ++ " and " ++ show b,
   parser = \ s -> if s `elem` ["*", "+", "-"] then Just (UIString s) else Nothing,
   handler = \ (UIString op) -> do
-    (USArithOperation (a:b:_, _)) <- get
+    (USArithOperation (b:a:_, _)) <- get
     let operation = M.lookup op $ M.fromList [("*", (*)), ("+", (+)), ("-", (-))]
     return $ maybe
       (AOLink (Just $ "Sorry we didn't recognize the given operation: " ++ op ++ ". It's weird") getOperation)
@@ -116,6 +114,8 @@ type SerializableState = [(FlowId, (NodeId, UserState))]
 initialSerState :: SerializableState
 initialSerState = [("globalFlow", ("start", USNothing))]
 
+saveSerializableState :: SerializableState -> IO ()
+saveSerializableState = writeFile "./temp" . show
 
 
 handleAppOut :: FlowId -> AppOut -> UserState -> SerializableState -> IO ()
@@ -130,26 +130,21 @@ handleAppOut flowId (AOEnd message result) _ suState = do
       -- app here must be the globalApp (at the end of YieldFlower)
       let (flowId'', (nodeId'', userState'')):rest =  suState
       runAppBeforeInput flowId'' app userState'' rest
-    _ -> error "Expected a Flower node"
 handleAppOut flowId (AOLink message app) userState suState = do
   maybe (return ()) print message
   runAppBeforeInput flowId app userState suState
-
-saveSerializableState :: SerializableState -> IO ()
-saveSerializableState = writeFile "./temp" . show
+handleAppOut flowId (AOFlower (flowId', userState')) userState rest = do
+  let rest' = (flowId, ("start", userState)):rest
+  saveSerializableState $ (flowId', ("start", userState')):rest'
+  runAppBeforeInput flowId' (getFlow flowId' "start") userState' rest'
 
 runAppBeforeInput :: FlowId -> App -> UserState -> SerializableState -> IO ()
 runAppBeforeInput flowId app@Await{} userState rest = do
   saveSerializableState ((flowId, (name app, userState)):rest)
-  print $ message app
+  print $ message app userState
 runAppBeforeInput flowId app@Flower{} userState rest = do
   let (flowId', userState') = withFlow app
   let rest' = (flowId, (name app, userState)):rest
-  saveSerializableState $ (flowId', ("start", userState')):rest'
-  runAppBeforeInput flowId' (getFlow flowId' "start") userState' rest'
-runAppBeforeInput flowId app@YieldFlower{} userState rest = do
-  let (flowId', userState') = withFlow app
-  let rest' = (flowId, ("start", userState)):rest
   saveSerializableState $ (flowId', ("start", userState')):rest'
   runAppBeforeInput flowId' (getFlow flowId' "start") userState' rest'
 
@@ -162,7 +157,6 @@ run e flowId oApp userState rest = do
     run' :: App -> UserInput -> UserState -> IO (AppOut, UserState)
     run' (Await _ _ _ handler) = runStateT . handler
     run' Flower{} = error "Flower cannot handle user input"
-    run' YieldFlower{}  = error "YieldFlower cannot handle user input"
 
 
 runApp :: FlowId -> App -> String -> UserState -> SerializableState -> IO ()
@@ -170,7 +164,7 @@ runApp flowId oApp input userState rest = case parser oApp input of
     Nothing -> do
       print "Invalid Input"
       case oApp of
-        Await{} -> print $ message oApp
+        Await{} -> print $ message oApp userState
         _       -> error "Input received for a non-Await app"
     Just e -> run e flowId oApp userState rest
 
