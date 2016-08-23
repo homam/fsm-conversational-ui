@@ -7,9 +7,11 @@ import Control.Exception
 
 type AOFlow = String
 data UserInput = UIActionSumTwoNumbers | UIActionQuit | UIInt Int | UIAny
-data AppOut = AOEnd String | AOLink App | AOMessage String App
-data UserState = USInts [Int] | USInt Int deriving (Read, Show)
+data AppOut = AOEnd String FlowResult | AOLink App | AOMessage String App
+data FlowResult = FRNoting | FRInt Int | FRInts [Int]
+data UserState = USNothing | USInts [Int] | USInt Int | USArithOperation ([Int], String) deriving (Read, Show)
 type NodeId = String
+type FlowId = String
 
 data App = Await {
   name :: NodeId,
@@ -17,26 +19,18 @@ data App = Await {
   parser :: String -> Maybe UserInput,
   handler :: UserInput -> StateT UserState IO AppOut
 } | Yield {
-  name :: NodeId,
   next :: StateT UserState IO AppOut
 } | Flower {
   name :: NodeId,
-  withFlow :: String,
-  continueWith :: UserState {- result of the flow -} -> StateT UserState IO AppOut
+  withFlow :: (FlowId, UserState),
+  continueWith :: FlowResult -> StateT UserState IO AppOut
+} | YieldFlower {
+  withFlow :: (FlowId, UserState)
 }
 
-getANumber = Await {
-  name = "start",
-  message = "Enter a number",
-  parser = fmap UIInt . readMaybe,
-  handler = \e -> case e of
-    UIInt i -> do
-      put (USInt i)
-      return $ AOEnd ""
-}
+-- globalFlow
 
-
-start = Await {
+globalApp = Await {
   name = "start",
   message = "What do you want to do?",
   parser = \ i -> case i of
@@ -45,71 +39,150 @@ start = Await {
     _ -> Nothing
   ,
   handler = \e -> case e of
-    UIActionSumTwoNumbers -> return $ AOLink getTwoNumbers
-    UIActionQuit -> return $ AOEnd "Goodbye!"
+    UIActionSumTwoNumbers -> return $ AOLink YieldFlower { withFlow = ("arithFlow", USArithOperation ([], mempty)) }
+    UIActionQuit -> return $ AOEnd "Goodbye!" FRNoting
 }
 
-getTwoNumbers = Flower {
-  name = "getTwoNumbers",
-  withFlow = "getANumberFlow",
-  continueWith = \e -> case e of
-    USInt i -> do
-      (USInts is) <- get
-      let is' = i:is
-      put $ USInts is'
-      return $ if length is' == 2 then AOLink getTwoNumbers else AOEnd "Thanks, we got two numbers"
+globalFlow :: NodeId -> App
+globalFlow "start" = globalApp
+
+
+-- getANumberFlow
+
+getANumberApp = Await {
+  name = "start",
+  message = "Enter a number",
+  parser = fmap UIInt . readMaybe,
+  handler = \e -> case e of
+    UIInt i ->
+      return $ AOEnd "" (FRInt i)
 }
 
-sumTwoNumbers = Yield {
-  name = "sumTwoNumbers",
+getANumberFlow :: NodeId -> App
+getANumberFlow "start" = getANumberApp
+
+
+
+
+-- arithOperationApp
+
+arithFlow :: NodeId -> App
+arithFlow "start" = arithApp
+arithFlow "nextNumber" = arithAppGetNextNumber
+arithFlow "sum" = sumTwoNumbersSubApp
+
+arithApp = Flower {
+  name = "start",
+  withFlow = ("getANumberFlow", USNothing),
+  continueWith = \ (FRInt i) -> do
+    USArithOperation (nums, op) <- get
+    put $ USArithOperation (i:nums, op)
+    return $ AOLink arithAppGetNextNumber
+}
+
+arithAppGetNextNumber = Flower {
+  name = "nextNumber",
+  withFlow = ("getANumberFlow", USNothing),
+  continueWith = \ (FRInt i) -> do
+    USArithOperation (nums, op) <- get
+    put $ USArithOperation (i:nums, op)
+    return $ AOLink sumTwoNumbersSubApp
+}
+
+sumTwoNumbersSubApp = Yield {
   next = do
-    (USInts is) <- get
-    return $ AOEnd ("And the sum is " ++ show (sum is))
+    USArithOperation (nums, op) <- get
+    let s = sum nums
+    return $ AOEnd ("And the sum is " ++ show s) (FRInt s)
 }
 
-getApp :: NodeId -> App
-getApp "start" = start
-getApp "getTwoNumbers" = getTwoNumbers
-getApp "sumTwoNumbers" = sumTwoNumbers
-getApp n = error $ "No state found for " ++ n
 
 
 
 
-run :: App -> UserInput -> UserState -> IO ()
-run oApp e userState = do
+
+
+getFlow :: FlowId -> (NodeId -> App)
+getFlow "globalFlow" = globalFlow
+getFlow "getANumberFlow" = getANumberFlow
+getFlow "arithFlow" = arithFlow
+
+
+
+type SerializableState = [(FlowId, (NodeId, UserState))]
+
+initialSerState :: SerializableState
+initialSerState = [("globalFlow", ("start", USNothing))]
+
+handleAppOut :: FlowId -> AppOut -> UserState -> SerializableState -> IO ()
+handleAppOut flowId (AOEnd message result) _ suState = do
+  print message
+  let (flowId', (nodeId', userState')) = head suState -- TODO: handle SerializableState with 0
+  case getFlow flowId' nodeId' of
+    app@Flower{} -> do
+      (appOut', userState'') <- runStateT (continueWith app result) userState'
+      handleAppOut flowId' appOut' userState'' (drop 1 suState)
+    app@Await{} -> do
+      let (flowId'', (nodeId'', userState'')):rest =  suState
+      runAppBeforeInput flowId'' app userState'' rest
+    _ -> error "Expected a Flower node"
+handleAppOut flowId (AOLink app) userState usState = runAppBeforeInput flowId app userState usState
+handleAppOut flowId (AOMessage message app) userState suState = do
+  print message
+  runAppBeforeInput flowId app userState suState
+
+saveSerializableState :: SerializableState -> IO ()
+saveSerializableState = writeFile "./temp" . show
+
+runAppBeforeInput :: FlowId -> App -> UserState -> SerializableState -> IO ()
+runAppBeforeInput flowId app@Await{} userState rest = do
+  saveSerializableState ((flowId, (name app, userState)):rest)
+  print $ message app
+runAppBeforeInput flowId app@Yield{} userState rest = runStateT (next app) userState >>= flip (uncurry (handleAppOut flowId)) rest
+runAppBeforeInput flowId app@Flower{} userState rest = do
+  let (flowId', userState') = withFlow app
+  let rest' = (flowId, (name app, userState)):rest
+  saveSerializableState $ (flowId', ("start", userState')):rest'
+  runAppBeforeInput flowId' (getFlow flowId' "start") userState' rest'
+runAppBeforeInput flowId app@YieldFlower{} userState rest = do
+  let (flowId', userState') = withFlow app
+  let rest' = (flowId, ("start", userState)):rest
+  saveSerializableState $ (flowId', ("start", userState')):rest'
+  runAppBeforeInput flowId' (getFlow flowId' "start") userState' rest'
+
+runAppAfterInput :: App -> UserState -> SerializableState -> UserInput -> IO ()
+runAppAfterInput = undefined
+
+run ::  FlowId -> App -> UserInput -> UserState -> SerializableState -> IO ()
+run flowId oApp e userState rest = do
   (mApp, userState') <- run' oApp e userState
-  case mApp of
-    AOEnd message -> writeFile "./temp" "" >> print message
-    AOLink app -> writeFile "./temp" (show (name app, userState')) >> go userState' app
-    AOMessage message app -> writeFile "./temp" (show (name app, userState')) >> print message >> go userState' app
+  handleAppOut flowId mApp userState' rest
   where
-    go :: UserState -> App -> IO ()
-    go _ a@Await{} = print (message a)
-    go u a@(Yield _ handler) = run a UIAny u
 
     run' :: App -> UserInput -> UserState -> IO (AppOut, UserState)
     run' (Await _ _ _ handler) = runStateT . handler
-    run' (Yield _ next) = const $ runStateT next
+    run' (Yield next) = const $ runStateT next
+    run' Flower{} = error "Flower cannot handle user input"
 
 
-runApp :: App -> String -> UserState -> IO ()
-runApp oApp input userState = case parser oApp input of
+runApp :: FlowId -> App -> String -> UserState -> SerializableState -> IO ()
+runApp flowId oApp input userState rest = case parser oApp input of
     Nothing -> print "Invalid Input"
-    Just e -> run oApp e userState
+    Just e -> run flowId oApp e userState rest
 
 
 main = do
   stFile <- readFileMaybe "./temp"
-  case (stFile >>= readMaybe) :: Maybe (NodeId, UserState) of
+  case (stFile >>= readMaybe) :: Maybe SerializableState of
     Nothing -> do
-      let app = start
-      print $ message app
+      let (flowId, (nodeId, userState)):rest = initialSerState
+      let app = getFlow flowId nodeId
+      runAppBeforeInput flowId app userState rest
       input <- getLine
-      runApp start input (USInts [])
-    Just (nodeId, userState) -> do
+      runApp flowId app input userState rest
+    Just suState@((flowId, (nodeId, userState)):rest) -> do
       input <- getLine
-      runApp (getApp nodeId) input userState
+      runApp flowId (getFlow flowId nodeId) input userState rest
 
 
 -- utils
