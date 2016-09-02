@@ -1,4 +1,5 @@
 {-# LANGUAGE ScopedTypeVariables, BangPatterns #-}
+-- {-# LANGUAGE RankNTypes, GADTs, MultiParamTypeClasses, FlexibleInstances, FlexibleContexts #-}
 
 module TestFMS6 where
 import System.IO
@@ -19,7 +20,7 @@ data App = Await {
   name :: NodeId,
   message :: UserState -> Message,
   parser :: String -> Maybe UserInput,
-  handler :: UserInput -> StateT UserState IO AppOut
+  handler :: UserInput -> StateT UserState IO AppOut -- UserInput
 } | Flower {
   name :: NodeId,
   withFlow :: (FlowId, UserState),
