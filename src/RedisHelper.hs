@@ -21,10 +21,10 @@ getRedis key = do
   conn <- connect defaultConnectInfo
   runRedis conn $ do
     a <- get (pack key)
-    liftIO $ go a
+    liftIO $ return $ go a
       where
-        go (Left a) = return Nothing
-        go (Right m) = return $ fmap unpack m
+        go (Left _) = Nothing
+        go (Right m) = fmap unpack m
 
 readRedisValue :: Read a => String -> IO (Maybe a)
 readRedisValue key = do
