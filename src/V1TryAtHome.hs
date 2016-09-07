@@ -8,6 +8,7 @@ where
 
 import V1IState
 import V1Flow
+import qualified V1SizeFlow as SF
 
 newtype Product = Product Int deriving (Read, Show)
 newtype Street = Street String deriving (Read, Show)
@@ -22,10 +23,14 @@ askStreet = askString "What is your street?" Street (,)
 askMobileNumber :: StateMachine as (MobileNumber, as) MobileNumber
 askMobileNumber = askString "What is your street?" MobileNumber (,)
 
+askSize :: StateMachine as (SF.SizeFlowResult, as) SF.SizeFlowResult
+askSize = askFlow "AskKnownSize, ()" SF.sizeFlow >>++ (,)
+
 data Stage as where
   AskProduct :: Stage ()
   AskStreet  :: Stage (Product, ())
   AskMobileNumber  :: Stage (Street, (Product, ()))
+  AskSize :: Stage (MobileNumber, (Street, (Product, ())))
 
 deriving instance Show (Stage as)
 
@@ -43,6 +48,7 @@ instance Read Suspended where
         "AskProduct"      -> parse' AskProduct
         "AskStreet"       -> parse' AskStreet
         "AskMobileNumber" -> parse' AskMobileNumber
+        "Asksize"         -> parse' AskSize
         _ -> const []
 
       parse' :: (Show as, Read as) => Stage as -> String -> [(Suspended, String)]
@@ -52,7 +58,7 @@ instance Read Suspended where
       mapFst f ~(a, b) = (f a, b)
 
 
-type TryAtHomeFlowResult = (MobileNumber, (Street, (Product, ())))
+type TryAtHomeFlowResult = (SF.SizeFlowResult, (MobileNumber, (Street, (Product, ()))))
 
 resume :: Suspended -> StateMachine as TryAtHomeFlowResult ()
 resume (Suspended AskProduct e) =
@@ -67,7 +73,13 @@ resume (Suspended AskStreet e) =
 
 resume (Suspended AskMobileNumber e) =
   iput e >>>
-  askMobileNumber >>> ireturn ()
+  askMobileNumber >>>
+  iget >>>= resume' AskSize
+
+resume (Suspended AskSize e) =
+  iput e >>>
+  askSize >>> ireturn ()
+
 
 
 resume' :: Show as => Stage as -> as -> StateMachine as TryAtHomeFlowResult ()
@@ -76,11 +88,8 @@ resume' stage as = suspend stage >>> resume (Suspended stage as)
 -- given persist :: Suspended -> IO ()
 suspend :: (Show as) => Stage as -> StateMachine as as ()
 suspend stage =
-  iget >>>= \env ->
+  iget >>>= \ env ->
   ilift (persist (Suspended stage env))
 
 tryAtHomeFlow :: Flow Suspended as TryAtHomeFlowResult ()
 tryAtHomeFlow = Flow resume
---
---
--- -- resumeFlow () "AskWeight, (False,())" sizeFlow

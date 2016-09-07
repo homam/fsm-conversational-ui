@@ -99,7 +99,7 @@ resume (Suspended AskHeight e) =
 
 resume (Suspended AskColour e) =
   iput e >>>
-  askColour
+  askColour -- >>> iget >>>= ireturn
 
 resume' :: Show as => Stage as -> as -> StateMachine as SizeFlowResult ()
 resume' stage as = suspend stage >>> resume (Suspended stage as)

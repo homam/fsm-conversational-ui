@@ -1,7 +1,8 @@
 module V1Flow
   (
     Flow(..),
-    resumeFlow, persist
+    resumeFlow, persist,
+    askFlow, (>>++)
   )
 where
 
@@ -16,4 +17,13 @@ persist :: Show sp => sp -> IO ()
 persist = print
 
 askFlow :: (Read sp) => String -> Flow sp i o a -> StateMachine i o a
-askFlow st flow = unFlow flow (read st)
+askFlow st flow =
+  ilift (print $ "New Flow Starts with state: " ++ st) >>>
+  unFlow flow (read st)
+  >>>= \a -> ilift (print "New Flow Ended") >>> ireturn a
+
+addReturn :: StateMachine i o a -> StateMachine i o o
+addReturn sm = sm >>> iget >>>= \ o -> ireturn o
+
+(>>++) :: StateMachine i o a1 -> (o -> i -> o') -> StateMachine i o' o
+sm1 >>++ f = iget >>>= \ as -> addReturn sm1 >>>= \ a -> iput (f a as) >>> ireturn a
