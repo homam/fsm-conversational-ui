@@ -1,4 +1,4 @@
-{-# LANGUAGE TupleSections, GADTs, StandaloneDeriving, FlexibleInstances #-}
+{-# LANGUAGE TupleSections, GADTs, StandaloneDeriving #-}
 
 module V1SizeFlow
   (
@@ -73,6 +73,7 @@ instance Read Suspended where
       mapFst f ~(a, b) = (f a, b)
 
 
+
 type SizeFlowResult = (Colour, (Size, (Bool, ())))
 
 resume :: Suspended -> StateMachine as SizeFlowResult ()
@@ -106,9 +107,14 @@ resume' stage as = suspend stage >>> resume (Suspended stage as)
 
 -- given persist :: Suspended -> IO ()
 suspend :: (Show as) => Stage as -> StateMachine as as ()
-suspend stage =
+suspend = suspend' Suspended
+  -- iget >>>= \env ->
+  -- ilift (persist (Suspended stage env))
+
+suspend' :: Show sp => (stage -> as -> sp) -> stage -> StateMachine as as ()
+suspend' mks stage =
   iget >>>= \env ->
-  ilift (persist (Suspended stage env))
+  ilift (persist (mks stage env))
 
 
 sizeFlow :: Flow Suspended as SizeFlowResult ()
