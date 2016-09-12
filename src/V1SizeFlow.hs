@@ -31,7 +31,6 @@ askWeight = askNumber "What is your weight?" Weight (,)
 
 askColour :: StateMachine as (Colour, as) ()
 askColour =
-  -- poor man's do-notation. You could use RebindableSyntax
   ilift (putStrLn "What is your favourite colour?") >>>
   ilift readLn >>>= \answer ->
   imodify (Colour answer,)
@@ -79,6 +78,7 @@ type SizeFlowResult = (Colour, (Size, (Bool, ())))
 resume :: Suspended -> StateMachine as SizeFlowResult ()
 resume (Suspended AskKnownSize e) =
   iput e >>>
+  suspend AskKnownSize >>>
   askKnownSize >>>= \ b ->
   resume' (if b then AskSize else AskWeight) (b, e)
 

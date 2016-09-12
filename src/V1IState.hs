@@ -63,3 +63,5 @@ askYN question mks =
     "y" -> imodify (mks True) >>> ireturn True
     "n" -> imodify (mks False) >>> ireturn False
     _ -> ilift (putStrLn "Please type y or n") >>> askYN question mks
+
+-- answer :: String -> StateMachine i o a -> StateMachine i'

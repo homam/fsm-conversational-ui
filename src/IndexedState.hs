@@ -51,6 +51,9 @@ askKnownSize = askYN' "Do you know your size?"
 askSize :: StateMachine as (Size, as) ()
 askSize = askNumber "What is your size?" Size
 
+receiveSize :: String -> StateMachine as (Size, as) ()
+receiveSize = receiveNumber Size
+
 -- askHeight takes an environment of type as and adds a Height element
 askHeight :: StateMachine as (Height, as) ()
 askHeight = askNumber "What is your height?" Height
@@ -61,7 +64,6 @@ askWeight = askNumber "What is your weight?" Weight
 
 askColour :: StateMachine as (Colour, as) ()
 askColour =
-  -- poor man's do-notation. You could use RebindableSyntax
   ilift (putStrLn "What is your favourite colour?") >>>
   ilift readLn >>>= \answer ->
   imodify (Colour answer,)
@@ -77,6 +79,17 @@ askNumber question mk =
     [(x, _)] -> imodify (mk x,)
     _ -> ilift (putStrLn "Please type a number") >>> askNumber question mk
 
+justAskColour :: StateMachine as (Maybe Colour, as) ()
+justAskColour =
+  ilift (putStrLn "What is your favourite colour?") >>>
+  imodify (Nothing, )
+
+receiveNumber :: (Int -> a) -> String -> StateMachine as (a, as) ()
+receiveNumber mk answer =
+  case reads answer of
+    [(x, _)] -> imodify (mk x,)
+    _ -> error "invalid number"
+
 askYN :: String -> StateMachine as as Bool
 askYN question =
   ilift (putStrLn question) >>>
@@ -90,6 +103,12 @@ askYN' :: String -> StateMachine as (Bool, as) Bool
 askYN' question =
   ilift (putStrLn question) >>>
   ilift readLn >>>= \answer ->
+  case answer of
+    "y" -> imodify (True,) >>> ireturn True
+    "n" -> imodify (False,) >>> ireturn False
+    _ -> ilift (putStrLn "Please type y or n") >>> askYN' question
+
+answerYN question answer =
   case answer of
     "y" -> imodify (True,) >>> ireturn True
     "n" -> imodify (False,) >>> ireturn False
@@ -206,7 +225,7 @@ main = resume'' "AskKnownSize, ()" sizeFlow ()
 -- runIState (suspend AskHeight ) (Weight 4, ())
 -- runIState (suspend AskWeight) ()
 
-newtype Flow sp as o a  = Flow {unFlow :: sp -> StateMachine as o a}
+newtype Flow sp as o a  = Flow { unFlow :: sp -> StateMachine as o a }
 
 sizeFlow :: Flow Suspended as (Colour, (Size, (Bool, ()))) ()
 sizeFlow = Flow resume
@@ -224,3 +243,18 @@ data Flows sp as o a where
 
 getFlow "SizeFlow" = SizeFlow sizeFlow
 getFlow "TryAtHomeFlow" = TryAtHomeFlow undefined
+
+
+---
+ask :: Suspended -> StateMachine as (Colour, (Size, (Bool, ()))) ()
+ask (Suspended AskKnownSize e) =
+  iput e >>>
+  suspend AskKnownSize >>>
+  askKnownSize >>>= \ b ->
+  resume' (if b then AskSize else AskWeight) (b, e)
+
+answer :: String -> Suspended -> StateMachine as (Colour, (Size, (Bool, ()))) ()
+answer answer (Suspended AskSize e) =
+  iput e >>>
+  receiveSize answer >>>
+  iget >>>= \ s -> resume' AskColour s
