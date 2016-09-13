@@ -1,6 +1,6 @@
 {-# LANGUAGE TupleSections, GADTs, StandaloneDeriving, FlexibleInstances, MultiParamTypeClasses, FlexibleContexts #-}
 
-module IndexedState
+module IndexedStateMaybe
 
 where
 
@@ -44,7 +44,7 @@ newtype Height = Height Int deriving (Read, Show)
 newtype Weight = Weight Int deriving (Read, Show)
 newtype Colour = Colour String deriving (Read, Show)
 
-askKnownSize :: StateMachine as (Bool, as) Bool
+askKnownSize :: StateMachine as (Maybe Bool, as) Bool
 askKnownSize = askYN' "Do you know your size?"
 
 -- askSize takes an environment of type as and adds a Size element
@@ -84,17 +84,25 @@ justAskColour =
   ilift (putStrLn "What is your favourite colour?") >>>
   imodify (Nothing, )
 
-justAnswer :: String -> Suspended -> StateMachine as (Maybe Colour, (Size, (Bool, ()))) ()
+justAnswer :: String -> Suspended -> StateMachine as (Maybe Colour, (Size, (Maybe Bool, ()))) ()
 justAnswer answer (Suspended AskSize e) =
   iput e >>>
   receiveSize answer >>>
   iget >>>= \ s -> undefined -- resume' AskColour (Just s) --TODO: rewrite types of resume' and resume
+
+justAnswer answer (Suspended AskKnownSize e) = undefined
 
 receiveNumber :: (Int -> a) -> String -> StateMachine as (a, as) ()
 receiveNumber mk answer =
   case reads answer of
     [(x, _)] -> imodify (mk x,)
     _ -> error "invalid number"
+
+receiveYN :: String -> StateMachine as (Maybe Bool, as) (Maybe Bool)
+receiveYN answer =  case answer of
+  "y" -> imodify (Just True,) >>> ireturn (Just True)
+  "n" -> imodify (Just False,) >>> ireturn (Just False)
+  _ -> imodify (Nothing, ) >>> ireturn (Just False)
 
 askYN :: String -> StateMachine as as Bool
 askYN question =
@@ -105,19 +113,19 @@ askYN question =
     "n" -> ireturn False
     _ -> ilift (putStrLn "Please type y or n") >>> askYN question
 
-askYN' :: String -> StateMachine as (Bool, as) Bool
+askYN' :: String -> StateMachine as (Maybe Bool, as) Bool
 askYN' question =
   ilift (putStrLn question) >>>
   ilift readLn >>>= \answer ->
   case answer of
-    "y" -> imodify (True,) >>> ireturn True
-    "n" -> imodify (False,) >>> ireturn False
+    "y" -> imodify (Just True,) >>> ireturn True
+    "n" -> imodify (Just False,) >>> ireturn False
     _ -> ilift (putStrLn "Please type y or n") >>> askYN' question
 
 answerYN question answer =
   case answer of
-    "y" -> imodify (True,) >>> ireturn True
-    "n" -> imodify (False,) >>> ireturn False
+    "y" -> imodify (Just True,) >>> ireturn True
+    "n" -> imodify (Just False,) >>> ireturn False
     _ -> ilift (putStrLn "Please type y or n") >>> askYN' question
 
 
@@ -148,10 +156,10 @@ interaction =
 
 data Stage as where
   AskKnownSize :: Stage ()
-  AskSize      :: Stage (Bool, ())
-  AskWeight    :: Stage (Bool, ())
-  AskHeight    :: Stage (Weight, (Bool, ()))
-  AskColour    :: Stage (Size, (Bool, ()))
+  AskSize      :: Stage (Maybe Bool, ())
+  AskWeight    :: Stage (Maybe Bool, ())
+  AskHeight    :: Stage (Weight, (Maybe Bool, ()))
+  AskColour    :: Stage (Size, (Maybe Bool, ()))
 
 deriving instance Show (Stage as)
 
@@ -186,11 +194,11 @@ instance Read Suspended where
 -- runIState (resume (Suspended AskWeight (False, ()) )) ()
 -- runIState (resume (Suspended AskHeight (Weight 40, ()))) ()
 
-resume :: Suspended -> StateMachine as (Colour, (Size, (Bool, ()))) ()
+resume :: Suspended -> StateMachine as (Colour, (Size, (Maybe Bool, ()))) ()
 resume (Suspended AskKnownSize e) =
   iput e >>>
   askKnownSize >>>= \ b ->
-  resume' (if b then AskSize else AskWeight) (b, e)
+  resume' (if b then AskSize else AskWeight) (Just b, e)
 
 resume (Suspended AskSize e) =
   iput e >>>
@@ -212,7 +220,7 @@ resume (Suspended AskColour e) =
   iput e >>>
   askColour
 
-resume' :: Show as => Stage as -> as -> StateMachine as (Colour, (Size, (Bool, ()))) ()
+resume' :: Show as => Stage as -> as -> StateMachine as (Colour, (Size, (Maybe Bool, ()))) ()
 resume' stage as = suspend stage >>> resume (Suspended stage as)
 
 -- given persist :: Suspended -> IO ()
@@ -233,18 +241,16 @@ main = resume'' "AskKnownSize, ()" sizeFlow ()
 
 newtype Flow sp as o a  = Flow { unFlow :: sp -> StateMachine as o a }
 
-sizeFlow :: Flow Suspended as (Colour, (Size, (Bool, ()))) ()
+sizeFlow :: Flow Suspended as (Colour, (Size, (Maybe Bool, ()))) ()
 sizeFlow = Flow resume
 
 resume'' :: (Read sp, Show o, Show a) => String -> Flow sp i o a -> i -> IO ()
 resume'' st flow i = runIState (unFlow flow (read st)) i >>= print
 
-
-
 --- ----
 
 data Flows sp as o a where
-  SizeFlow :: Flow Suspended as (Colour, (Size, (Bool, ()))) () -> Flows sp as o a
+  SizeFlow :: Flow Suspended as (Colour, (Size, (Maybe Bool, ()))) () -> Flows sp as o a
   TryAtHomeFlow :: Flow Suspended as (Colour, (Size, (Int, ()))) () -> Flows sp as o a
 
 getFlow "SizeFlow" = SizeFlow sizeFlow
@@ -252,16 +258,32 @@ getFlow "TryAtHomeFlow" = TryAtHomeFlow undefined
 
 
 ---
-ask :: Suspended -> StateMachine as (Colour, (Size, (Bool, ()))) ()
+ask :: Suspended -> StateMachine as (Colour, (Size, (Maybe Bool, ()))) ()
 ask (Suspended AskKnownSize e) =
   iput e >>>
   suspend AskKnownSize >>>
   askKnownSize >>>= \ b ->
-  resume' (if b then AskSize else AskWeight) (b, e)
+  resume' (if b then AskSize else AskWeight) (Just b, e)
 
--- runIState (answer "5" (Suspended AskSize (True, ()))) () AskColour, (Size 5,(True,()))
-answer :: String -> Suspended -> StateMachine as (Colour, (Size, (Bool, ()))) ()
+-- -- runIState (answer "5" (Suspended AskSize (True, ()))) () AskColour, (Size 5,(True,()))
+--
+-- runIState (answer "y" (Suspended AskKnownSize ())) ()
+-- runIState (answer "22" (Suspended AskSize (Just True,()))) ()
+-- runIState (answer "red" (Suspended AskColour (Size 22, (Just True,())))) ()
+-- TODO: perhaps return Either Error SM
+answer :: String -> Suspended -> StateMachine as (Colour, (Size, (Maybe Bool, ()))) ()
 answer answer (Suspended AskSize e) =
   iput e >>>
   receiveSize answer >>>
   iget >>>= \ s -> resume' AskColour s
+
+answer answer (Suspended AskKnownSize e) =
+  iput e >>>
+  receiveYN answer >>>
+  iget >>>= \ s@(b, as) -> -- resume' AskSize s
+    case b of
+      Nothing -> error "invalid input"
+      Just True -> resume' AskSize s
+      Just False -> resume' AskWeight s
+
+--TODO: answer
