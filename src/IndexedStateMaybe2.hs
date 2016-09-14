@@ -1,6 +1,6 @@
 {-# LANGUAGE TupleSections, GADTs, StandaloneDeriving, FlexibleInstances, MultiParamTypeClasses, FlexibleContexts #-}
 
-module IndexedStateMaybe
+module IndexedStateMaybe2
 
 where
 
@@ -48,19 +48,19 @@ askKnownSize :: StateMachine as (Maybe Bool, as) Bool
 askKnownSize = askYN "Do you know your size?"
 
 -- askSize takes an environment of type as and adds a Size element
-askSize :: StateMachine as (Size, as) ()
+askSize :: StateMachine as (Maybe Size, as) ()
 askSize = askNumber "What is your size?" Size
 
-receiveSize :: String -> StateMachine as (Size, as) ()
+receiveSize :: String -> StateMachine as (Maybe Size, as) ()
 receiveSize = receiveNumber Size
 
 -- askHeight takes an environment of type as and adds a Height element
-askHeight :: StateMachine as (Height, as) ()
+askHeight :: StateMachine as (Maybe Height, as) ()
 askHeight = askNumber "What is your height?" Height
 
 -- etc
 askWeight :: StateMachine as (Maybe Weight, as) ()
-askWeight = askNumber "What is your weight?" (Just . Weight)
+askWeight = askNumber "What is your weight?" Weight
 
 askColour :: StateMachine as (Colour, as) ()
 askColour =
@@ -71,12 +71,12 @@ askColour =
 calculateSize :: Height -> Weight -> Size
 calculateSize (Height h) (Weight w) = Size (h - w)  -- or whatever the calculation is
 
-askNumber :: String -> (Int -> a) -> StateMachine as (a, as) ()
+askNumber :: String -> (Int -> a) -> StateMachine as (Maybe a, as) ()
 askNumber question mk =
   ilift (putStrLn question) >>>
   ilift readLn >>>= \answer ->
   case reads answer of
-    [(x, _)] -> imodify (mk x,)
+    [(x, _)] -> imodify (mk <$> Just x,)
     _ -> ilift (putStrLn "Please type a number") >>> askNumber question mk
 
 justAskColour :: StateMachine as (Maybe Colour, as) ()
@@ -84,11 +84,11 @@ justAskColour =
   ilift (putStrLn "What is your favourite colour?") >>>
   imodify (Nothing, )
 
-receiveNumber :: (Int -> a) -> String -> StateMachine as (a, as) ()
+receiveNumber :: (Int -> a) -> String -> StateMachine as (Maybe a, as) ()
 receiveNumber mk answer =
   case reads answer of
-    [(x, _)] -> imodify (mk x,)
-    _ -> error "invalid number"
+    [(x, _)] -> imodify (mk <$> x,)
+    _ -> imodify (Nothing, ) >>> ireturn ()
 
 receiveYN :: String -> StateMachine as (Maybe Bool, as) (Maybe Bool)
 receiveYN answer =  case answer of
@@ -111,7 +111,7 @@ data Stage as where
   AskSize      :: Stage (Maybe Bool, ())
   AskWeight    :: Stage (Maybe Bool, ())
   AskHeight    :: Stage (Maybe Weight, (Maybe Bool, ()))
-  AskColour    :: Stage (Size, (Maybe Bool, ()))
+  AskColour    :: Stage (Maybe Size, (Maybe Bool, ()))
 
 deriving instance Show (Stage as)
 
@@ -140,7 +140,7 @@ instance Read Suspended where
       mapFst f ~(a, b) = (f a, b)
 
 
-type SMResult = (Colour, (Size, (Maybe Bool, ())))
+type SMResult = (Colour, (Maybe Size, (Maybe Bool, ())))
 
 -- WORKS: runIState (resume (read "AskColour, (Size 33, (True, ()))" )) ()
 -- WORKS: runIState (resume (read "AskKnownSize, ()" )) ()
@@ -167,12 +167,13 @@ resume (Suspended AskWeight e) =
 resume (Suspended AskHeight e) =
   iput e >>>
   askHeight >>>
-  imodify (\(h, (Just w, xs)) -> (calculateSize h w, xs)) >>> -- TODO: none-exhausive pattern mathching
+  imodify (\(h, (w, xs)) -> (calculateSize <$> h <*> w, xs)) >>> -- TODO: none-exhausive pattern mathching
   iget >>>= resume' AskColour
 
 resume (Suspended AskColour e) =
   iput e >>>
   askColour
+
 
 resume' :: Show as => Stage as -> as -> StateMachine as SMResult ()
 resume' stage as = suspend stage >>> resume (Suspended stage as)
@@ -225,7 +226,6 @@ ask (Suspended AskKnownSize e) =
 -- runIState (answer "haha" (Suspended AskKnownSize ())) () -- to test error handling
 -- runIState (answer "22" (Suspended AskSize (Just True,()))) ()
 -- runIState (answer "red" (Suspended AskColour (Size 22, (Just True,())))) ()
--- TODO: perhaps return Either Error SM
 answer :: String -> Suspended -> StateMachine as SMResult  ()
 answer answer (Suspended AskSize e) =
   iput e >>>
