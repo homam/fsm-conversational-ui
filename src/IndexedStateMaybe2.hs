@@ -256,5 +256,12 @@ answer answer (Suspended AskWeight e) =
       Nothing -> ilift (putStrLn "invalid input, please enter a number") >>> resume (Suspended AskWeight e)
       Just i -> resume' AskHeight s
 
+handleAnswer :: (Show as, Show a) => String -> (String -> StateMachine as (Maybe a, as) ()) -> Suspended -> (a -> Stage (Maybe a, as)) -> StateMachine as SMResult  ()
+handleAnswer answer receiver onError onNext =
+  receiver answer >>>
+  iget >>>= \ s@(b, as) ->
+    case b of
+      Nothing -> resume onError
+      Just i -> resume' (onNext i) s
 
 --TODO: answer
