@@ -62,11 +62,11 @@ askHeight = askNumber "What is your height?" Height
 askWeight :: StateMachine as (Maybe Weight, as) ()
 askWeight = askNumber "What is your weight?" Weight
 
-askColour :: StateMachine as (Colour, as) ()
+askColour :: StateMachine as (Maybe Colour, as) ()
 askColour =
   ilift (putStrLn "What is your favourite colour?") >>>
   ilift readLn >>>= \answer ->
-  imodify (Colour answer,)
+  imodify (Just $ Colour answer,)
 
 calculateSize :: Height -> Weight -> Size
 calculateSize (Height h) (Weight w) = Size (h - w)  -- or whatever the calculation is
@@ -87,7 +87,7 @@ justAskColour =
 receiveNumber :: (Int -> a) -> String -> StateMachine as (Maybe a, as) ()
 receiveNumber mk answer =
   case reads answer of
-    [(x, _)] -> imodify (mk <$> x,)
+    [(x, _)] -> imodify (mk <$> Just x,)
     _ -> imodify (Nothing, ) >>> ireturn ()
 
 receiveYN :: String -> StateMachine as (Maybe Bool, as) (Maybe Bool)
@@ -140,7 +140,7 @@ instance Read Suspended where
       mapFst f ~(a, b) = (f a, b)
 
 
-type SMResult = (Colour, (Maybe Size, (Maybe Bool, ())))
+type SMResult = (Maybe Colour, (Maybe Size, (Maybe Bool, ())))
 
 -- WORKS: runIState (resume (read "AskColour, (Size 33, (True, ()))" )) ()
 -- WORKS: runIState (resume (read "AskKnownSize, ()" )) ()
@@ -227,18 +227,34 @@ ask (Suspended AskKnownSize e) =
 -- runIState (answer "22" (Suspended AskSize (Just True,()))) ()
 -- runIState (answer "red" (Suspended AskColour (Size 22, (Just True,())))) ()
 answer :: String -> Suspended -> StateMachine as SMResult  ()
+
+--runIState (answer "12" (Suspended AskSize (Just True, ()))) ()
 answer answer (Suspended AskSize e) =
   iput e >>>
   receiveSize answer >>>
-  iget >>>= \ s -> resume' AskColour s
+  iget >>>= \ s@(b, as) ->
+    case b of
+      Nothing -> ilift (putStrLn "invalid input, please enter a number") >>> resume (Suspended AskSize e)
+      Just i -> resume' AskColour s
 
+-- runIState (answer "n" (Suspended AskKnownSize ())) ()
 answer answer (Suspended AskKnownSize e) =
   iput e >>>
   receiveYN answer >>>
   iget >>>= \ s@(b, as) -> -- resume' AskSize s
     case b of
-      Nothing -> ilift (putStrLn "invalid input, please enter either y or n") >>> resume (Suspended AskKnownSize ()) -- error "invalid input"
+      Nothing -> ilift (putStrLn "invalid input, please enter either y or n") >>> resume (Suspended AskKnownSize ())
       Just True -> resume' AskSize s
       Just False -> resume' AskWeight s
+
+-- runIState (answer "44" (Suspended AskWeight (Just False,()))) ()
+answer answer (Suspended AskWeight e) =
+  iput e >>>
+  receiveNumber Weight answer >>>
+  iget >>>= \ s@(b, as) ->
+    case b of
+      Nothing -> ilift (putStrLn "invalid input, please enter a number") >>> resume (Suspended AskWeight e)
+      Just i -> resume' AskHeight s
+
 
 --TODO: answer
