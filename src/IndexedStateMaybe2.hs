@@ -231,11 +231,13 @@ answer :: String -> Suspended -> StateMachine as SMResult  ()
 --runIState (answer "12" (Suspended AskSize (Just True, ()))) ()
 answer answer (Suspended AskSize e) =
   iput e >>>
-  receiveSize answer >>>
-  iget >>>= \ s@(b, as) ->
-    case b of
-      Nothing -> ilift (putStrLn "invalid input, please enter a number") >>> resume (Suspended AskSize e)
-      Just i -> resume' AskColour s
+  handleAnswer (receiveSize answer) ("Invalid input, enter a number", Suspended AskSize e) (const AskColour)
+
+  -- receiveSize answer >>>
+  -- iget >>>= \ s@(b, as) ->
+  --   case b of
+  --     Nothing -> ilift (putStrLn "invalid input, please enter a number") >>> resume (Suspended AskSize e)
+  --     Just i -> resume' AskColour s
 
 -- runIState (answer "n" (Suspended AskKnownSize ())) ()
 answer answer (Suspended AskKnownSize e) =
@@ -256,12 +258,12 @@ answer answer (Suspended AskWeight e) =
       Nothing -> ilift (putStrLn "invalid input, please enter a number") >>> resume (Suspended AskWeight e)
       Just i -> resume' AskHeight s
 
-handleAnswer :: (Show as, Show a) => String -> (String -> StateMachine as (Maybe a, as) ()) -> Suspended -> (a -> Stage (Maybe a, as)) -> StateMachine as SMResult  ()
-handleAnswer answer receiver onError onNext =
-  receiver answer >>>
+handleAnswer :: (Show as, Show a) => StateMachine as (Maybe a, as) () -> (String, Suspended) -> (a -> Stage (Maybe a, as)) -> StateMachine as SMResult  ()
+handleAnswer received (errorMessage, onError) onNext =
+  received >>>
   iget >>>= \ s@(b, as) ->
     case b of
-      Nothing -> resume onError
+      Nothing -> ilift (putStrLn errorMessage) >>> resume onError
       Just i -> resume' (onNext i) s
 
 --TODO: answer
