@@ -1,12 +1,18 @@
 {-# LANGUAGE GADTs, StandaloneDeriving #-}
 
-module V2TryAtHome (run, Suspended) where
+module V2TryAtHome (run, Stage(..)) where
 
-import V2FlowCont (Cont(..))
+import V2FlowCont (Cont(..), StageFlow(FlowTryAtHome, FlowYourSize))
 import qualified V2Size as Size
 
 newtype Product = Product Int deriving (Read, Show)
 newtype Address = Address String deriving (Read, Show)
+
+data Suspended where
+    Suspended :: Show as => Stage as -> as -> Suspended
+
+instance Show Suspended where
+  show (Suspended stage as) = show stage ++ ", " ++ show as
 
 data Stage a where
   AskProduct :: Stage ()
@@ -16,11 +22,6 @@ data Stage a where
 
 deriving instance Show (Stage a)
 
-data Suspended where
-    Suspended :: Show as => Stage as -> as -> Suspended
-
-instance Show Suspended where
-  show (Suspended stage as) = show stage ++ ", " ++ show as
 
 getProduct :: s -> String -> (Product, s)
 getProduct s i = (Product $ read i, s)
@@ -28,6 +29,7 @@ getProduct s i = (Product $ read i, s)
 getAddress :: s -> String -> (Address, s)
 getAddress s i = (Address i, s)
 
-run :: Suspended -> String -> Cont
-run (Suspended AskProduct s) i = Start (Suspended AskSize (getProduct s i)) (Size.Suspended Size.AskDoYou ())
-run (Suspended AskAddress s) i = End (Suspended AskFinal (getAddress s i))
+run :: Stage s -> s -> String -> Cont
+run AskProduct s i = Start (FlowTryAtHome $ Suspended AskSize (getProduct s i)) (FlowYourSize $ Size.Suspended Size.AskDoYou ())
+run AskSize s i = Cont . FlowTryAtHome $ Suspended AskAddress undefined
+run AskAddress s i = End . FlowTryAtHome $ Suspended AskFinal (getAddress s i)

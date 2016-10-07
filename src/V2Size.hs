@@ -2,7 +2,7 @@
 
 module V2Size (run, Suspended(Suspended), FinalResult, Stage(AskDoYou)) where
 
-import V2FlowCont (Cont(..))
+import V2FlowCont (Cont(..), StageFlow(FlowYourSize))
 
 newtype Size = Size Int deriving (Read, Show)
 newtype Height = Height Int deriving (Read, Show)
@@ -35,7 +35,7 @@ getHeight :: (Weight, s) -> String -> (Size, s)
 getHeight (Weight w, s) i = (Size $ w * read i, s)
 
 run :: Suspended -> String -> Cont
-run (Suspended AskDoYou s) i = Cont $ if "y" == i then Suspended AskSize (True, s) else Suspended AskWeight (False, s)
-run (Suspended AskWeight s) i = Cont $ Suspended AskHeight (getWeight s i)
-run (Suspended AskHeight s) i = End $ Suspended AskFinal (getHeight s i)
-run (Suspended AskSize s) i = End $ Suspended AskFinal (getKnownSize s i)
+run (Suspended AskDoYou s) i = Cont . FlowYourSize $ if "y" == i then Suspended AskSize (True, s) else Suspended AskWeight (False, s)
+run (Suspended AskWeight s) i = Cont . FlowYourSize $ Suspended AskHeight (getWeight s i)
+run (Suspended AskHeight s) i = End . FlowYourSize $ Suspended AskFinal (getHeight s i)
+run (Suspended AskSize s) i = End . FlowYourSize $ Suspended AskFinal (getKnownSize s i)
