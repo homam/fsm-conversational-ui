@@ -40,6 +40,8 @@ library
                       , wreq
                       , lens
                       , unordered-containers
+                      , free
+                      , monad-control
   default-language:    Haskell2010
 
 executable fsm-conversation-exe
