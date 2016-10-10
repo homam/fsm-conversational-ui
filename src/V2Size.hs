@@ -1,8 +1,8 @@
 {-# LANGUAGE GADTs, StandaloneDeriving #-}
 
-module V2Size (run, Suspended(Suspended), FinalResult, Stage(AskDoYou)) where
+module V2Size (Suspended(Suspended), FinalResult, Stage(..)) where -- AskDoYou, AskFinal
 
-import V2FlowCont (Cont(..), StageFlow(FlowYourSize))
+import V2FlowCont (Cont(..), IsState(..), start, cont, end)
 
 newtype Size = Size Int deriving (Read, Show)
 newtype Height = Height Int deriving (Read, Show)
@@ -25,6 +25,24 @@ data Suspended where
 instance Show Suspended where
   show (Suspended stage as) = show stage ++ ", " ++ show as
 
+instance Read Suspended where
+  readsPrec = const $ uncurry ($) . mapFst parse . fmap (drop 2) . break (==',')
+    where
+      parse :: String -> String -> [(Suspended, String)]
+      parse stage = case stage of
+        "AskDoYou"  -> parse' AskDoYou
+        "AskSize"   -> parse' AskSize
+        "AskWeight" -> parse' AskWeight
+        "AskHeight" -> parse' AskHeight
+        "AskFinal"  -> parse' AskFinal
+        _ -> const []
+
+      parse' :: (Show as, Read as) => Stage as -> String -> [(Suspended, String)]
+      parse' stg st = [(Suspended stg (read st), mempty)]
+
+      mapFst :: (a -> c) -> (a, b) -> (c, b)
+      mapFst f ~(a, b) = (f a, b)
+
 getKnownSize :: s -> String -> (Size, s)
 getKnownSize s i = (Size $ read i, s)
 
@@ -34,8 +52,9 @@ getWeight s i = (Weight $ read i, s)
 getHeight :: (Weight, s) -> String -> (Size, s)
 getHeight (Weight w, s) i = (Size $ w * read i, s)
 
-run :: Suspended -> String -> Cont
-run (Suspended AskDoYou s) i = Cont . FlowYourSize $ if "y" == i then Suspended AskSize (True, s) else Suspended AskWeight (False, s)
-run (Suspended AskWeight s) i = Cont . FlowYourSize $ Suspended AskHeight (getWeight s i)
-run (Suspended AskHeight s) i = End . FlowYourSize $ Suspended AskFinal (getHeight s i)
-run (Suspended AskSize s) i = End . FlowYourSize $ Suspended AskFinal (getKnownSize s i)
+
+instance IsState Suspended where
+  step (Suspended AskDoYou s) i = cont $ if "y" == i then Suspended AskSize (True, s) else Suspended AskWeight (False, s)
+  step (Suspended AskWeight s) i = cont $ Suspended AskHeight (getWeight s i)
+  step (Suspended AskHeight s) i = end $ Suspended AskFinal (getHeight s i)
+  step (Suspended AskSize s) i = end $ Suspended AskFinal (getKnownSize s i)
