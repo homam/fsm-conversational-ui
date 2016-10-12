@@ -1,6 +1,6 @@
 {-# LANGUAGE GADTs, StandaloneDeriving #-}
 
-module V2Checkout (Suspended(Suspended), FinalResult) where -- AskDoYou, AskCheckoutFinal
+module V2Checkout (Suspended(Suspended), Stage(..), FinalResult) where -- AskDoYou, AskCheckoutFinal
 
 import V2FlowCont (Cont(..), IsState(..), start, cont, end)
 import V2ParserUtil (parseSuspended, parseStage, ReadParsec(..))
@@ -34,4 +34,4 @@ instance ReadParsec Suspended where
 
 
 instance IsState Suspended where
-  step (Suspended AskCheckoutBillingInfo s) i = cont $ Suspended AskCheckoutFinal (BillingInfo i, s)
+  step (Suspended AskCheckoutBillingInfo s) i = end $ Suspended AskCheckoutFinal (BillingInfo i, s)

@@ -26,7 +26,7 @@ instance ReadParsec Suspended where
         read' "AskSizeFlow" AskSizeFlow
       , read' "AskProduct" AskProduct
       , read' "AskAddress" AskAddress
-      , read' "AskCheckout" AskCheckoutFlow
+      , read' "AskCheckoutFlow" AskCheckoutFlow
       , read' "AskFinal" AskFinal
     ]
     where
@@ -55,5 +55,9 @@ instance IsState Suspended where
     in case f of
       Size.Suspended Size.AskFinal s' -> cont $ Suspended AskAddress (s', s)
       _ -> error ("error: " ++ i ++ " is not of type Size.Suspended Size.AskFinal s")
-  step (Suspended AskAddress s) i = cont (Suspended AskCheckoutFlow (Address i, s))
-  step (Suspended AskCheckoutFlow s) i = cont (Suspended AskFinal (read i, s))
+  step (Suspended AskAddress s) i = start (Suspended AskCheckoutFlow (Address i, s)) (Checkout.Suspended Checkout.AskCheckoutBillingInfo ())
+  step st@(Suspended AskCheckoutFlow s) i =
+    let f = trace ("> " ++ show st ++ " -- " ++ i) (read i :: Checkout.Suspended)
+    in case f of
+      Checkout.Suspended Checkout.AskCheckoutFinal s' -> end $ Suspended AskFinal (s', s)
+      _ -> error ("error: " ++ i ++ " is not of type Checkout.Suspended Checkout.FinalResult s")

@@ -4,6 +4,7 @@ module V2Flow () where
 
 import qualified V2Size as Size
 import qualified V2TryAtHome as TryAtHome
+import qualified V2Checkout as Checkout
 import V2FlowCont (Cont(..), cont, start, end, State(..), IsState(..))
 
 import Control.Arrow (first)
@@ -24,8 +25,9 @@ proceed ∷ Cont → Stack → Stack
 proceed (Cont s) rest = s : rest
 proceed (Start s s') rest = s' : s : rest
 -- proceed (End s) rest = rest
-proceed (End s) rest = let (h:t) = rest in
-  proceed (next h (show s)) t
+proceed (End s) rest = case rest of
+  (h:t) -> proceed (next h (show s)) t
+  []    -> []
 
 serialize ∷ Stack → [String]
 serialize = map save
@@ -55,11 +57,26 @@ instance (IsState l, IsState r) ⇒ IsState (BiState l r) where
   step (RState y) = step y
 
 
+data TriState a b c = ATri a | BTri b | CTri c
+
+instance (Read a, Read b, Read c) => Read (TriState a b c) where
+  readsPrec p s = map (first ATri) (readsPrec p s) ++ map (first BTri) (readsPrec p s) ++ map (first CTri) (readsPrec p s)
+
+instance (Show a, Show b, Show c) ⇒ Show (TriState a b c) where
+  show (ATri x) = show x
+  show (BTri x) = show x
+  show (CTri x) = show x
+
+instance (IsState a, IsState b, IsState c) ⇒ IsState (TriState a b c) where
+  step (ATri x) = step x
+  step (BTri x) = step x
+  step (CTri x) = step x
+
 loopStack :: Stack → IO ()
 loopStack current = do
   let saved = serialize current
   putStrLn $ "saved = " ++ show saved
-  case (deserialize saved ∷ Maybe [BiState Size.Suspended TryAtHome.Suspended]) of
+  case (deserialize saved ∷ Maybe [BiState (BiState Checkout.Suspended Size.Suspended) TryAtHome.Suspended]) of
     Just loaded -> do
       let next' = run $ stack loaded
       i <- readLn
