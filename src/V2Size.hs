@@ -1,8 +1,9 @@
 {-# LANGUAGE GADTs, StandaloneDeriving #-}
 
-module V2Size (Suspended(Suspended), FinalResult, Stage(..)) where -- AskDoYou, AskFinal
+module V2Size (Suspended(Suspended), FinalResult, Stage(..), Size(..), Weight(..), Height(..)) where -- AskDoYou, AskFinal
 
 import V2FlowCont (Cont(..), IsState(..), start, cont, end)
+import V2ParserUtil (parseSuspended, parseStage, ReadParsec(..))
 
 newtype Size = Size Int deriving (Read, Show)
 newtype Height = Height Int deriving (Read, Show)
@@ -23,25 +24,21 @@ data Suspended where
   Suspended :: Show as => Stage as -> as -> Suspended
 
 instance Show Suspended where
-  show (Suspended stage as) = show stage ++ ", " ++ show as
+  show (Suspended stage as) = "Suspended " ++ show stage ++ " " ++ show as
 
 instance Read Suspended where
-  readsPrec = const $ uncurry ($) . mapFst parse . fmap (drop 2) . break (==',')
+  readsPrec = readsPrec1
+
+instance ReadParsec Suspended where
+  parsecRead = parseSuspended [
+        read' "AskSize" AskSize
+      , read' "AskDoYou" AskDoYou
+      , read' "AskWeight" AskWeight
+      , read' "AskHeight" AskHeight
+      , read' "AskFinal" AskFinal
+    ]
     where
-      parse :: String -> String -> [(Suspended, String)]
-      parse stage = case stage of
-        "AskDoYou"  -> parse' AskDoYou
-        "AskSize"   -> parse' AskSize
-        "AskWeight" -> parse' AskWeight
-        "AskHeight" -> parse' AskHeight
-        "AskFinal"  -> parse' AskFinal
-        _ -> const []
-
-      parse' :: (Show as, Read as) => Stage as -> String -> [(Suspended, String)]
-      parse' stg st = [(Suspended stg (read st), mempty)]
-
-      mapFst :: (a -> c) -> (a, b) -> (c, b)
-      mapFst f ~(a, b) = (f a, b)
+      read' name = parseStage name  . Suspended
 
 getKnownSize :: s -> String -> (Size, s)
 getKnownSize s i = (Size $ read i, s)

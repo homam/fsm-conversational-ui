@@ -9,6 +9,9 @@ import V2FlowCont (Cont(..), cont, start, end, State(..), IsState(..))
 import Control.Arrow (first)
 import Text.Read (Read(readsPrec), readMaybe)
 
+import qualified System.IO as IO
+
+import Debug.Trace (trace)
 
 -- | Stack is list of states
 type Stack = [State]
@@ -41,7 +44,7 @@ stack = map state
 data BiState l r = LState l | RState r
 
 instance (Read l, Read r) ⇒ Read (BiState l r) where
-  readsPrec p s = map (first LState) (readsPrec p s) ++ map (first RState) (readsPrec p s)
+  readsPrec p s = trace ("\nRead BiState s = " ++ s ++ "\n") $ map (first LState) (readsPrec p s) ++ map (first RState) (readsPrec p s)
 
 instance (Show l, Show r) ⇒ Show (BiState l r) where
   show (LState x) = show x
@@ -55,8 +58,8 @@ instance (IsState l, IsState r) ⇒ IsState (BiState l r) where
 loopStack :: Stack → IO ()
 loopStack current = do
   let saved = serialize current
-  print saved
-  case (deserialize saved ∷ Maybe [BiState TryAtHome.Suspended Size.Suspended]) of
+  putStrLn $ "saved = " ++ show saved
+  case (deserialize saved ∷ Maybe [BiState Size.Suspended TryAtHome.Suspended]) of
     Just loaded -> do
       let next' = run $ stack loaded
       i <- readLn
@@ -80,6 +83,8 @@ test' ∷ IO ()
 test' = do
   let start = [state $ TryAtHome.Suspended TryAtHome.AskProduct ()] :: Stack
   -- loopStack start
-  loopStackWORead start
+  loopStack start
 
-main = test'
+main = do
+  IO.hSetBuffering IO.stdin IO.LineBuffering
+  test'
