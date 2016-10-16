@@ -1,8 +1,8 @@
 {-# LANGUAGE GADTs, StandaloneDeriving #-}
 
-module V2Checkout (Suspended(Suspended), Stage(..), FinalResult) where -- AskDoYou, AskCheckoutFinal
+module V2Checkout (Suspended(Suspended), Stage(..), FinalResult) where
 
-import V2FlowCont (Cont(..), IsState(..), start, cont, end)
+import V2FlowCont (Answer(..), Cont(..), IsQuestion(..), IsState(..), start, cont, end)
 import V2ParserUtil (parseSuspended, parseStage, ReadParsec(..))
 
 newtype BillingInfo = BillingInfo String deriving (Read, Show)
@@ -11,7 +11,7 @@ type FinalResult = (BillingInfo, ())
 
 data Stage a where
   AskCheckoutBillingInfo :: Stage ()
-  AskCheckoutFinal       :: Stage (BillingInfo, ())
+  AskFinal       :: Stage (BillingInfo, ())
 
 deriving instance Show (Stage a)
 
@@ -22,16 +22,19 @@ instance Show Suspended where
   show (Suspended stage as) = "Suspended " ++ show stage ++ " " ++ show as
 
 instance Read Suspended where
-  readsPrec = readsPrec1
+  readsPrec = readsPrecRP
 
 instance ReadParsec Suspended where
-  parsecRead = parseSuspended [
+  readParsec = parseSuspended [
         read' "AskCheckoutBillingInfo" AskCheckoutBillingInfo
-      , read' "AskCheckoutFinal" AskCheckoutFinal
+      , read' "AskFinal" AskFinal
     ]
     where
       read' name = parseStage name  . Suspended
 
+instance IsQuestion Suspended where
+  ask (Suspended AskCheckoutBillingInfo _) = Just "What is your credit card number?"
+  ask (Suspended AskFinal       _) = Nothing
 
 instance IsState Suspended where
-  step (Suspended AskCheckoutBillingInfo s) i = end $ Suspended AskCheckoutFinal (BillingInfo i, s)
+  step (Suspended AskCheckoutBillingInfo s) (Answer i) = end $ Suspended AskFinal (BillingInfo i, s)

@@ -3,18 +3,24 @@
 module V2ParserUtil (parseSuspended, parseStage, ReadParsec(..))
 where
 
-import Text.ParserCombinators.Parsec
+import Text.ParserCombinators.Parsec (string, char, try, many, anyToken, (<|>), getInput, parse)
 import Text.Parsec.Prim (ParsecT)
 import Data.Functor.Identity (Identity)
 
-import Debug.Trace (trace)
-
+-- | By convenction we expect every Suspended types to be shown as: @Suspended Stage Value@.
 parseSuspended :: [ParsecT String u Identity t] -> ParsecT String u Identity t
-parseSuspended = parsecSuspended . toTryParsec
+parseSuspended = parsecSuspended . toTryParsec where
 
-parsecSuspended :: ParsecT String u Identity t -> ParsecT String u Identity t
-parsecSuspended p = string "Suspended" >> char ' ' >> p
+  parsecSuspended :: ParsecT String u Identity t -> ParsecT String u Identity t
+  parsecSuspended p = string "Suspended" >> char ' ' >> p
 
+  toTryParsec :: [ParsecT String u Identity t] -> ParsecT String u Identity t
+  toTryParsec (h:rest) = foldl1 (<|>) (map try rest) <|> h
+
+-- | Parses @Suspended Stage as@ GADT, for example:
+-- @
+-- parse (parseStage "AskSize" $ Suspended AskSize) "" "AskSize (False, ())"
+-- @
 parseStage :: Read b => String -> (b -> t) -> ParsecT String u Identity t
 parseStage name stager = do
   string name
@@ -22,21 +28,15 @@ parseStage name stager = do
   t <- many anyToken
   return $ stager $ read t
 
-toTryParsec :: [ParsecT String u Identity t] -> ParsecT String u Identity t
-toTryParsec (h:rest) = foldl1 (<|>) (map try rest) <|> h
--- toTryParsec = foldl1 (<|>) . map try
-
+-- | Create 'Read' instances of @Suspended@ types by @readsPrec = readsPrecRP@
 class ReadParsec t where
-  parsecRead :: ParsecT String u Identity t
+  readParsec :: ParsecT String u Identity t
 
-  readsPrec1 :: ReadParsec t => a -> String -> [(t, String)]
-  readsPrec1 _ = either (const []) id . parse (parsecRead' parsecRead) ""
+  readsPrecRP :: ReadParsec t => a -> String -> [(t, String)]
+  readsPrecRP _ = either (const []) id . parse (readParsec' readParsec) ""
 
--- instance (ReadParsec t) => Read t where
---   readsPrec _ = either (const []) id . parse (parsecRead' parsecRead) ""
-
-parsecRead' :: ParsecT String u Identity t -> ParsecT String u Identity [(t, String)]
-parsecRead' parsecRead = do
-  a <- parsecRead
+readParsec' :: ParsecT String u Identity t -> ParsecT String u Identity [(t, String)]
+readParsec' readParsec = do
+  a <- readParsec
   rest <- getInput
   return [(a, rest)]

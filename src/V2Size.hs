@@ -1,22 +1,25 @@
 {-# LANGUAGE GADTs, StandaloneDeriving #-}
 
-module V2Size (Suspended(Suspended), FinalResult, Stage(..), Size(..), Weight(..), Height(..)) where -- AskDoYou, AskFinal
+module V2Size (Suspended(Suspended), SizeResult, Stage(AskDoYou, AskFinal), Size(..), Weight(..), Height(..)) where -- AskDoYou, AskFinal
 
-import V2FlowCont (Cont(..), IsState(..), start, cont, end)
-import V2ParserUtil (parseSuspended, parseStage, ReadParsec(..))
+import V2FlowCont (Answer(..), Cont(..), IsQuestion(..), IsState(..), start, cont, end)
+import V2ParserUtil (parseSuspended, parseStage, ReadParsec(readsPrecRP, readParsec))
 
 newtype Size = Size Int deriving (Read, Show)
 newtype Height = Height Int deriving (Read, Show)
 newtype Weight = Weight Int deriving (Read, Show)
 
-type FinalResult = (Size, (Bool, ()))
+data SizeResult = SizeResult {
+  knownSize :: Bool,
+  size :: Size
+} deriving (Read, Show)
 
 data Stage a where
   AskDoYou  :: Stage ()
   AskSize   :: Stage (Bool, ())
   AskWeight :: Stage (Bool, ())
   AskHeight :: Stage (Weight, (Bool, ()))
-  AskFinal  :: Stage FinalResult
+  AskFinal  :: Stage SizeResult
 
 deriving instance Show (Stage a)
 
@@ -27,10 +30,10 @@ instance Show Suspended where
   show (Suspended stage as) = "Suspended " ++ show stage ++ " " ++ show as
 
 instance Read Suspended where
-  readsPrec = readsPrec1
+  readsPrec = readsPrecRP
 
 instance ReadParsec Suspended where
-  parsecRead = parseSuspended [
+  readParsec = parseSuspended [
         read' "AskSize" AskSize
       , read' "AskDoYou" AskDoYou
       , read' "AskWeight" AskWeight
@@ -38,20 +41,27 @@ instance ReadParsec Suspended where
       , read' "AskFinal" AskFinal
     ]
     where
-      read' name = parseStage name  . Suspended
+      read' name = parseStage name . Suspended
 
-getKnownSize :: s -> String -> (Size, s)
-getKnownSize s i = (Size $ read i, s)
+getKnownSize :: (Bool, s) -> String -> SizeResult
+getKnownSize (b, _) i = SizeResult { size = Size $ read i, knownSize = b}
 
 getWeight :: s -> String -> (Weight, s)
 getWeight s i = (Weight $ read i, s)
 
-getHeight :: (Weight, s) -> String -> (Size, s)
-getHeight (Weight w, s) i = (Size $ w * read i, s)
+getHeight :: (Weight, (Bool, s)) -> String -> SizeResult
+getHeight (Weight w, (b, _)) i = SizeResult { size = Size $ w * read i, knownSize = b }
 
+instance IsQuestion Suspended where
+  ask (Suspended AskDoYou  _) = Just "Do you know your size?"
+  ask (Suspended AskWeight _) = Just "What is your weight?"
+  ask (Suspended AskHeight _) = Just "What is your height?"
+  ask (Suspended AskSize   _) = Just "What is your size?"
+  ask (Suspended AskFinal  _) = Nothing
 
 instance IsState Suspended where
-  step (Suspended AskDoYou s) i = cont $ if "y" == i then Suspended AskSize (True, s) else Suspended AskWeight (False, s)
-  step (Suspended AskWeight s) i = cont $ Suspended AskHeight (getWeight s i)
-  step (Suspended AskHeight s) i = end $ Suspended AskFinal (getHeight s i)
-  step (Suspended AskSize s) i = end $ Suspended AskFinal (getKnownSize s i)
+  step (Suspended AskDoYou  s) (Answer i) = cont $ if "y" == i then Suspended AskSize (True, s) else Suspended AskWeight (False, s)
+  step (Suspended AskWeight s) (Answer i) = cont $ Suspended AskHeight (getWeight s i)
+  step (Suspended AskHeight s) (Answer i) = end $ Suspended AskFinal (getHeight s i)
+  step (Suspended AskSize   s) (Answer i) = end $ Suspended AskFinal (getKnownSize s i)
+  step (Suspended AskFinal  _) _          = error "Flow already ended."

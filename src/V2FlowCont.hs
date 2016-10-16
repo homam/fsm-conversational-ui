@@ -1,35 +1,43 @@
-{-# LANGUAGE UnicodeSyntax #-}
+module V2FlowCont (Answer(..), Cont(..), cont, start, end, State(..), IsState(..), IsQuestion(..)) where
 
-module V2FlowCont (Cont(..), cont, start, end, State(..), IsState(..)) where
-
-import Debug.Trace (trace)
+newtype Answer = Answer { unAnswer :: String }
 
 -- | Action operates on 'State'
 data Cont = Cont State | Start State State | End State deriving (Show)
 
--- | Converts actual data to 'State'
-cont ∷ IsState s ⇒ s → Cont
+-- | Continue in the same flow
+cont :: IsState s => s -> Cont
 cont i = Cont $ state i
 
-start ∷ (IsState s, IsState s') ⇒ s → s' → Cont
-start x x' = Start (state x) (state x')
+-- | Start a new flow (from inside the current flow)
+start :: (IsState s, IsState s') => s -> s' -> Cont
+start s s' = Start (state s) (state s')
 
-end ∷ IsState s ⇒ s → Cont
-end s = trace ("-- end s = " ++ show s) (End $ state s)
+-- | End the current flow
+end :: IsState s => s -> Cont
+end s = End $ state s
 
--- | State is something, which have next action and string representation
+-- | Whether the state is a Question
+class IsQuestion s where
+  ask :: s -> Maybe String
+
+-- | State is something, which has the next action, a string representation and maybe a question
 data State = State {
-  next ∷ String -> Cont,
-  save ∷ String
+  next :: Answer -> Cont,
+  question :: Maybe String,
+  save :: String
 }
 
 
-class (Read s, Show s) ⇒ IsState s where
-  step ∷ s → String → Cont
-  -- | No need of implementation, just to allow using when implementing step
-  state ∷ s → State
+class (Read s, Show s, IsQuestion s) => IsState s where
+
+  -- | Specifies how to proceed given the current state 's' and an `Answer`
+  step :: s -> Answer -> Cont
+
+  state :: s -> State
   state x = State {
     next = step x,
+    question = ask x,
     save = show x
   }
 
